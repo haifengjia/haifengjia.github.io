@@ -1,6 +1,7 @@
-title: Minimal theme
-logo: /assets/img/logo.png
-description: Minimal is a theme for GitHub Pages.
-show_downloads: true
+title: Haifeng Jia
+logo: /assets/img/me.jpg
+description: "Pre-adm Ph.D. student @SJTU-NMS-Lab \n B.S. ECE @SJTU"
+show_downloads: false
 google_analytics:
+github_username: haifengjia
 theme: jekyll-theme-minimal
