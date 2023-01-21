@@ -1,7 +1,7 @@
 title: Haifeng Jia
 logo: /assets/img/me.jpg
-description: "Pre-adm Ph.D. student @SJTU-NMS-Lab \n B.S. ECE @SJTU"
+description: "Ph.D. student @SJTU-NMS-Lab (pre-adm)"
 show_downloads: false
 google_analytics:
-github_username: haifengjia
+# github_username: haifengjia
 theme: jekyll-theme-minimal
