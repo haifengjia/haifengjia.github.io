@@ -4,7 +4,7 @@ email: bogus at gmail dot com
 description: Minimalist is a theme powered by Jekyll. It is modified based on the Minimal theme.
 show_downloads: false
 google_analytics: UA-108144808-1
-color-scheme: auto
+color-scheme: light
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
