@@ -2,8 +2,12 @@
 layout: default
 ---
 
-## Welcome to another page
+## Projects
 
-_yay_
+Large-scale Bluetooth Low Energy Networking
+
+- Time Synchronization
+- Concurrent Transmission
+- Channel Assignment & Anti-interference
 
 [back](./)
