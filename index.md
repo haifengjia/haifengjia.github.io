@@ -12,7 +12,7 @@ layout: default
 ## About Me
 
  🏫 Electrical and Computer Engineering (ECE) B.S. @UM-SJTU JI <br>
- 🎓 First-year PhD student majoring in Information and Communication Engineering <br>
+ 🎓 Incoming Ph.D. student majoring in Information and Communication Engineering <br>
  💻 Specially focus upon Wireless Networking and Communication (BLE, 5G, WiFi) <br>
 
 [Click here to check my research projects](./another-page.html)
