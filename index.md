@@ -6,8 +6,8 @@ layout: default
 
 <!-- ## News -->
 
-<!-- **[2023/02]** Our *BLE-wBMS* project got sponsored by [CATL (宁德时代)](https://www.catl.com/en/)! -->
-<!-- **[2023/01]** Our capstone design got accepted by SJTU with an A letter grade! -->
+**[2023/06]** Our paper *Efficient Interference Graph Estimation via Concurrent Flooding* got accepted by [EWSN'23](https://events.dimes.unical.it/ewsn2023/)! \\
+**[2023/01]** Our capstone design got accepted by SJTU with an A letter grade!
 
 ## About Me
 

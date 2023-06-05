@@ -15,7 +15,7 @@ layout: default
 - Concurrent Transmission (C.T.)
 - Anti-interference design (e.g. transceiver power control)
 
-### Energy-efficient forest fire detection acceleration solution based on wireless multimedia sensor
+### Energy-efficient forest fire detection acceleration solution based on wireless multimedia sensor (MDE Project)
 
 ![mde](assets/img/mde_project.png)
 
