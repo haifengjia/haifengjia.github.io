@@ -4,31 +4,51 @@ layout: default
 
 ![avatar](assets/img/20230123.jpg)
 
-## \[About Me\]
+## About Me
 
  🏫 Electrical and Computer Engineering (ECE) B.S. @UM-SJTU JI <br>
  🎓 Incoming Ph.D. student majoring in Information and Communication Engineering <br>
  💻 Specially focus upon Wireless Networking and Communication (BLE, 5G, WiFi) <br>
 
-## \[News\]
+***
+
+## News
 
 - **2023/06** Our paper got accepted by [EWSN'23](https://events.dimes.unical.it/ewsn2023/)!
 - **2023/01** Our capstone design got accepted by SJTU with an A letter grade!
 
-## \[Publications\]
+***
 
-### Efficient Interference Graph Estimation (IGE) via Concurrent Flooding
+## Publications
+
+### [Efficient Interference Graph Estimation via Concurrent Flooding](./)
 
 Haifeng Jia, Yichen Wei, Zhan Wang, Jiani Jin, Haorui Li and [Yibo Pi](https://yibopi.github.io/)
 
-*International Conference on Embedded Wireless Systems and Networking, Italy, 2023*
+International Conference on Embedded Wireless Systems and Networking (EWSN), Rende, Italy, 2023
 
-<div align=center>
-    <img src="assets/img/flooding_w_ige_00.png" width="80%">
-</div>
+***
 
-- One of the *first* IGE works upon *wireless sensor networks*
-- Implementation on [BlueFlood](https://github.com/iot-chalmers/BlueFlood) with COTS boards (nRF52840 DK)
-- Real-world experiments with estimation error *median 3dB* and *80th percentile 7.5dB*
+## Teaching
 
-## [\[Projects\]](./projects.html)
+- Teaching Assistant, VE441: App Development for Entrepreneurs [Summer 2023]
+
+***
+
+## Projects
+
+### [Energy-efficient forest fire detection acceleration solution based on wireless multimedia sensor](https://drive.google.com/file/d/1if4rOR7iOwFTxU3L_Zbg1LV7aQ8YHrr8/view?usp=share_link)
+
+Haifeng Jia, [Runxi Wang](https://misaki-rx.github.io/), Yichen Cai and [An Zou](https://sites.ji.sjtu.edu.cn/zouan/)
+
+Major Design Experience (MDE) Project, Shanghai, China, 2022
+
+![mde](assets/img/mde_project.png)
+
+### Fire control evaluation system design based on Big Data and Internet of Things
+
+Haifeng Jia, Boming Zhang, Ruiqi Lai and [Mian Li](https://sites.ji.sjtu.edu.cn/ido/professor/)
+
+SJTU Innovation and Practice Program, Shanghai, China, 2021
+
+![mde](assets/img/IPP.png)
