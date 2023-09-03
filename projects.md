@@ -28,4 +28,12 @@ Haifeng Jia, [Runxi Wang](https://misaki-rx.github.io/), Yichen Cai, [An Zou](ht
 - *Nanosecond-level* time synchronization
 - Anti-interference design
 
+### Fire control evaluation system design based on Big Data and Internet of Things
+
+Haifeng Jia, Boming Zhang, Ruiqi Lai and [Mian Li](https://sites.ji.sjtu.edu.cn/ido/professor/)
+
+SJTU Innovation and Practice Program, Shanghai, China, 2021
+
+![mde](assets/img/IPP.png)
+
 [Return](./)
