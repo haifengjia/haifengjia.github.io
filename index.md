@@ -31,9 +31,9 @@ Haifeng Jia\*, Yichen Wei\*, Zhan Wang, Jiani Jin, Haorui Li and [Yibo Pi](https
 
 *International Conference on Embedded Wireless Systems and Networking (EWSN), Rende, Italy, 2023*
 
-[[pdf](./)]
+<!-- [[pdf](./)]
 [[slides](./)]
-[[codes](./)]
+[[codes](./)] -->
 
 ***
 
