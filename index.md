@@ -2,7 +2,7 @@
 layout: default
 ---
 
-![avatar](assets/img/20230123.jpg)
+![avatar](assets/img/20231006.jpg)
 
 ## About Me
 
