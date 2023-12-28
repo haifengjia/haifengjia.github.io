@@ -2,7 +2,7 @@
 layout: default
 ---
 
-![avatar](assets/img/20231006.jpg)
+![avatar](assets/img/20230123.jpg)
 
 ## About Me
 
@@ -31,8 +31,9 @@ Haifeng Jia\*, Yichen Wei\*, Zhan Wang, Jiani Jin, Haorui Li and [Yibo Pi](https
 
 *International Conference on Embedded Wireless Systems and Networking, Rende, Italy, 2023*
 
-[[pdf](./assets/pdf/EWSN_23_camera_ready.pdf)]
-[[talk](./assets/pdf/ewsn_haifeng_static.pdf)]
+[[arXiv](./assets/pdf/EWSN_23_camera_ready.pdf)]
+[[paper](./assets/pdf/EWSN_23_camera_ready.pdf)]
+[[slides](./assets/pdf/ewsn_haifeng_static.pdf)]
 <!-- [[codes]()] -->
 
 ### Power-Domain Interference Graph Estimation for Multi-hop BLE Networks [*Under Review*]
