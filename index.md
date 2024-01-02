@@ -6,15 +6,15 @@ layout: default
 
 ## About Me
 
-<iconify-icon icon="icon-park:school" width="24" height="24"></iconify-icon> **Currently**
+**Currently** <iconify-icon icon="icon-park:school" width="24" height="24"></iconify-icon> 
  
 I am a first-year Ph.D. student majoring in Information and Communication Engineering @UM-SJTU JI, advised by Prof. <a href="https://yibopi.github.io/">Yibo Pi</a>. 
 
-<iconify-icon icon="icon-park:bachelor-cap-one" width="24" height="24"></iconify-icon> **Background**
+**Background** <iconify-icon icon="icon-park:bachelor-cap-one" width="24" height="24"></iconify-icon> 
  
 I got my Electrical and Computer Engineering (ECE) B.S. also @UM-SJTU JI. 
 
-<iconify-icon icon="mdi:file-pdf-box" width="32" height="32"></iconify-icon> **Research Interests** 
+**Research Interests** <iconify-icon icon="icon-park:direction" width="32" height="32"></iconify-icon>
 
 Wireless Communication Systems, Network Measurement, Sensor Networks
 
@@ -38,7 +38,7 @@ Haifeng Jia\*, Yichen Wei\*, Zhan Wang, Jiani Jin, Haorui Li and [Yibo Pi](https
 *International Conference on Embedded Wireless Systems and Networking, Rende, Italy, 2023*
 
 [<iconify-icon icon="ph:link-fill" width="32" height="32"></iconify-icon>](https://arxiv.org/abs/2312.16807)
-[<iconify-icon icon="mdi:file-pdf-box" width="32" height="32"></iconify-icon>](./assets/pdf/EWSN_23_camera_ready.pdf)
+[<iconify-icon icon="mdi:file-pdf-box" width="32" height="32"></iconify-icon>](./assets/pdf/EWSN_23_camera_ready.pdf) 
 [<iconify-icon icon="simple-icons:slides" width="32" height="32"></iconify-icon>](./assets/pdf/ewsn_haifeng_static.pdf)
 
 
