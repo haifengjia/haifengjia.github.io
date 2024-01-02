@@ -6,15 +6,15 @@ layout: default
 
 ## About Me
 
-**Currently** <iconify-icon icon="icon-park:school" width="24" height="24"></iconify-icon> 
+**Currently** <iconify-icon icon="icon-park-outline:school" width="24" height="24"></iconify-icon>
  
 I am a first-year Ph.D. student majoring in Information and Communication Engineering @UM-SJTU JI, advised by Prof. <a href="https://yibopi.github.io/">Yibo Pi</a>. 
 
-**Background** <iconify-icon icon="icon-park:bachelor-cap-one" width="24" height="24"></iconify-icon> 
+**Background** <iconify-icon icon="icon-park-solid:bachelor-cap-one" width="24" height="24"></iconify-icon> 
  
 I got my Electrical and Computer Engineering (ECE) B.S. also @UM-SJTU JI. 
 
-**Research Interests** <iconify-icon icon="openmoji:wireless" width="24" height="24"></iconify-icon>
+**Research Interests** <iconify-icon icon="streamline:cellular-network-5g-solid" width="24" height="24"></iconify-icon> <iconify-icon icon="streamline:cellular-network-lte-solid" width="24" height="24"></iconify-icon><iconify-icon icon="majesticons:bluetooth-line" width="24" height="24"></iconify-icon> 
 
 Wireless Communication Systems, Network Measurement, Sensor Networks
 
