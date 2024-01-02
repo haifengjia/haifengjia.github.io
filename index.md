@@ -67,7 +67,7 @@ Haifeng Jia, [Runxi Wang](https://misaki-rx.github.io/), Yichen Cai and [An Zou]
 
 *Major Design Experience (MDE) Project, Shanghai, China, 2022*
 
-[<iconify-icon icon="carbon:video-filled" width="32" height="32"></iconify-icon>](https://drive.google.com/file/d/1if4rOR7iOwFTxU3L_Zbg1LV7aQ8YHrr8/view?usp=share_link)
+[<iconify-icon icon="ri:video-fill" width="32" height="32"></iconify-icon>](https://drive.google.com/file/d/1if4rOR7iOwFTxU3L_Zbg1LV7aQ8YHrr8/view?usp=share_link)
 
 ![mde](assets/img/mde_project.png)
 
