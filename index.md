@@ -14,7 +14,7 @@ I am a first-year Ph.D. student majoring in Information and Communication Engine
  
 I got my Electrical and Computer Engineering (ECE) B.S. also @UM-SJTU JI. 
 
-**Research Interests** <iconify-icon icon="icon-park:direction" width="24" height="24"></iconify-icon>
+**Research Interests** <iconify-icon icon="openmoji:wireless" width="24" height="24"></iconify-icon>
 
 Wireless Communication Systems, Network Measurement, Sensor Networks
 
@@ -67,7 +67,7 @@ Haifeng Jia, [Runxi Wang](https://misaki-rx.github.io/), Yichen Cai and [An Zou]
 
 *Major Design Experience (MDE) Project, Shanghai, China, 2022*
 
-[[demo](https://drive.google.com/file/d/1if4rOR7iOwFTxU3L_Zbg1LV7aQ8YHrr8/view?usp=share_link)]
+[<iconify-icon icon="carbon:video-filled" width="32" height="32"></iconify-icon>](https://drive.google.com/file/d/1if4rOR7iOwFTxU3L_Zbg1LV7aQ8YHrr8/view?usp=share_link)
 
 ![mde](assets/img/mde_project.png)
 
