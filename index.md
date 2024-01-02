@@ -6,9 +6,9 @@ layout: default
 
 ## About Me
 
-🏫 I am a first-year Ph.D. student majoring in Information and Communication Engineering @UM-SJTU JI, advised by Prof. <a href="https://yibopi.github.io/">Yibo Pi</a>. 
+🏫<iconify-icon icon="icon-park:school" width="32" height="32"></iconify-icon> I am a first-year Ph.D. student majoring in Information and Communication Engineering @UM-SJTU JI, advised by Prof. <a href="https://yibopi.github.io/">Yibo Pi</a>. 
 
-🎓 I got my Electrical and Computer Engineering (ECE) B.S. also @UM-SJTU JI. 
+🎓<iconify-icon icon="icon-park:bachelor-cap" width="32" height="32"></iconify-icon> I got my Electrical and Computer Engineering (ECE) B.S. also @UM-SJTU JI. 
 
 **Research Interests:** Wireless Communication Systems, Network Measurement, Sensor Networks
 
@@ -31,10 +31,10 @@ Haifeng Jia\*, Yichen Wei\*, Zhan Wang, Jiani Jin, Haorui Li and [Yibo Pi](https
 
 *International Conference on Embedded Wireless Systems and Networking, Rende, Italy, 2023*
 
-[[arXiv![arXiv](https://arxiv.org/favicon.ico)](https://arxiv.org/abs/2312.16807)]
-[[PDF](./assets/pdf/EWSN_23_camera_ready.pdf)]
-[[Slides](./assets/pdf/ewsn_haifeng_static.pdf)]
-<!-- [[codes]()] -->
+[<iconify-icon icon="academicons:arxiv" width="32" height="32"></iconify-icon>](https://arxiv.org/abs/2312.16807)
+[<iconify-icon icon="ant-design:file-pdf-filled" width="32" height="32"></iconify-icon>](./assets/pdf/EWSN_23_camera_ready.pdf)
+[<iconify-icon icon="logos:slides" width="32" height="32"></iconify-icon>](./assets/pdf/ewsn_haifeng_static.pdf)
+
 
 ### Power-Domain Interference Graph Estimation for Multi-hop BLE Networks [*Under Review*]
 
@@ -42,9 +42,6 @@ Haifeng Jia, Yichen Wei, [Yibo Pi](https://yibopi.github.io/) and [Cailian Chen]
 
 *ACM Transactions on Sensor Networks, submitted in December 2023*
 
-<!-- [[pdf](./assets/pdf/)] -->
-<!-- [[talk](./assets/pdf/)] -->
-<!-- [[codes]()] -->
 
 ***
 
