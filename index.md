@@ -14,7 +14,7 @@ I am a first-year Ph.D. student majoring in Information and Communication Engine
  
 I got my Electrical and Computer Engineering (ECE) B.S. also @UM-SJTU JI. 
 
-**Research Interests** <iconify-icon icon="icon-park:direction" width="32" height="32"></iconify-icon>
+**Research Interests** <iconify-icon icon="icon-park:direction" width="24" height="24"></iconify-icon>
 
 Wireless Communication Systems, Network Measurement, Sensor Networks
 
