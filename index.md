@@ -55,6 +55,7 @@ Haifeng Jia, Yichen Wei, [Yibo Pi](https://yibopi.github.io/) and [Cailian Chen]
 
 - Teaching Assistant, VE441: App Development for Entrepreneurs [Summer 2023]
 - Teaching Assistant, VE281: Data Structures and Algorithms [Fall 2021]
+- Teaching Assistant, VG100: Introduction to Engineering [Summer 2021]
 
 
 ***
