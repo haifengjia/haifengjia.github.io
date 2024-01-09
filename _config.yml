@@ -4,7 +4,7 @@ email: haifeng.jia@foxmail.com
 description: "Ph.D. student"
 show_downloads: false
 google_analytics: 
-color-scheme: auto
+color-scheme: light # dark/light/auto
 plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
