@@ -22,6 +22,7 @@ Wireless Communication Systems, Network Measurement, Sensor Networks
 
 ## News
 
+- **2024/03** Our IGE work got first citation!
 - **2023/08** Selected as *2023 SJTU Outstanding Bachelor Graduate*
 - **2023/07** Awarded *Future Technology Taihu Scholarship for Technological Innovation*
 - **2023/06** Our IGE work accepted by [EWSN'23](https://events.dimes.unical.it/ewsn2023/)!
@@ -41,7 +42,7 @@ Haifeng Jia\*, Yichen Wei\*, Zhan Wang, Jiani Jin, Haorui Li and [Yibo Pi](https
 \[<iconify-icon icon="raphael:paper" style="color: green;" width="24" height="24"></iconify-icon>[Paper](./assets/pdf/EWSN_23_camera_ready.pdf)\]
 \[<iconify-icon icon="carbon:demo" style="color: #d88d54;" width="24" height="24"></iconify-icon>[Slides](./assets/pdf/ewsn_haifeng_static.pdf)\]
 
-### Power-Domain Interference Graph Estimation for Multi-hop BLE Networks [*Under Review*]
+### Power-Domain Interference Graph Estimation for Multi-hop BLE Networks [*Major Revision*]
 
 Haifeng Jia, Yichen Wei, [Yibo Pi](https://yibopi.github.io/) and [Cailian Chen](https://english.seiee.sjtu.edu.cn/english/detail/386_581.htm)
 
