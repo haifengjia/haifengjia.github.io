@@ -46,7 +46,7 @@ Haifeng Jia\*, Yichen Wei\*, Zhan Wang, Jiani Jin, Haorui Li and [Yibo Pi](https
 
 Haifeng Jia, Yichen Wei, [Yibo Pi](https://yibopi.github.io/) and [Cailian Chen](https://english.seiee.sjtu.edu.cn/english/detail/386_581.htm)
 
-*ACM Transactions on Sensor Networks, submitted in December 2023*
+*ACM Transactions on Sensor Networks, first submitted in December 2023, revised and resubmitted in June 2024*
 
 
 ***
