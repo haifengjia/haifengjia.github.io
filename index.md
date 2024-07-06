@@ -7,12 +7,12 @@ layout: default
 ## About Me
 
 **Currently** <iconify-icon icon="simple-icons:now" style="color: #7b5443;" width="24" height="24"></iconify-icon>
- 
-I am a first-year Ph.D. student majoring in Information and Communication Engineering @University of Michigan - Shanghai Jiao Tong University Joint Institute (UM-SJTU JI), advised by Prof. <a href="https://yibopi.github.io/">Yibo Pi</a>. 
 
-**Background** <iconify-icon icon="icon-park-solid:bachelor-cap-one" width="24" height="24"></iconify-icon> 
- 
-I got my Electrical and Computer Engineering (ECE) B.S. also @UM-SJTU JI. 
+I am a first-year Ph.D. student majoring in Information and Communication Engineering @University of Michigan - Shanghai Jiao Tong University Joint Institute (UM-SJTU JI), advised by Prof. <a href="https://yibopi.github.io/">Yibo Pi</a>.
+
+**Background** <iconify-icon icon="icon-park-solid:bachelor-cap-one" width="24" height="24"></iconify-icon>
+
+I got my Electrical and Computer Engineering (ECE) B.S. also @UM-SJTU JI.
 
 **Research Interests** <iconify-icon icon="streamline:cellular-network-5g-solid" style="color: #fd0100;" width="24" height="24"></iconify-icon> <iconify-icon icon="streamline:cellular-network-lte-solid" style="color: #199144;" width="24" height="24"></iconify-icon> <iconify-icon icon="bi:bluetooth" style="color: #017ff5;" width="24" height="24"></iconify-icon>
 
@@ -22,7 +22,7 @@ Wireless Communication Systems, Network Measurement, Sensor Networks
 
 ## News
 
-- **2024/03** Our IGE work got first citation!
+- **2024/07** Our EWSN'23 work is published!
 - **2023/08** Selected as *2023 SJTU Outstanding Bachelor Graduate*
 - **2023/07** Awarded *Future Technology Taihu Scholarship for Technological Innovation*
 - **2023/06** Our IGE work accepted by [EWSN'23](https://events.dimes.unical.it/ewsn2023/)!
@@ -32,22 +32,18 @@ Wireless Communication Systems, Network Measurement, Sensor Networks
 
 ## Publications
 
-### Efficient Interference Graph Estimation via Concurrent Flooding
+### Conferences
 
-Haifeng Jia\*, Yichen Wei\*, Zhan Wang, Jiani Jin, Haorui Li and [Yibo Pi](https://yibopi.github.io/)
+- **Haifeng Jia**, Yichen Wei, Zhan Wang, Jiani Jin, and Yibo Pi. 2023. Efficient Interference Graph Estimation via Concurrent Flooding. In Proceedings of the 2023 International Conference on embedded Wireless Systems and Networks (EWSN '23). Association for Computing Machinery, New York, NY, USA, 249–255.
+<br>
+    \[<iconify-icon icon="academicons:acmdl" width="24" height="24"  style="color: #73cef2"></iconify-icon>[ACM](https://dl.acm.org/doi/10.5555/3639940.3639972)\]
+    \[<iconify-icon icon="academicons:arxiv" style="color: #9d242d;" width="24" height="24"></iconify-icon>[arXiv](https://arxiv.org/abs/2312.16807)\]
+    \[<iconify-icon icon="raphael:paper" style="color: green;" width="24" height="24"></iconify-icon>[Paper](./assets/pdf/EWSN_23_camera_ready.pdf)\]
+    \[<iconify-icon icon="carbon:demo" style="color: #d88d54;" width="24" height="24"></iconify-icon>[Slides](./assets/pdf/ewsn_haifeng_static.pdf)\]
 
-*International Conference on Embedded Wireless Systems and Networking, Rende, Italy, 2023*
+### Journals
 
-\[<iconify-icon icon="academicons:arxiv" style="color: #9d242d;" width="24" height="24"></iconify-icon>[arXiv](https://arxiv.org/abs/2312.16807)\]
-\[<iconify-icon icon="raphael:paper" style="color: green;" width="24" height="24"></iconify-icon>[Paper](./assets/pdf/EWSN_23_camera_ready.pdf)\]
-\[<iconify-icon icon="carbon:demo" style="color: #d88d54;" width="24" height="24"></iconify-icon>[Slides](./assets/pdf/ewsn_haifeng_static.pdf)\]
-
-### Power-Domain Interference Graph Estimation for Multi-hop BLE Networks [*Major Revision*]
-
-Haifeng Jia, Yichen Wei, [Yibo Pi](https://yibopi.github.io/) and [Cailian Chen](https://english.seiee.sjtu.edu.cn/english/detail/386_581.htm)
-
-*ACM Transactions on Sensor Networks, first submitted in December 2023, revised and resubmitted in June 2024*
-
+- **Haifeng Jia**, Yichen Wei, Yibo Pi and [Cailian Chen](https://english.seiee.sjtu.edu.cn/english/detail/386_581.htm). Power-Domain Interference Graph Estimation for Multi-hop BLE Networks. *ACM Transactions on Sensor Networks, first submitted in December 2023, revised and resubmitted in June 2024.* [*Major Revision*]
 
 ***
 
@@ -57,12 +53,11 @@ Haifeng Jia, Yichen Wei, [Yibo Pi](https://yibopi.github.io/) and [Cailian Chen]
 - Teaching Assistant, VE281: Data Structures and Algorithms [Fall 2021]
 - Teaching Assistant, VG100: Introduction to Engineering [Summer 2021]
 
-
 ***
 
 ## Projects
 
-### Energy-efficient forest fire detection acceleration solution based on wireless multimedia sensor 
+### Energy-efficient forest fire detection acceleration solution based on wireless multimedia sensor
 
 Haifeng Jia, [Runxi Wang](https://misaki-rx.github.io/), Yichen Cai and [An Zou](https://sites.ji.sjtu.edu.cn/zouan/)
 
