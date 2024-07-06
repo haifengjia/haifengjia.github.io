@@ -34,7 +34,7 @@ Wireless Communication Systems, Network Measurement, Sensor Networks
 
 ### Conferences
 
-- **Haifeng Jia**, Yichen Wei, Zhan Wang, Jiani Jin, and Yibo Pi. 2023. Efficient Interference Graph Estimation via Concurrent Flooding. In Proceedings of the 2023 International Conference on embedded Wireless Systems and Networks (EWSN '23). Association for Computing Machinery, New York, NY, USA, 249–255.
+- **Haifeng Jia\***, Yichen Wei\*, Zhan Wang, Jiani Jin, and Yibo Pi. 2023. Efficient Interference Graph Estimation via Concurrent Flooding. In Proceedings of the 2023 International Conference on embedded Wireless Systems and Networks (EWSN '23). Association for Computing Machinery, New York, NY, USA, 249–255. (\* Co-primary authors)
 <br>
     \[<iconify-icon icon="academicons:acmdl" width="24" height="24"  style="color: #73cef2"></iconify-icon>[ACM](https://dl.acm.org/doi/10.5555/3639940.3639972)\]
     \[<iconify-icon icon="academicons:arxiv" style="color: #9d242d;" width="24" height="24"></iconify-icon>[arXiv](https://arxiv.org/abs/2312.16807)\]
