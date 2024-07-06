@@ -43,7 +43,7 @@ Wireless Communication Systems, Network Measurement, Sensor Networks
 
 ### Journals
 
-- **Haifeng Jia**, Yichen Wei, Yibo Pi and [Cailian Chen](https://english.seiee.sjtu.edu.cn/english/detail/386_581.htm). Power-Domain Interference Graph Estimation for Multi-hop BLE Networks. *ACM Transactions on Sensor Networks, first submitted in December 2023, revised and resubmitted in June 2024.* [*Major Revision*]
+- **Haifeng Jia**, Yichen Wei, Yibo Pi and [Cailian Chen](https://english.seiee.sjtu.edu.cn/english/detail/386_581.htm). Power-Domain Interference Graph Estimation for Multi-hop BLE Networks. ACM Transactions on Sensor Networks (TOSN). *First draft submitted in December 2023, major revision submitted in June 2024.* [Under review]
 
 ***
 
@@ -57,10 +57,6 @@ Wireless Communication Systems, Network Measurement, Sensor Networks
 
 ## Projects
 
-### Energy-efficient forest fire detection acceleration solution based on wireless multimedia sensor
-
-Haifeng Jia, [Runxi Wang](https://misaki-rx.github.io/), Yichen Cai and [An Zou](https://sites.ji.sjtu.edu.cn/zouan/)
-
-*Major Design Experience (MDE) Project, Shanghai, China, 2022*
-
+- Energy-efficient forest fire detection acceleration solution based on wireless multimedia sensor. Haifeng Jia, [Runxi Wang](https://misaki-rx.github.io/), Yichen Cai and [An Zou](https://sites.ji.sjtu.edu.cn/zouan/). *Major Design Experience (MDE) Project, Shanghai, China, 2022.*
+<br>
 \[<iconify-icon icon="icon-park-outline:video" style="color: #ab97e0;" width="24" height="24"></iconify-icon> [Video](https://drive.google.com/file/d/1if4rOR7iOwFTxU3L_Zbg1LV7aQ8YHrr8/view?usp=share_link)\]
