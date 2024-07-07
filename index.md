@@ -63,5 +63,5 @@ Wireless Communication Systems, Network Measurement, Sensor Networks
 
 - Age of Plague: After the Apocalypse. Jigang Li, **Haifeng Jia**, Zefang Wei, Danyu Zhou. *Introduction to Engineering (Web Game Development), Shanghai, 2020.*
 <br>
-\[<iconify-icon icon="twemoji:video-game" width="24" height="24"></iconify-icon> [Game](https://github.com/haifengjia/Age-of-Plague)\]
+\[<iconify-icon icon="twemoji:video-game" width="24" height="24"></iconify-icon> [Game](./assets/game/index.html)\]
 \[<iconify-icon icon="devicon:githubcodespaces" width="24" height="24"></iconify-icon> [Codes](https://github.com/haifengjia/Age-of-Plague)\]
