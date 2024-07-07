@@ -57,6 +57,11 @@ Wireless Communication Systems, Network Measurement, Sensor Networks
 
 ## Projects
 
-- Energy-efficient forest fire detection acceleration solution based on wireless multimedia sensor. Haifeng Jia, [Runxi Wang](https://misaki-rx.github.io/), Yichen Cai and [An Zou](https://sites.ji.sjtu.edu.cn/zouan/). *Major Design Experience (MDE) Project, Shanghai, China, 2022.*
+- Energy-efficient forest fire detection acceleration solution based on wireless multimedia sensor. **Haifeng Jia**, [Runxi Wang](https://misaki-rx.github.io/), Yichen Cai and [An Zou](https://sites.ji.sjtu.edu.cn/zouan/). *Major Design Experience (MDE) Project, Shanghai, China, 2022.*
 <br>
 \[<iconify-icon icon="icon-park-outline:video" style="color: #ab97e0;" width="24" height="24"></iconify-icon> [Video](https://drive.google.com/file/d/1if4rOR7iOwFTxU3L_Zbg1LV7aQ8YHrr8/view?usp=share_link)\]
+
+- Age of Plague: After the Apocalypse. Jigang Li, **Haifeng Jia**, Zefang Wei, Danyu Zhou. *Introduction to Engineering (Web Game Development), Shanghai, 2020.*
+<br>
+\[<iconify-icon icon="twemoji:video-game" width="24" height="24"></iconify-icon> [Game](https://github.com/haifengjia/Age-of-Plague)\]
+\[<iconify-icon icon="devicon:githubcodespaces" width="24" height="24"></iconify-icon> [Codes](https://github.com/haifengjia/Age-of-Plague)\]
