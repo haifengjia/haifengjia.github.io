@@ -46,7 +46,7 @@ layout: default
 ### Journal Articles
 
 - **Power-Domain Interference Graph Estimation for Multi-hop BLE Networks.**<br>
-    <u>Haifeng Jia</u>, Yichen Wei, Yibo Pi\* and Cailian Chen\*.<br>
+    <u>Haifeng Jia</u>, Yichen Wei, Yibo Pi\* and Cailian Chen.<br>
     ACM Transactions on Sensor Networks (TOSN).<br>
     Accepted in 2024/08, to appear.
 
