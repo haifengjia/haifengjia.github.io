@@ -17,7 +17,7 @@ layout: default
 ## News
 
 - **[2024/08]** Our Interference Graph Estimation work is accepted by [TOSN](https://dl.acm.org/journal/tosn)!
-- **[2024/07]** Our work got accepted by [GLOBECOM'24](https://globecom2024.ieee-globecom.org/)!
+<!-- - **[2024/07]** Our work got accepted by [GLOBECOM'24](https://globecom2024.ieee-globecom.org/)! -->
 - **[2023/06]** Our Interference Graph Estimation work is accepted by [EWSN'23](https://events.dimes.unical.it/ewsn2023/)!
 
 ***
@@ -28,11 +28,11 @@ layout: default
 
 ### Conference Papers
 
-- **Neural Reflectance Fields for Radio-Frequency Ray Tracing.**<br>
+<!-- - **Neural Reflectance Fields for Radio-Frequency Ray Tracing.**<br>
     <u>Haifeng Jia</u>, Xinyi Chen, Yichen Wei, Yifei Sun and Yibo Pi\*.<br>
     IEEE Global Communications Conference (GLOBECOM).<br>
     Cape Town, South Africa, 2024/12.<br>
-    To appear.
+    To appear. -->
 
 - **Efficient Interference Graph Estimation via Concurrent Flooding.**<br>
     <u>Haifeng Jia</u>#, Yichen Wei#, Zhan Wang, Jiani Jin and Yibo Pi\*.<br>
