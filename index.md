@@ -16,9 +16,9 @@ layout: default
 
 ## News
 
-- **[2024/08]** Our Interference Graph Estimation work is accepted by [TOSN](https://dl.acm.org/journal/tosn)!
-<!-- - **[2024/07]** Our work got accepted by [GLOBECOM'24](https://globecom2024.ieee-globecom.org/)! -->
-- **[2023/06]** Our Interference Graph Estimation work is accepted by [EWSN'23](https://events.dimes.unical.it/ewsn2023/)!
+- **2024/08.** Our paper *Power-Domain Interference Graph Estimation for Multi-hop BLE Networks* is accepted for publication in [TOSN](https://dl.acm.org/journal/tosn)!
+- **2024/07.** Our paper *Neural Reflectance Fields for Radio-Frequency Ray Tracing* is accepted by [GLOBECOM'24](https://globecom2024.ieee-globecom.org/)!
+- **2023/06.** Our paper *Efficient Interference Graph Estimation via Concurrent Flooding* is accepted by [EWSN'23](https://events.dimes.unical.it/ewsn2023/)!
 
 ***
 
@@ -28,11 +28,11 @@ layout: default
 
 ### Conference Papers
 
-<!-- - **Neural Reflectance Fields for Radio-Frequency Ray Tracing.**<br>
+- **Neural Reflectance Fields for Radio-Frequency Ray Tracing.**<br>
     <u>Haifeng Jia</u>, Xinyi Chen, Yichen Wei, Yifei Sun and Yibo Pi\*.<br>
     IEEE Global Communications Conference (GLOBECOM).<br>
     Cape Town, South Africa, 2024/12.<br>
-    To appear. -->
+    To appear.
 
 - **Efficient Interference Graph Estimation via Concurrent Flooding.**<br>
     <u>Haifeng Jia</u>#, Yichen Wei#, Zhan Wang, Jiani Jin and Yibo Pi\*.<br>
@@ -48,7 +48,9 @@ layout: default
 - **Power-Domain Interference Graph Estimation for Multi-hop BLE Networks.**<br>
     <u>Haifeng Jia</u>, Yichen Wei, Yibo Pi\* and Cailian Chen.<br>
     ACM Transactions on Sensor Networks (TOSN).<br>
-    Accepted in 2024/08, to appear.
+    Just accepted in 2024/08, to appear.<br>
+    \[[ACM<iconify-icon icon="academicons:acmdl" width="18" height="18"></iconify-icon>](https://dl.acm.org/doi/10.1145/3689635)\]
+    \[[arxiv<iconify-icon icon="academicons:arxiv" width="18" height="18"></iconify-icon>](https://arxiv.org/abs/2408.11499)\]
 
 ***
 
