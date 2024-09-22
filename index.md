@@ -10,7 +10,7 @@ layout: default
 
 **Background.** I got my Bachelor degree also @UM-SJTU JI, majoring in Electrical and Computer Engineering.
 
-**Research Interests.** AI4COMM, wireless network measurement.
+**Research Interests.** Radio SLAM, AI4COMM, wireless network measurement.
 
 ***
 
