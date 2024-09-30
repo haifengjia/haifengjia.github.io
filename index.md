@@ -6,7 +6,7 @@ layout: default
 
 ## About Me
 
-**Currently**, I am a 1st-year Ph.D. student majoring in Information and Communication Engineering @University of Michigan - Shanghai Jiao Tong University Joint Institute (UM-SJTU JI), advised by Prof. <a href="https://yibopi.github.io/">Yibo Pi</a>.
+**Currently**, I am a 2nd-year Ph.D. student majoring in Information and Communication Engineering @University of Michigan - Shanghai Jiao Tong University Joint Institute (UM-SJTU JI), advised by Prof. <a href="https://yibopi.github.io/">Yibo Pi</a>.
 
 **Background.** I got my Bachelor degree also @UM-SJTU JI, majoring in Electrical and Computer Engineering.
 
