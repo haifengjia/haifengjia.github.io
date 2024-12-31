@@ -56,6 +56,8 @@ layout: default
 
 ## Awards
 
+- **[2024/11]** Awarded Guo Xie Birong Scholarship.
+- **[2024/11]** Awarded Yu Liming Scholarship.
 - **[2023/08]** Selected as 2023 SJTU Outstanding Bachelor Graduate.
 - **[2023/07]** Awarded Future Technology Taihu Scholarship.
 
