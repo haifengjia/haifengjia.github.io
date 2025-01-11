@@ -32,16 +32,16 @@ layout: default
     <u>Haifeng Jia</u>, Xinyi Chen, Yichen Wei, Yifei Sun and Yibo Pi\*.<br>
     IEEE Global Communications Conference (GLOBECOM).<br>
     Cape Town, South Africa, 2024/12.<br>
-    To appear.
+    \[[Arxiv<iconify-icon icon="academicons:arxiv" width="18" height="18"></iconify-icon>](https://arxiv.org/abs/2501.02458)\]
 
 - **Efficient Interference Graph Estimation via Concurrent Flooding.**<br>
     <u>Haifeng Jia</u>#, Yichen Wei#, Zhan Wang, Jiani Jin and Yibo Pi\*.<br>
     International Conference on Embedded Wireless Systems and Networks (EWSN).<br>
     Rende, Italy, 2023/09.<br>
     \[[ACM<iconify-icon icon="academicons:acmdl" width="18" height="18"></iconify-icon>](https://dl.acm.org/doi/10.5555/3639940.3639972)\]
-    \[[arxiv<iconify-icon icon="academicons:arxiv" width="18" height="18"></iconify-icon>](https://arxiv.org/abs/2312.16807)\]
+    \[[Arxiv<iconify-icon icon="academicons:arxiv" width="18" height="18"></iconify-icon>](https://arxiv.org/abs/2312.16807)\]
     \[[PDF<iconify-icon icon="bi:file-earmark-pdf-fill" width="18" height="18"></iconify-icon>](./assets/pdf/EWSN_23_camera_ready.pdf)\]
-    \[[slides<iconify-icon icon="file-icons:microsoft-powerpoint" width="18" height="18"></iconify-icon>](./assets/pdf/ewsn_haifeng_static.pdf)\]
+    \[[Slides<iconify-icon icon="file-icons:microsoft-powerpoint" width="18" height="18"></iconify-icon>](./assets/pdf/ewsn_haifeng_static.pdf)\]
 
 ### Journal Articles
 
@@ -50,7 +50,7 @@ layout: default
     ACM Transactions on Sensor Networks (TOSN).<br>
     Volume 20, Issue 6. Article No.: 115, Pages 1 - 28.<br>
     \[[ACM<iconify-icon icon="academicons:acmdl" width="18" height="18"></iconify-icon>](https://dl.acm.org/doi/10.1145/3689635)\]
-    \[[arxiv<iconify-icon icon="academicons:arxiv" width="18" height="18"></iconify-icon>](https://arxiv.org/abs/2408.11499)\]
+    \[[Arxiv<iconify-icon icon="academicons:arxiv" width="18" height="18"></iconify-icon>](https://arxiv.org/abs/2408.11499)\]
 
 ***
 
