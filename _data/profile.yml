@@ -7,7 +7,7 @@ positions:
   name: Ph.D. Student @ Shanghai Jiao Tong University
 
 
-email: "haifeng.jia@foxmail.com"
+email: "ethanjia@sjtu.edu.cn"
 # cv_link: link-to-your-cv-file
 gscholar: OnkWy7kAAAAJ  # This is an example, replace it with your own Google Scholar ID
 github: haifengjia
@@ -21,10 +21,7 @@ orcid: 0009-0001-7215-9075
 short_bio_text_justify: false
 short_bio: >-
   <p>
-  <strong>Currently</strong>, I am a 2nd-year Ph.D. student majoring in Information and Communication Engineering @University of Michigan - Shanghai Jiao Tong University Joint Institute (UM-SJTU JI), advised by Prof. <a href="https://yibopi.github.io/">Yibo Pi</a>.
-  </p>
-  <p>
-  <strong>Background.</strong> I got my Electrical and Computer Engineering (ECE) B.E. also @UM-SJTU JI.
+  Currently, I am a 2nd-year Ph.D. student majoring in Information and Communication Engineering @University of Michigan - Shanghai Jiao Tong University Joint Institute (UM-SJTU JI), advised by Prof. <a href="https://yibopi.github.io/">Yibo Pi</a>.
   </p>
   <p>
   <strong>Research Interests.</strong> Radio digital twin construction, AI4COMM, wireless network measurement.
@@ -39,6 +36,7 @@ education:
   logo: /assets/images/badges/Sjtu-logo-standard-red.png
   position: >- 
     UM-SJTU Joint Institute <br/>
+    Information and Communication Engineering <br/>
     Ph.D. Student
   date: Sep. 2023 - present
 - name: Shanghai Jiao Tong University
