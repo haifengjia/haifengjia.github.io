@@ -44,11 +44,11 @@ education:
   position: B.E. in Electrical and Computer Engineering
   date: Sep. 2019 - Aug. 2023
 
-# experience:
-# - name: Peking University
-#   logo: /assets/images/badges/PKU_red.png
-#   position: Research Intern
-#   date: Sep. 2019 - Jul. 2021
+experience:
+- name: McGill University
+  logo: /assets/images/badges/Mcgill_university_coa.png
+  position: Winter Program
+  date: Jan. 2020 - Feb. 2020
 
 awards:
 - name: Guo Xie Birong Scholarship
