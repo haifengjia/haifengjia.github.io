@@ -13,6 +13,7 @@ authors:
   - Yifei Sun
   - Yibo Pi#
 links:
+  <i class="ai ai-ieee"></i> IEEE: https://ieeexplore.ieee.org/abstract/document/10901842
   ar<i class="ai ai-arxiv"></i>iv: https://arxiv.org/abs/2501.02458
   <i class="fa-solid fa-file-powerpoint"></i> Slides: assets/slides/globecom24_haifeng.pptx
 ---
