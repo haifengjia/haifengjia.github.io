@@ -3,6 +3,7 @@ title:          "Neural Reflectance Fields for Radio-Frequency Ray Tracing"
 date:           2024/12/08
 selected:       true
 pub:            "IEEE Global Communications Conference (GLOBECOM)"
+pub_last:       '<span class="badge badge-pill badge-publication badge-warning">CCF C</span> <span class="badge badge-pill badge-publication badge-info">TH-CPL B</span>'
 pub_date:       "2024"
 abstract: 
 cover: /assets/images/covers/ray_tracing.png
