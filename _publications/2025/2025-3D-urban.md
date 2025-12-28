@@ -1,7 +1,7 @@
 ---
 title:          "A paper about 3D urban environment reconstruction"
 date:           2025/11/02
-selected:       false
+selected:       true
 pub:            ""
 pub_pre:        "In Submission."
 # pub_post:       'Under review.'
