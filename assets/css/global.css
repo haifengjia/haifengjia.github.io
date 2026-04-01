@@ -84,6 +84,49 @@ div.lazy {
     vertical-align: text-bottom;
 }
 
+/* Ranking badges: A tier stands out; B/C stay muted slate (venue pill stays pure black) */
+.badge-publication.badge-rank-a {
+    background: linear-gradient(145deg, #c41e4a 0%, #9b1538 100%);
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    box-shadow: 0 1px 4px rgba(155, 21, 56, 0.35);
+}
+
+/* B: solid steel blue (mid tier); C: light pill + border (lower emphasis, easy to tell apart) */
+.badge-publication.badge-rank-b {
+    background-color: #2c5282;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.badge-publication.badge-rank-c {
+    background-color: #e8edf4;
+    color: #3e4c5e;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border: 1px solid #a8b4c8;
+    box-shadow: none;
+}
+
+.badge-publication.badge-rank-lead {
+    background-color: #fff;
+    color: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    font-weight: 600;
+    box-shadow: none;
+}
+
+.abstract-links a {
+    color: #2c5282;
+}
+
+.abstract-links a:hover {
+    color: #1a365d;
+    text-decoration: underline;
+}
+
 .email-text {
     font-family: Courier, monospace;
 }
