@@ -15,5 +15,6 @@ authors:
   - Yibo Pi#
   - Cailian Chen
 links:
-  "Artifacts coming soon": "#"
+  - label: "Artifacts, coming soon"
+    url: "#"
 ---

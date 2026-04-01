@@ -1,0 +1,33 @@
+{%- assign pub = include.item -%}
+<p class="small pb-0 mb-0 lh-125 abstract-links pub-link-badges">
+    {%- for link in pub.links -%}
+        {%- assign u = link.url -%}
+        {%- if u == '#' -%}
+            {%- assign href = '#' -%}
+        {%- elsif u contains '://' -%}
+            {%- assign href = u -%}
+        {%- else -%}
+            {%- assign href = u | relative_url -%}
+        {%- endif -%}
+        {%- if href == '#' -%}
+            {%- assign badge_class = 'pub-link-badge pub-link-badge--muted' -%}
+            {%- assign rel_attr = '' -%}
+        {%- else -%}
+            {%- assign badge_class = 'pub-link-badge' -%}
+            {%- assign rel_attr = 'noopener noreferrer' -%}
+        {%- endif -%}
+        <a class="{{ badge_class }}" href="{{ href }}"
+            {%- if href != '#' %} target="_blank" rel="{{ rel_attr }}"{% endif %}>
+            {%- case link.icon -%}
+                {%- when 'acmdl' -%}<i class="ai ai-acmdl" aria-hidden="true"></i>
+                {%- when 'arxiv' -%}<i class="ai ai-arxiv" aria-hidden="true"></i>
+                {%- when 'ieee' -%}<i class="ai ai-ieee" aria-hidden="true"></i>
+                {%- when 'slides' -%}<i class="fa-solid fa-file-powerpoint" aria-hidden="true"></i>
+                {%- when 'video' -%}<i class="fa-solid fa-video" aria-hidden="true"></i>
+                {%- when 'gamepad' -%}<i class="fa-solid fa-gamepad" aria-hidden="true"></i>
+                {%- when 'code' -%}<i class="fa-solid fa-code" aria-hidden="true"></i>
+            {%- endcase -%}
+            <span>{{ link.label }}</span>
+        </a>
+    {%- endfor -%}
+</p>

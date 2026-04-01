@@ -8,9 +8,11 @@ navbar_title: Services
     <h6 class="p-3 mb-0 border-bottom border-gray"><i class="fas fa-chalkboard-teacher"></i> Teaching Assistantship</h6>
     <div class="px-3 pb-1">
         {% for item in site.data.services.services %}
-        <div class="my-1 d-flex">
-            <div>{{ item.name }}</div>
-            <div class="ml-auto mt-auto text-muted no-break"><i>{{ item.date }}</i></div>
+        <div class="my-2 d-flex align-items-center flex-wrap">
+            <div class="pr-2">
+                <span class="badge badge-pill badge-venue mr-2 align-middle">{{ item.code }}</span><span class="align-middle">{{ item.title }}</span>
+            </div>
+            <div class="ml-auto mt-1 mt-sm-0 text-muted no-break"><i>{{ item.date }}</i></div>
         </div>
         {% endfor %}
     </div>

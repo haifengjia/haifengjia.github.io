@@ -74,17 +74,19 @@ div.lazy {
     font-size: 100%;
 }
 
+/* Venue pill: deep cool slate (same family as B rank / link blues, softer than pure black) */
 .badge-venue {
-    background-color: #000;
+    background-color: #2c3d52;
     color: #fff;
     font-size: 0.72rem;
     font-weight: 600;
     letter-spacing: 0.03em;
     padding: 0.35em 0.65em;
     vertical-align: text-bottom;
+    box-shadow: 0 1px 2px rgba(44, 61, 82, 0.2);
 }
 
-/* Ranking badges: A tier stands out; B/C stay muted slate (venue pill stays pure black) */
+/* Ranking badges: A tier stands out; B/C muted slate / light pill */
 .badge-publication.badge-rank-a {
     background: linear-gradient(145deg, #c41e4a 0%, #9b1538 100%);
     color: #fff;
@@ -93,7 +95,7 @@ div.lazy {
     box-shadow: 0 1px 4px rgba(155, 21, 56, 0.35);
 }
 
-/* B: solid steel blue (mid tier); C: light pill + border (lower emphasis, easy to tell apart) */
+/* B: solid steel blue; C: very pale cyan-sky blue (not same mix as .pub-link-badge #eef3fa / #c5d3e8) */
 .badge-publication.badge-rank-b {
     background-color: #2c5282;
     color: #fff;
@@ -102,29 +104,55 @@ div.lazy {
 }
 
 .badge-publication.badge-rank-c {
-    background-color: #e8edf4;
-    color: #3e4c5e;
+    background-color: #eaf5fb;
+    color: #4a6274;
     font-weight: 600;
     letter-spacing: 0.02em;
-    border: 1px solid #a8b4c8;
+    border: 1px solid #bfd9e6;
     box-shadow: none;
 }
 
-.badge-publication.badge-rank-lead {
-    background-color: #fff;
-    color: #1a1a1a;
-    border: 1px solid #2a2a2a;
+/* Publication resource links as pills (harmonizes with rank badges, distinct from body links) */
+.pub-link-badges {
+    margin-top: 0.35rem;
+}
+
+.pub-link-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.28rem 0.7rem;
+    margin: 0 0.4rem 0.4rem 0;
+    font-size: 0.78rem;
     font-weight: 600;
-    box-shadow: none;
-}
-
-.abstract-links a {
+    line-height: 1.2;
     color: #2c5282;
+    background-color: #eef3fa;
+    border: 1px solid #c5d3e8;
+    border-radius: 999px;
+    text-decoration: none;
+    vertical-align: middle;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
 
-.abstract-links a:hover {
+.pub-link-badge:hover {
     color: #1a365d;
-    text-decoration: underline;
+    background-color: #e2eaf6;
+    border-color: #a8bdd9;
+    text-decoration: none;
+}
+
+.pub-link-badge--muted {
+    color: #5a6570;
+    background-color: #f0f2f5;
+    border-color: #d5dbe3;
+    cursor: default;
+}
+
+.pub-link-badge--muted:hover {
+    color: #5a6570;
+    background-color: #f0f2f5;
+    border-color: #d5dbe3;
 }
 
 .email-text {
