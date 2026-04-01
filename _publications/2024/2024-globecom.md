@@ -1,5 +1,6 @@
 ---
 title:          "Neural Reflectance Fields for Radio-Frequency Ray Tracing"
+pub_venue_badge: "GLOBECOM'24"
 date:           2024/12/08
 selected:       false
 pub:            "IEEE Global Communications Conference (GLOBECOM)"

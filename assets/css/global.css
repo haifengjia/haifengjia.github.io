@@ -63,6 +63,16 @@ div.lazy {
     font-size: 100%;
 }
 
+.badge-venue {
+    background-color: #000;
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    padding: 0.35em 0.65em;
+    vertical-align: text-bottom;
+}
+
 .email-text {
     font-family: Courier, monospace;
 }
