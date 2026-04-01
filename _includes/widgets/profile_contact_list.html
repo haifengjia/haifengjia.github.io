@@ -1,0 +1,64 @@
+{%- assign fmt = include.format | default: 'inline' -%}
+{%- if site.data.profile.gscholar -%}
+{%- if site.data.profile.gscholar contains 'scholar.google' -%}
+{%- assign gscholar_url = site.data.profile.gscholar -%}
+{%- else -%}
+{%- assign gscholar_url = 'https://scholar.google.com/citations?user=' | append: site.data.profile.gscholar -%}
+{%- endif -%}
+{%- endif -%}
+
+{%- if site.data.profile.email -%}
+{%- if fmt == 'stack' -%}<li>{%- endif -%}
+<a class="profile-contact-ch profile-contact-ch--{{ fmt }}" href="mailto:{{ site.data.profile.email | encode_email }}">
+    <i class="fas fa-at {% if fmt == 'stack' %}fa-fw{% endif %}"></i>{% if fmt == 'stack' %}<span>Email</span>{% else %} <span class="email-text">{{ site.data.profile.email | replace: "@", "(at)" }}</span>{% endif %}
+</a>
+{%- if fmt == 'stack' -%}</li>{%- endif -%}
+{%- endif -%}
+
+{%- if site.data.profile.gscholar -%}
+{%- if fmt == 'stack' -%}<li>{%- endif -%}
+<a class="profile-contact-ch profile-contact-ch--{{ fmt }}" target="_blank" href="{{ gscholar_url }}">
+    <i class="fab fa-google-scholar {% if fmt == 'stack' %}fa-fw{% endif %}"></i>{% if fmt == 'stack' %}<span>Google Scholar</span>{% else %} Google Scholar{% endif %}
+</a>
+{%- if fmt == 'stack' -%}</li>{%- endif -%}
+{%- endif -%}
+
+{%- if site.data.profile.github -%}
+{%- if fmt == 'stack' -%}<li>{%- endif -%}
+<a class="profile-contact-ch profile-contact-ch--{{ fmt }}" target="_blank" href="https://github.com/{{ site.data.profile.github }}">
+    <i class="fab fa-github {% if fmt == 'stack' %}fa-fw{% endif %}"></i>{% if fmt == 'stack' %}<span>GitHub</span>{% else %} GitHub{% endif %}
+</a>
+{%- if fmt == 'stack' -%}</li>{%- endif -%}
+{%- endif -%}
+
+{%- if site.data.profile.wechat_qrcode -%}
+{%- if fmt == 'stack' -%}<li>{%- endif -%}
+<a class="profile-contact-ch profile-contact-ch--{{ fmt }}" data-toggle="modal" data-target="#modal-wechat">
+    <i class="fab fa-weixin {% if fmt == 'stack' %}fa-fw{% endif %}"></i>{% if fmt == 'stack' %}<span>WeChat</span>{% else %} WeChat{% endif %}
+</a>
+{%- if fmt == 'stack' -%}</li>{%- endif -%}
+{%- endif -%}
+
+{%- if site.data.profile.twitter -%}
+{%- if fmt == 'stack' -%}<li>{%- endif -%}
+<a class="profile-contact-ch profile-contact-ch--{{ fmt }}" target="_blank" href="https://twitter.com/{{ site.data.profile.twitter }}">
+    <i class="fab fa-twitter {% if fmt == 'stack' %}fa-fw{% endif %}"></i>{% if fmt == 'stack' %}<span>Twitter</span>{% else %} Twitter{% endif %}
+</a>
+{%- if fmt == 'stack' -%}</li>{%- endif -%}
+{%- endif -%}
+
+{%- if site.data.profile.linkedin -%}
+{%- if fmt == 'stack' -%}<li>{%- endif -%}
+<a class="profile-contact-ch profile-contact-ch--{{ fmt }}" target="_blank" href="https://www.linkedin.com/in/{{ site.data.profile.linkedin }}">
+    <i class="fab fa-linkedin {% if fmt == 'stack' %}fa-fw{% endif %}"></i>{% if fmt == 'stack' %}<span>LinkedIn</span>{% else %} LinkedIn{% endif %}
+</a>
+{%- if fmt == 'stack' -%}</li>{%- endif -%}
+{%- endif -%}
+
+{%- if site.data.profile.orcid -%}
+{%- if fmt == 'stack' -%}<li>{%- endif -%}
+<a class="profile-contact-ch profile-contact-ch--{{ fmt }}" target="_blank" href="https://orcid.org/{{ site.data.profile.orcid }}">
+    <i class="fab fa-orcid {% if fmt == 'stack' %}fa-fw{% endif %}"></i>{% if fmt == 'stack' %}<span>ORCID</span>{% else %} ORCID{% endif %}
+</a>
+{%- if fmt == 'stack' -%}</li>{%- endif -%}
+{%- endif -%}
