@@ -13,7 +13,7 @@ authors:
   - Xingyuan Ding
   - Minyang Qu
   - Yibo Pi#
-  - Cailian Chen
+  - Cailian Chen#
 links:
   - label: "Artifacts, coming soon"
     url: "#"
