@@ -9,7 +9,17 @@ body_attr: >-
 {% assign pubs_by_year = site.projects | sort: "date" | reverse | group_by_exp: "item", "item.date | date: '%Y'" %}
 
 <div class="row">
-    <div class="col-12 col-lg-10">
+    <aside class="col-lg-2 mb-3 mb-lg-0 pr-lg-3 d-none d-lg-block year-nav-aside" aria-label="Year navigation">
+        <div class="year-nav-sticky">
+            <nav id="navbar-year" class="year-nav nav flex-column" aria-label="Project years">
+                {% for year in pubs_by_year %}
+                <a class="nav-link d-block" href="#year-{{ year.name }}">{{ year.name }}</a>
+                {% endfor %}
+            </nav>
+        </div>
+    </aside>
+
+    <div class="col-lg-10 col-12">
         {% for year in pubs_by_year %}
         {% assign num_papers = year.items | size %}
         <h2 class="pt-4" id="year-{{ year.name }}">{{ year.name }}</h2>
@@ -19,14 +29,6 @@ body_attr: >-
             {% endfor %}
         </div>
         {% endfor %}
-    </div>
-
-    <div class="col-2 d-none d-lg-block">
-        <div id="navbar-year" class="nav nav-pills flex-column sticky-top" style="top: 80px">
-            {% for year in pubs_by_year %}
-            <a class="nav-link d-block" href="#year-{{ year.name }}">{{ year.name }}</a>
-            {% endfor %}
-        </div>
     </div>
 
 </div>
