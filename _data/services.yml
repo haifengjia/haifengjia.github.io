@@ -1,13 +1,24 @@
 services:
   - code: VG100
     title: Introduction to Engineering
+    role: Teaching Assistant (TA)
     date: 2021 SU
   - code: VE281
     title: Introduction to Data Structures and Algorithms
+    role: Teaching Assistant (TA)
     date: 2021 FA
   - code: VE441
     title: App Development for Entrepreneurs
+    role: Teaching Assistant (TA)
     date: 2023 SU
   - code: VE586
     title: Advanced Computer Networks
+    role: Teaching Assistant (TA)
     date: 2026 SP
+
+academic_services:
+  - code: MobiCom
+    title: Artifact Evaluation Committee (AEC)
+    role: Member
+    rank: a
+    date: 2026
