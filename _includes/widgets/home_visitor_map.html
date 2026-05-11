@@ -1,0 +1,27 @@
+{% assign vm = site.data.display.homepage.visitor_map %}
+{% assign in_footer = include.in_footer | default: false %}
+{% assign in_sidebar = include.in_sidebar | default: false %}
+{% if vm.enabled %}
+{% assign mid = vm.clustrmaps_site_id | default: "" | strip %}
+{% if mid != "" %}
+{% assign mcl = vm.clustrmaps_background | default: "ffffff" | strip %}
+{% assign mw = vm.clustrmaps_width | default: "a" | strip %}
+{% assign mt = vm.clustrmaps_map_type | default: "" | strip %}
+{% if in_sidebar %}
+<div class="homepage-contact-sidebar year-nav sidebar-visitor-map mt-3" aria-label="Visitor map">
+    <div class="homepage-contact-sidebar-heading text-muted font-weight-bold text-uppercase mb-1">Visitors</div>
+    <div class="sidebar-visitor-map__embed">
+        <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?cl={{ mcl }}&amp;w={{ mw }}{% if mt != "" %}&amp;t={{ mt }}{% endif %}&amp;d={{ mid }}"></script>
+    </div>
+</div>
+{% else %}
+<section class="homepage-visitor-map{% if in_footer %} homepage-visitor-map--footer{% endif %}" aria-label="Visitor map">
+    <div class="homepage-visitor-map__inner">
+        <div class="homepage-visitor-map__embed">
+            <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?cl={{ mcl }}&amp;w={{ mw }}{% if mt != "" %}&amp;t={{ mt }}{% endif %}&amp;d={{ mid }}"></script>
+        </div>
+    </div>
+</section>
+{% endif %}
+{% endif %}
+{% endif %}

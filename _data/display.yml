@@ -3,10 +3,14 @@ homepage:
   show_news: true
   show_selected_publications: true
   num_news: 10
-  # ClustrMaps rotating globe in the homepage contact sidebar (lg+). Requires clustrmaps_site_id.
+  # t=n: hide Total Pageviews row (and date). See ClustrMaps map_v2.js.
   visitor_map:
     enabled: true
+    placement: "sidebar"
     clustrmaps_site_id: "YNmBeR5d-s8xJg12vBq-QdpHiZOjsZtcowHgYN4QjAk"
+    clustrmaps_background: "ffffff"
+    clustrmaps_width: "a"
+    clustrmaps_map_type: "n"
 
 # Feel free to replace the footer text if you would like to, but I will greatly appreciate it 
 # if you keep the link to the template so that more people can benefit from it. Thanks!

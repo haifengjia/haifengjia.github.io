@@ -35,5 +35,10 @@ navbar_title: Home
         title='<i class="fas fa-star"></i> Selected Publications'
         %}
         {% endif %}
+
+        {% assign vmp = site.data.display.homepage.visitor_map.placement | default: "inline" | strip %}
+        {% if vmp == "inline" %}
+        {% include widgets/home_visitor_map.html %}
+        {% endif %}
     </div>
 </div>

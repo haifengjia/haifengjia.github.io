@@ -4,15 +4,9 @@
         {% include widgets/profile_contact_list.html format='stack' %}
     </ul>
 </nav>
-{% assign vglobe = site.data.display.homepage.visitor_map %}
-{% if vglobe.enabled %}
-{% assign gid = vglobe.clustrmaps_site_id | default: "" | strip %}
-{% if gid != "" %}
-<div class="clustrmaps-globe-sidebar year-nav mt-3" aria-label="Visitor globe">
-    <div class="homepage-contact-sidebar-heading text-muted font-weight-bold text-uppercase mb-2">Visitors</div>
-    <div class="clustrmaps-globe-embed">
-        <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d={{ gid }}"></script>
-    </div>
-</div>
-{% endif %}
+{% assign vm = site.data.display.homepage.visitor_map %}
+{% assign vmp = vm.placement | default: "inline" | strip %}
+{% assign vid = vm.clustrmaps_site_id | default: "" | strip %}
+{% if vm.enabled and vid != "" and vmp == "sidebar" %}
+{% include widgets/home_visitor_map.html in_sidebar=true %}
 {% endif %}

@@ -1,5 +1,19 @@
 <footer class="footer">
     <div class="container">
+        {% assign vm = site.data.display.homepage.visitor_map %}
+        {% assign vmp = vm.placement | default: "inline" | strip %}
+        {% assign vid = vm.clustrmaps_site_id | default: "" | strip %}
+        {% assign is_home = false %}
+        {% if page.url == "/" or page.url == "/index.html" %}
+        {% assign is_home = true %}
+        {% endif %}
+        {% if vm.enabled and vid != "" and vmp == "footer" and is_home %}
+        <div class="row footer-visitor-map-row">
+            <div class="col-12">
+                {% include widgets/home_visitor_map.html in_footer=true %}
+            </div>
+        </div>
+        {% endif %}
         <div class="row my-3">
             <div class="col-6">
                 <div class="text-muted">
