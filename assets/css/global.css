@@ -45,6 +45,24 @@ h6,
     white-space: nowrap;
 }
 
+.clustrmaps-globe-embed {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    line-height: 0;
+    border-radius: 0.25rem;
+    overflow: hidden;
+}
+
+.clustrmaps-globe-embed iframe,
+.clustrmaps-globe-embed canvas,
+.clustrmaps-globe-embed img {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+}
+
 .news-badge-new {
     display: inline-block;
     font-family: "Fredoka", "Lato", sans-serif;
