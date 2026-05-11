@@ -3,32 +3,44 @@ layout: default
 title : Publications
 navbar_title: Publications
 body_attr: >-
-  data-spy="scroll" data-target="#navbar-year" data-offset="100"
+  data-spy="scroll" data-target="#navbar-pub-nav" data-offset="100"
 ---
 
-{% assign pubs_by_year = site.publications | sort: "date" | reverse | group_by_exp: "item", "item.date | date: '%Y'" %}
+{% assign conference_papers = site.publications | where: "pub_category", "conference" | sort: "date" | reverse %}
+{% assign journal_articles = site.publications | where: "pub_category", "journal" | sort: "date" | reverse %}
 
 <div class="row">
-    <aside class="col-lg-2 mb-3 mb-lg-0 pr-lg-3 d-none d-lg-block year-nav-aside" aria-label="Year navigation">
+    <aside class="col-lg-2 mb-3 mb-lg-0 pr-lg-3 d-none d-lg-block year-nav-aside" aria-label="Category navigation">
         <div class="year-nav-sticky">
-            <nav id="navbar-year" class="year-nav nav flex-column" aria-label="Publication years">
-                {% for year in pubs_by_year %}
-                <a class="nav-link d-block" href="#year-{{ year.name }}">{{ year.name }}</a>
-                {% endfor %}
+            <nav id="navbar-pub-nav" class="year-nav nav flex-column" aria-label="Publication categories">
+                {% if journal_articles.size > 0 %}
+                <a class="nav-link d-block" href="#pub-journal">Journal</a>
+                {% endif %}
+                {% if conference_papers.size > 0 %}
+                <a class="nav-link d-block" href="#pub-conference">Conference</a>
+                {% endif %}
             </nav>
         </div>
     </aside>
 
     <div class="col-lg-10 col-12">
-        {% for year in pubs_by_year %}
-        {% assign num_papers = year.items | size %}
-        <h2 class="pt-4" id="year-{{ year.name }}">{{ year.name }}</h2>
+        {% if journal_articles.size > 0 %}
+        <h2 class="publications-category-heading pt-4" id="pub-journal">Journal Articles</h2>
         <div class="my-0 p-0 bg-white shadow-sm rounded-sm">
-            {% for item in year.items %}
+            {% for item in journal_articles %}
                 {% include widgets/publication_item.html item=item hide_bottom_border=forloop.last first=forloop.first last=forloop.last %}
             {% endfor %}
         </div>
-        {% endfor %}
+        {% endif %}
+
+        {% if conference_papers.size > 0 %}
+        <h2 class="publications-category-heading pt-4" id="pub-conference">Conference Papers</h2>
+        <div class="my-0 p-0 bg-white shadow-sm rounded-sm">
+            {% for item in conference_papers %}
+                {% include widgets/publication_item.html item=item hide_bottom_border=forloop.last first=forloop.first last=forloop.last %}
+            {% endfor %}
+        </div>
+        {% endif %}
     </div>
 
 </div>

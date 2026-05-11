@@ -1,5 +1,6 @@
 ---
 title:          "SurfNeHF: Surface-Aware Neural Height Fields for Efficient 3D Urban Mapping Using Crowdsourced GNSS Data"
+pub_category:   conference
 pub_venue_badge: "UbiComp'26"
 pub_venue_rank:  a
 date:           2026/10/13
