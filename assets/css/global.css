@@ -45,6 +45,22 @@ h6,
     white-space: nowrap;
 }
 
+.news-badge-new {
+    display: inline-block;
+    font-family: "Fredoka", "Lato", sans-serif;
+    font-weight: 600;
+    font-size: 0.82rem;
+    letter-spacing: 0.02em;
+    color: #fff;
+    background: linear-gradient(145deg, #ef5350 0%, #c62828 100%);
+    padding: 0.1em 0.28em 0.14em;
+    border-radius: 0.35rem;
+    box-shadow: 0 2px 4px rgba(198, 40, 40, 0.35);
+    transform: rotate(-2deg);
+    vertical-align: middle;
+    line-height: 1.15;
+}
+
 .cover-image {
     width: 180px;
     max-height: 120px;

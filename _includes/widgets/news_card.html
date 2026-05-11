@@ -10,7 +10,12 @@
             <div class="media-body">
                 {% for item in year.items %}
                 <div class="my-1 d-flex">
-                    <div>{{ item.title }}</div>
+                    <div class="flex-grow-1 pr-2">
+                        {% if item.highlight_new %}
+                        <span class="news-badge-new mr-1 align-middle" aria-label="New item">New!</span>
+                        {% endif %}
+                        <span>{{ item.title }}</span>
+                    </div>
                     <div class="ml-auto mt-auto text-muted no-break"><i>{{ item.date | date: "%b %d" }}</i></div>
                 </div>
                 {% endfor %}
