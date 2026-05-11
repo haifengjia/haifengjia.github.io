@@ -19,6 +19,5 @@ services:
 academic_services:
   - code: MobiCom'26
     title: Artifact Evaluation Committee (AEC)
-    role: Member
     rank: a
     date: 2026
