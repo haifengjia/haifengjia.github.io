@@ -7,21 +7,64 @@
 {% assign mcl = vm.clustrmaps_background | default: "ffffff" | strip %}
 {% assign mw = vm.clustrmaps_width | default: "a" | strip %}
 {% assign mt = vm.clustrmaps_map_type | default: "" | strip %}
+{% assign _clustrmaps_url = "//clustrmaps.com/map_v2.js?cl=" | append: mcl | append: "&w=" | append: mw %}
+{% if mt != "" %}
+{% assign _clustrmaps_url = _clustrmaps_url | append: "&t=" | append: mt %}
+{% endif %}
+{% assign _clustrmaps_url = _clustrmaps_url | append: "&d=" | append: mid %}
 {% if in_sidebar %}
 <div class="homepage-contact-sidebar year-nav sidebar-visitor-map mt-3" aria-label="Visitor map">
     <div class="homepage-contact-sidebar-heading text-muted font-weight-bold text-uppercase mb-1">Visitors</div>
-    <div class="sidebar-visitor-map__embed">
-        <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?cl={{ mcl }}&amp;w={{ mw }}{% if mt != "" %}&amp;t={{ mt }}{% endif %}&amp;d={{ mid }}"></script>
-    </div>
+    <div id="clustrmaps-host" class="sidebar-visitor-map__embed"></div>
 </div>
 {% else %}
 <section class="homepage-visitor-map{% if in_footer %} homepage-visitor-map--footer{% endif %}" aria-label="Visitor map">
     <div class="homepage-visitor-map__inner">
-        <div class="homepage-visitor-map__embed">
-            <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?cl={{ mcl }}&amp;w={{ mw }}{% if mt != "" %}&amp;t={{ mt }}{% endif %}&amp;d={{ mid }}"></script>
-        </div>
+        <div id="clustrmaps-host" class="homepage-visitor-map__embed"></div>
     </div>
 </section>
 {% endif %}
+<script>
+(function () {
+    var url = {{ _clustrmaps_url | jsonify }};
+    var host = document.getElementById('clustrmaps-host');
+    if (!url || !host || host.dataset.clustrmapsInjected) return;
+    function inject() {
+        if (host.dataset.clustrmapsInjected) return;
+        host.dataset.clustrmapsInjected = '1';
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.id = 'clustrmaps';
+        s.async = true;
+        s.src = url;
+        host.appendChild(s);
+    }
+    function schedule() {
+        if (window.requestIdleCallback) {
+            window.requestIdleCallback(
+                function () {
+                    setTimeout(inject, 0);
+                },
+                { timeout: 4000 }
+            );
+        } else if (document.readyState === 'complete') {
+            setTimeout(inject, 150);
+        } else {
+            window.addEventListener(
+                'load',
+                function () {
+                    setTimeout(inject, 100);
+                },
+                { once: true }
+            );
+        }
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', schedule, { once: true });
+    } else {
+        schedule();
+    }
+})();
+</script>
 {% endif %}
 {% endif %}
