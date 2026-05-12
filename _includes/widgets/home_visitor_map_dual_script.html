@@ -1,0 +1,59 @@
+{% assign vm = site.data.display.homepage.visitor_map %}
+{% assign mid = vm.clustrmaps_site_id | default: "" | strip %}
+{% if vm.enabled and mid != "" %}
+{% assign mcl = vm.clustrmaps_background | default: "ffffff" | strip %}
+{% assign mw = vm.clustrmaps_width | default: "a" | strip %}
+{% assign mt = vm.clustrmaps_map_type | default: "" | strip %}
+{% assign _clustrmaps_url = "//clustrmaps.com/map_v2.js?cl=" | append: mcl | append: "&w=" | append: mw %}
+{% if mt != "" %}
+{% assign _clustrmaps_url = _clustrmaps_url | append: "&t=" | append: mt %}
+{% endif %}
+{% assign _clustrmaps_url = _clustrmaps_url | append: "&d=" | append: mid %}
+<script>
+(function () {
+    var url = {{ _clustrmaps_url | jsonify }};
+    function pickHost() {
+        var narrow = window.matchMedia("(max-width: 991.98px)").matches;
+        var id = narrow ? "clustrmaps-host-stack" : "clustrmaps-host-sidebar";
+        return document.getElementById(id);
+    }
+    var host = pickHost();
+    if (!url || !host || host.dataset.clustrmapsInjected) return;
+    function inject() {
+        if (host.dataset.clustrmapsInjected) return;
+        host.dataset.clustrmapsInjected = "1";
+        var s = document.createElement("script");
+        s.type = "text/javascript";
+        s.id = "clustrmaps";
+        s.async = true;
+        s.src = url;
+        host.appendChild(s);
+    }
+    function schedule() {
+        if (window.requestIdleCallback) {
+            window.requestIdleCallback(
+                function () {
+                    setTimeout(inject, 0);
+                },
+                { timeout: 4000 }
+            );
+        } else if (document.readyState === "complete") {
+            setTimeout(inject, 150);
+        } else {
+            window.addEventListener(
+                "load",
+                function () {
+                    setTimeout(inject, 100);
+                },
+                { once: true }
+            );
+        }
+    }
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", schedule, { once: true });
+    } else {
+        schedule();
+    }
+})();
+</script>
+{% endif %}

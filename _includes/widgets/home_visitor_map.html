@@ -12,22 +12,36 @@
 {% assign _clustrmaps_url = _clustrmaps_url | append: "&t=" | append: mt %}
 {% endif %}
 {% assign _clustrmaps_url = _clustrmaps_url | append: "&d=" | append: mid %}
+{% assign _map_inst = include.map_host_suffix | default: "" | strip %}
+{% if _map_inst == "" %}
+{% if in_sidebar %}
+{% assign _map_inst = "sidebar" %}
+{% elsif in_footer %}
+{% assign _map_inst = "footer" %}
+{% else %}
+{% assign _map_inst = "main" %}
+{% endif %}
+{% endif %}
+{% assign _host_el_id = "clustrmaps-host-" | append: _map_inst %}
+{% assign _skip_inj = include.skip_script | default: false %}
 {% if in_sidebar %}
 <div class="homepage-contact-sidebar year-nav sidebar-visitor-map mt-3" aria-label="Visitor map">
     <div class="homepage-contact-sidebar-heading text-muted font-weight-bold text-uppercase mb-1">Visitors</div>
-    <div id="clustrmaps-host" class="sidebar-visitor-map__embed"></div>
+    <div id="{{ _host_el_id }}" class="sidebar-visitor-map__embed"></div>
 </div>
 {% else %}
 <section class="homepage-visitor-map{% if in_footer %} homepage-visitor-map--footer{% endif %}" aria-label="Visitor map">
     <div class="homepage-visitor-map__inner">
-        <div id="clustrmaps-host" class="homepage-visitor-map__embed"></div>
+        <div id="{{ _host_el_id }}" class="homepage-visitor-map__embed"></div>
     </div>
 </section>
 {% endif %}
+{% unless _skip_inj %}
 <script>
 (function () {
     var url = {{ _clustrmaps_url | jsonify }};
-    var host = document.getElementById('clustrmaps-host');
+    var hostId = {{ _host_el_id | jsonify }};
+    var host = document.getElementById(hostId);
     if (!url || !host || host.dataset.clustrmapsInjected) return;
     function inject() {
         if (host.dataset.clustrmapsInjected) return;
@@ -66,5 +80,6 @@
     }
 })();
 </script>
+{% endunless %}
 {% endif %}
 {% endif %}

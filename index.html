@@ -3,10 +3,17 @@ layout: default
 title : Homepage
 navbar_title: Home
 ---
+{% assign _vm_hp = site.data.display.homepage.visitor_map %}
+{% assign vmp = _vm_hp.placement | default: "inline" | strip %}
+{% assign _vm_vid = _vm_hp.clustrmaps_site_id | default: "" | strip %}
+{% assign _vm_dual_visitors = false %}
+{% if vmp == "sidebar" and _vm_hp.enabled and _vm_vid != "" %}
+{% assign _vm_dual_visitors = true %}
+{% endif %}
 <div class="row homepage-layout">
     <aside class="col-lg-2 mb-3 mb-lg-0 pr-lg-3 d-none d-lg-block homepage-contact-aside" aria-label="Contact sidebar">
         <div class="homepage-contact-sidebar-sticky">
-            {% include widgets/contact_sidebar.html %}
+            {% include widgets/contact_sidebar.html skip_visitor_script=_vm_dual_visitors %}
         </div>
     </aside>
     <div class="col-lg-10 col-12 homepage-main-column">
@@ -36,9 +43,15 @@ navbar_title: Home
         %}
         {% endif %}
 
-        {% assign vmp = site.data.display.homepage.visitor_map.placement | default: "inline" | strip %}
         {% if vmp == "inline" %}
         {% include widgets/home_visitor_map.html %}
+        {% elsif _vm_dual_visitors %}
+        <div class="d-lg-none">
+            {% include widgets/home_visitor_map.html map_host_suffix="stack" skip_script=true %}
+        </div>
         {% endif %}
     </div>
 </div>
+{% if _vm_dual_visitors %}
+{% include widgets/home_visitor_map_dual_script.html %}
+{% endif %}

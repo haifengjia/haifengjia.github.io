@@ -8,5 +8,6 @@
 {% assign vmp = vm.placement | default: "inline" | strip %}
 {% assign vid = vm.clustrmaps_site_id | default: "" | strip %}
 {% if vm.enabled and vid != "" and vmp == "sidebar" %}
-{% include widgets/home_visitor_map.html in_sidebar=true %}
+{% assign _vskip = include.skip_visitor_script | default: false %}
+{% include widgets/home_visitor_map.html in_sidebar=true skip_script=_vskip %}
 {% endif %}
