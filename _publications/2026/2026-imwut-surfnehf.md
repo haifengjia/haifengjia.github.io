@@ -20,7 +20,7 @@ links:
   - label: "Paper · June 2026"
     icon: acmdl
     url: "#"
-  - label: "Code (open source, Fall 2026)"
+  - label: "Code · Fall 2026"
     icon: github
     url: "#"
 ---

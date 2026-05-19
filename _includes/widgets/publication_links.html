@@ -10,14 +10,15 @@
             {%- assign href = u | relative_url -%}
         {%- endif -%}
         {%- if href == '#' -%}
-            {%- assign badge_class = 'pub-link-badge pub-link-badge--muted' -%}
-            {%- assign rel_attr = '' -%}
+            {%- assign badge_class = 'pub-link-badge pub-link-badge--muted pub-link-badge--static' -%}
         {%- else -%}
             {%- assign badge_class = 'pub-link-badge' -%}
-            {%- assign rel_attr = 'noopener noreferrer' -%}
         {%- endif -%}
-        <a class="{{ badge_class }}" href="{{ href }}"
-            {%- if href != '#' %} target="_blank" rel="{{ rel_attr }}"{% endif %}>
+        {%- if href == '#' -%}
+        <span class="{{ badge_class }}">
+        {%- else -%}
+        <a class="{{ badge_class }}" href="{{ href }}" target="_blank" rel="noopener noreferrer">
+        {%- endif -%}
             {%- case link.icon -%}
                 {%- when 'acmdl' -%}<i class="ai ai-acmdl" aria-hidden="true"></i>
                 {%- when 'arxiv' -%}<i class="ai ai-arxiv" aria-hidden="true"></i>
@@ -29,6 +30,10 @@
                 {%- when 'github' -%}<i class="fab fa-github" aria-hidden="true"></i>
             {%- endcase -%}
             <span>{{ link.label }}</span>
+        {%- if href == '#' -%}
+        </span>
+        {%- else -%}
         </a>
+        {%- endif -%}
     {%- endfor -%}
 </p>
