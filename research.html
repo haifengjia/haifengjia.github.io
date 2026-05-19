@@ -1,0 +1,53 @@
+---
+layout: default
+title : Research
+navbar_title: Research
+body_attr: >-
+  data-spy="scroll" data-target="#navbar-research" data-offset="100"
+---
+
+{% assign project_topics = site.data.project_topics.topics | sort: "start_year" | reverse %}
+
+<div class="row">
+    <aside class="col-lg-2 mb-3 mb-lg-0 pr-lg-3 d-none d-lg-block year-nav-aside" aria-label="Research navigation">
+        <div class="year-nav-sticky">
+            <nav id="navbar-research" class="year-nav nav flex-column" aria-label="Research years">
+                {% for topic in project_topics %}
+                <a class="nav-link d-block" href="#project-{{ topic.id }}">{{ topic.start_year }}{% if topic.end_year != topic.start_year %}–{% if topic.end_year == "now" %}now{% else %}{{ topic.end_year }}{% endif %}{% endif %}</a>
+                {% endfor %}
+            </nav>
+        </div>
+    </aside>
+
+    <div class="col-lg-10 col-12">
+        {% for topic in project_topics %}
+        <section class="pt-4" id="project-{{ topic.id }}">
+            <h2 class="research-topic-heading mb-1">
+                {{ topic.title }}
+                <span class="research-topic-years text-muted font-weight-normal">({{ topic.start_year }}–{% if topic.end_year == "now" %}now{% else %}{{ topic.end_year }}{% endif %})</span>
+            </h2>
+            {% if topic.subtitle %}
+            <p class="text-muted mb-3">{{ topic.subtitle }}</p>
+            {% endif %}
+            <div class="my-0 p-0 bg-white shadow-sm rounded-sm research-topic-card">
+                <div class="px-3 pt-3">
+                    <p class="mb-0">{{ topic.description }}</p>
+                </div>
+                {% assign has_pubs = false %}
+                <div class="research-pub-grid px-3 pb-3">
+                    {% for pub_key in topic.publications %}
+                        {% assign pub = site.publications | where_exp: "item", "item.path contains pub_key" | first %}
+                        {% if pub %}
+                            {% assign has_pubs = true %}
+                            {% include widgets/publication_compact_card.html item=pub anchor=pub_key %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {% unless has_pubs %}
+                <p class="small text-muted px-3 pb-3 mb-0">More publications coming soon.</p>
+                {% endunless %}
+            </div>
+        </section>
+        {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,20 @@
+topics:
+  - id: urban-mapping
+    title: "Outdoor RF Digital Twinning"
+    start_year: 2024
+    end_year: "now"
+    description: >-
+      We build outdoor radio frequency (RF) digital twins by reconstructing urban 3D geometry and RF signal propagation environments from mobile sensing data, leveraging neural networks as a powerful tool for accurate and efficient reconstruction.
+    publications:
+      - 2026/2026-imwut-surfnehf
+      - 2024/2024-globecom
+
+  - id: wireless-sensing
+    title: "Low Power Wireless Sensor Networking"
+    start_year: 2023
+    end_year: 2024
+    description: >-
+      We study low-power wireless sensor networks by estimating interference graphs and link connectivity in multi-hop BLE systems. Enabled by our hardware design, nodes can probe the channel during ongoing communication without reserving additional dedicated time-frequency resources, thereby supporting efficient and reliable network operations.
+    publications:
+      - 2024/2024-tosn
+      - 2023/2023-ewsn

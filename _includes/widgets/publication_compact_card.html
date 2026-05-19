@@ -1,0 +1,25 @@
+{% assign item = include.item %}
+{% if include.anchor %}
+{% assign pub_anchor = include.anchor | split: '/' | last %}
+{% else %}
+{% assign pub_anchor = item.path | split: '/' | last | replace: '.md', '' %}
+{% endif %}
+{% assign pub_href = '/publications' | relative_url | append: '#pub-' | append: pub_anchor %}
+<a class="publication-compact-card" href="{{ pub_href }}" title="{{ item.title }}">
+    <div class="publication-compact-card__cover">
+        {%- if item.cover -%}
+        <img data-src="{{ item.cover | relative_url }}" alt="" class="lazy publication-compact-card__img" src="{{ '/assets/images/empty_300x200.png' | relative_url }}">
+        {%- else -%}
+        <svg class="bubble-visual-hash lazy publication-compact-card__img" data-bubble-visual-hash="{{ item.id }}" viewBox="0 0 300 200" aria-hidden="true"></svg>
+        {%- endif -%}
+        <div class="publication-compact-card__teaser" aria-hidden="true">
+            <p class="publication-compact-card__teaser-title">{{ item.title }}</p>
+            <p class="publication-compact-card__teaser-hint">Click to check</p>
+        </div>
+    </div>
+    <div class="publication-compact-card__meta">
+        {% if item.pub_venue_badge %}
+        <span class="badge badge-pill badge-venue{% if item.pub_venue_rank %} badge-rank-{{ item.pub_venue_rank | downcase }}{% endif %} publication-compact-card__venue">{{ item.pub_venue_badge }}</span>
+        {% endif %}
+    </div>
+</a>

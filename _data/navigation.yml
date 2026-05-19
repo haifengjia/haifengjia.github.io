@@ -5,11 +5,13 @@ pages:
   url: /
 - name: Publications
   url: /publications
+- name: Research
+  url: /research
 - name: Teaching
   url: /teaching
 - name: Services
   url: /services
-- name: Projects
-  url: /projects
+- name: Demo
+  url: /demo
 # - name: Showcase
 #   url: /showcase

@@ -1,0 +1,15 @@
+{% assign item = include.item %}
+<div class="publication-cover-zoom">
+    <div class="publication-cover-zoom__thumb-wrap">
+        {%- if item.cover -%}
+        <img data-src="{{ item.cover | relative_url }}" alt="{{ item.title }}" class="lazy w-100 rounded-sm publication-cover-zoom__thumb" src="{{ '/assets/images/empty_300x200.png' | relative_url }}">
+        {%- else -%}
+        <svg class="bubble-visual-hash lazy w-100 rounded-sm publication-cover-zoom__thumb" data-bubble-visual-hash="{{ item.id }}" viewBox="0 0 300 200" aria-hidden="true"></svg>
+        {%- endif -%}
+    </div>
+    {%- if item.cover -%}
+    <div class="publication-cover-zoom__flyout" aria-hidden="true">
+        <img data-src="{{ item.cover | relative_url }}" alt="" class="lazy publication-cover-zoom__flyout-img" src="{{ '/assets/images/empty_300x200.png' | relative_url }}">
+    </div>
+    {%- endif -%}
+</div>
