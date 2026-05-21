@@ -20,7 +20,7 @@ links:
   - label: "Paper · Coming soon"
     icon: acmdl
     url: "#"
-  - label: "SurfNeHF Implementation · Coming soon"
+  - label: "SurfNeHF (implementation) · Coming soon"
     icon: github
     url: "#"
 ---
