@@ -15,12 +15,12 @@ authors:
   - Xingyuan Ding
   - Minyang Qu
   - Yibo Pi#
-  - Cailian Chen#
+  - Cailian Chen
 links:
-  - label: "Paper · June 2026"
+  - label: "Paper · Coming soon"
     icon: acmdl
     url: "#"
-  - label: "Code · Fall 2026"
+  - label: "Implementation · Coming soon"
     icon: github
     url: "#"
 ---
