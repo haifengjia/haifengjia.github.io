@@ -6,7 +6,7 @@ pub_venue_rank:  a
 date:           2026/10/13
 selected:       true
 pub:            "Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (IMWUT/UbiComp)"
-pub_last:       '<span class="badge badge-pill badge-publication badge-rank-a">CCF A</span> <span class="badge badge-pill badge-publication badge-rank-a">TH-CPL A</span>'
+pub_last:       '<span class="badge badge-pill badge-publication badge-rank-a">CCF A</span> <span class="badge badge-pill badge-publication badge-rank-a">JCR Q1</span>'
 pub_date:       "2026"
 abstract: 
 cover: /assets/images/covers/surfnehf-framework.png

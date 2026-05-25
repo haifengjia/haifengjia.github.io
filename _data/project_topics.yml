@@ -7,6 +7,7 @@ topics:
       We build outdoor radio frequency (RF) digital twins by reconstructing urban 3D geometry and RF signal propagation environments from mobile sensing data, leveraging neural networks as a powerful tool for accurate and efficient reconstruction.
     publications:
       - 2026/2026-imwut-surfnehf
+      - 2026/2026-wcl-urc-sim-reality
       - 2024/2024-globecom
 
   - id: wireless-sensing
