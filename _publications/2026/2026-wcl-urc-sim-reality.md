@@ -2,7 +2,6 @@
 title:          "Bridging the Gap Between Simulation and Reality for Ultra-Reliable Communications"
 pub_category:   journal
 pub_venue_badge: "WCL'26"
-pub_venue_rank:  a
 date:           2026/05/25
 selected:       false
 pub:            "IEEE Wireless Communications Letters (WCL)"
@@ -15,7 +14,7 @@ authors:
   - Haifeng Jia
   - Haorui Li
   - Yibo Pi#
-  - Cailian Chen#
+  - Cailian Chen
 links:
   - label: "Paper · Coming soon"
     icon: ieee
