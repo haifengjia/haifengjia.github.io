@@ -1,10 +1,10 @@
 topics:
   - id: urban-mapping
-    title: "Outdoor RF Digital Twinning"
+    title: "RF Digital Twinning"
     start_year: 2024
     end_year: "now"
     description: >-
-      We build outdoor radio frequency (RF) digital twins by reconstructing urban 3D geometry and RF signal propagation environments from mobile sensing data, leveraging neural networks as a powerful tool for accurate and efficient reconstruction.
+      We build radio frequency (RF) digital twins by reconstructing urban 3D geometry and RF signal propagation environments from mobile sensing data, leveraging neural networks as a powerful tool for accurate and efficient reconstruction.
     publications:
       - 2026/2026-imwut-surfnehf
       - 2026/2026-wcl-urc-sim-reality
