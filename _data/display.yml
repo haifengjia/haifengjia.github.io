@@ -3,14 +3,15 @@ homepage:
   show_news: true
   show_selected_publications: true
   num_news: 10
-  # t=n: hide Total Pageviews row (and date). See ClustrMaps map_v2.js.
   visitor_map:
     enabled: true
     placement: "sidebar"
-    clustrmaps_site_id: "YNmBeR5d-s8xJg12vBq-QdpHiZOjsZtcowHgYN4QjAk"
-    clustrmaps_background: "ffffff"
-    clustrmaps_width: "a"
-    clustrmaps_map_type: "n"
+    mapmyvisitors_site_id: "5FrgfB2ufL-yYAKy6-iPerK33s_0DfjX-vrkMnVmkTE"
+    mapmyvisitors_stats_slug: "1c4rl"
+    mapmyvisitors_background: "ffffff"
+    mapmyvisitors_width: "a"
+    # t=n hides pageview/date text on the interactive map.js widget, keeps scatter dots.
+    mapmyvisitors_map_type: "n"
 
 # Feel free to replace the footer text if you would like to, but I will greatly appreciate it 
 # if you keep the link to the template so that more people can benefit from it. Thanks!

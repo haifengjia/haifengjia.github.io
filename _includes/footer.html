@@ -2,7 +2,7 @@
     <div class="container">
         {% assign vm = site.data.display.homepage.visitor_map %}
         {% assign vmp = vm.placement | default: "inline" | strip %}
-        {% assign vid = vm.clustrmaps_site_id | default: "" | strip %}
+        {% assign vid = vm.mapmyvisitors_site_id | default: "" | strip %}
         {% assign is_home = false %}
         {% if page.url == "/" or page.url == "/index.html" %}
         {% assign is_home = true %}

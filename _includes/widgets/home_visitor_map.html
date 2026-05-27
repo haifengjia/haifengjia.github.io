@@ -2,16 +2,17 @@
 {% assign in_footer = include.in_footer | default: false %}
 {% assign in_sidebar = include.in_sidebar | default: false %}
 {% if vm.enabled %}
-{% assign mid = vm.clustrmaps_site_id | default: "" | strip %}
+{% assign mid = vm.mapmyvisitors_site_id | default: "" | strip %}
 {% if mid != "" %}
-{% assign mcl = vm.clustrmaps_background | default: "ffffff" | strip %}
-{% assign mw = vm.clustrmaps_width | default: "a" | strip %}
-{% assign mt = vm.clustrmaps_map_type | default: "" | strip %}
-{% assign _clustrmaps_url = "//clustrmaps.com/map_v2.js?cl=" | append: mcl | append: "&w=" | append: mw %}
+{% assign slug = vm.mapmyvisitors_stats_slug | default: "" | strip %}
+{% assign mcl = vm.mapmyvisitors_background | default: "ffffff" | strip %}
+{% assign mw = vm.mapmyvisitors_width | default: "a" | strip %}
+{% assign mt = vm.mapmyvisitors_map_type | default: "" | strip %}
+{% assign _stats_url = "https://mapmyvisitors.com/web/" | append: slug %}
+{% assign _mapjs_url = "https://mapmyvisitors.com/map.js?d=" | append: mid | append: "&cl=" | append: mcl | append: "&w=" | append: mw %}
 {% if mt != "" %}
-{% assign _clustrmaps_url = _clustrmaps_url | append: "&t=" | append: mt %}
+{% assign _mapjs_url = _mapjs_url | append: "&t=" | append: mt %}
 {% endif %}
-{% assign _clustrmaps_url = _clustrmaps_url | append: "&d=" | append: mid %}
 {% assign _map_inst = include.map_host_suffix | default: "" | strip %}
 {% if _map_inst == "" %}
 {% if in_sidebar %}
@@ -22,7 +23,7 @@
 {% assign _map_inst = "main" %}
 {% endif %}
 {% endif %}
-{% assign _host_el_id = "clustrmaps-host-" | append: _map_inst %}
+{% assign _host_el_id = "mmv-host-" | append: _map_inst %}
 {% assign _skip_inj = include.skip_script | default: false %}
 {% if in_sidebar %}
 <div class="homepage-contact-sidebar year-nav sidebar-visitor-map mt-3" aria-label="Visitor map">
@@ -39,42 +40,54 @@
 {% unless _skip_inj %}
 <script>
 (function () {
-    var url = {{ _clustrmaps_url | jsonify }};
+    var url = {{ _mapjs_url | jsonify }};
+    var statsUrl = {{ _stats_url | jsonify }};
     var hostId = {{ _host_el_id | jsonify }};
     var host = document.getElementById(hostId);
-    if (!url || !host || host.dataset.clustrmapsInjected) return;
+    if (!url || !host || host.dataset.mmvInjected) return;
+    function fixStatsLink() {
+        var widget = document.getElementById("mapmyvisitors-widget");
+        if (widget && statsUrl) {
+            widget.href = statsUrl;
+            widget.target = "_blank";
+            widget.rel = "noopener";
+            return;
+        }
+        window.setTimeout(fixStatsLink, 150);
+    }
     function inject() {
-        if (host.dataset.clustrmapsInjected) return;
-        host.dataset.clustrmapsInjected = '1';
-        var s = document.createElement('script');
-        s.type = 'text/javascript';
-        s.id = 'clustrmaps';
+        if (host.dataset.mmvInjected) return;
+        host.dataset.mmvInjected = "1";
+        var s = document.createElement("script");
+        s.type = "text/javascript";
+        s.id = "mapmyvisitors";
         s.async = true;
         s.src = url;
         host.appendChild(s);
+        fixStatsLink();
     }
     function schedule() {
         if (window.requestIdleCallback) {
             window.requestIdleCallback(
                 function () {
-                    setTimeout(inject, 0);
+                    window.setTimeout(inject, 0);
                 },
                 { timeout: 4000 }
             );
-        } else if (document.readyState === 'complete') {
-            setTimeout(inject, 150);
+        } else if (document.readyState === "complete") {
+            window.setTimeout(inject, 150);
         } else {
             window.addEventListener(
-                'load',
+                "load",
                 function () {
-                    setTimeout(inject, 100);
+                    window.setTimeout(inject, 100);
                 },
                 { once: true }
             );
         }
     }
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', schedule, { once: true });
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", schedule, { once: true });
     } else {
         schedule();
     }
