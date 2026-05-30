@@ -16,7 +16,7 @@ authors:
   - Yibo Pi#
   - Cailian Chen
 links:
-  - label: "Paper · Coming soon"
+  - label: IEEE Xplore
     icon: ieee
-    url: "#"
+    url: https://ieeexplore.ieee.org/document/11538147
 ---
