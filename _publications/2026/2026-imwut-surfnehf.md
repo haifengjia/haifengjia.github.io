@@ -17,9 +17,9 @@ authors:
   - Yibo Pi#
   - Cailian Chen
 links:
-  - label: "Paper · Coming soon"
+  - label: "Paper"
     icon: acmdl
-    url: "#"
+    url: "https://doi.org/10.1145/3810234"
   - label: "SurfNeHF (implementation) · Coming soon"
     icon: github
     url: "#"
