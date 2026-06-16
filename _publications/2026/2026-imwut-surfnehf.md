@@ -17,7 +17,7 @@ authors:
   - Yibo Pi#
   - Cailian Chen
 links:
-  - label: "Paper"
+  - label: "ACM DL"
     icon: acmdl
     url: "https://doi.org/10.1145/3810234"
   - label: "SurfNeHF (implementation) · Coming soon"
