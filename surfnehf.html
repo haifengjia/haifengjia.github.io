@@ -1,0 +1,302 @@
+---
+layout: project
+title: SurfNeHF
+permalink: /surfnehf/
+body_attr: >-
+  data-spy="scroll" data-target="#project-side-nav" data-offset="120"
+---
+
+{% assign pub = site.publications | where_exp: "item", "item.path contains '2026-imwut-surfnehf'" | first %}
+{% assign fig = '/assets/images/surfnehf' | relative_url %}
+
+<div class="row project-page my-3 my-lg-4">
+    <aside class="col-lg-2 mb-3 mb-lg-0 pr-lg-3 d-none d-lg-block project-nav-aside" aria-label="Section navigation">
+        <div class="project-nav-sticky">
+            <nav id="project-side-nav" class="project-nav nav flex-column" aria-label="SurfNeHF sections">
+                <span class="nav-label">On this page</span>
+                <a class="nav-link" href="#overview">Overview</a>
+                <a class="nav-link" href="#abstract">Abstract</a>
+                <a class="nav-link" href="#principles-surface">Surface via NeHF</a>
+                <a class="nav-link" href="#principles-rendering">Forward Rendering</a>
+                <a class="nav-link" href="#results-recon">Reconstruction</a>
+                <a class="nav-link" href="#results-brdf">Material via BRDF</a>
+                <a class="nav-link" href="#citation">Citation</a>
+            </nav>
+        </div>
+    </aside>
+
+    <div class="col-lg-10 col-12">
+        <div class="project-mobile-nav">
+            <label class="sr-only" for="project-mobile-jump">Jump to section</label>
+            <select id="project-mobile-jump">
+                <option value="">Jump to section…</option>
+                <option value="overview">Overview</option>
+                <option value="abstract">Abstract</option>
+                <option value="principles-surface">Surface via NeHF</option>
+                <option value="principles-rendering">Forward Rendering</option>
+                <option value="results-recon">Reconstruction</option>
+                <option value="results-brdf">Material via BRDF</option>
+                <option value="citation">Citation</option>
+            </select>
+        </div>
+
+        <header class="project-page__header text-center mb-4" id="overview">
+            <p class="project-page__venue small mb-2">
+                ACM IMWUT / UbiComp 2026 · Shanghai
+            </p>
+            <h1 class="project-page__brand mb-2">SurfNeHF</h1>
+            <p class="project-page__subtitle mb-3">
+                Surface-Aware Neural Height Fields for Efficient 3D Urban Mapping<br class="d-none d-md-inline">
+                Using Crowdsourced GNSS Data
+            </p>
+            <p class="mb-2">
+                {% include widgets/author_list.html authors=pub.authors %}
+            </p>
+            <p class="small text-muted mb-3">
+                Shanghai Jiao Tong University
+            </p>
+            <p class="pub-link-badges justify-content-center mb-0">
+                <a class="pub-link-badge" href="https://doi.org/10.1145/3810234" target="_blank" rel="noopener noreferrer">
+                    <i class="ai ai-acmdl" aria-hidden="true"></i>
+                    <span>Paper</span>
+                </a>
+                <span class="pub-link-badge pub-link-badge--muted pub-link-badge--static" title="Coming soon">
+                    <i class="fa-solid fa-cube" aria-hidden="true"></i>
+                    <span>Minimal Viable Demo · Coming soon</span>
+                </span>
+                <span class="pub-link-badge pub-link-badge--muted pub-link-badge--static" title="Coming soon">
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                    <span>Full Implementation · Coming soon</span>
+                </span>
+                <a class="pub-link-badge" href="#citation">
+                    <i class="fa-solid fa-quote-right" aria-hidden="true"></i>
+                    <span>BibTeX</span>
+                </a>
+            </p>
+        </header>
+
+        <section class="project-page__teaser mb-4" aria-label="Teaser video">
+            <div class="project-page__video-slot">
+                <img
+                    class="project-page__video-poster"
+                    src="{{ '/assets/images/covers/surfnehf-framework.png' | relative_url }}"
+                    alt="SurfNeHF framework overview">
+                <div class="project-page__video-overlay">
+                    <span class="project-page__video-play" aria-hidden="true">
+                        <i class="fa-solid fa-play"></i>
+                    </span>
+                    <p class="project-page__video-label mb-0">Teaser video · Coming soon</p>
+                </div>
+            </div>
+            <p class="small text-muted text-center mt-2 mb-0">Overview of the SurfNeHF framework.</p>
+        </section>
+
+        <section class="project-page__section rounded-sm p-4 mb-4" id="abstract">
+            <h2 class="project-section-title">Abstract</h2>
+            <p class="mb-0 text-justify">
+                Modern cities increasingly rely on 3D urban maps as digital infrastructures to support applications such as navigation, autonomous driving, urban development, and cellular network planning. Maintaining these maps with high fidelity and timely updates, however, remains challenging due to the high cost and limited availability of aerial imagery or LiDAR data. In this work, we present SurfNeHF, a lightweight deep learning framework that accurately infers building shapes from noisy crowdsourced GNSS data. By adapting optical inverse rendering to the radio frequency domain, SurfNeHF represents building surfaces as neural height fields and explicitly models signal-surface interactions. This surface-aware formulation enables the framework to effectively disentangle building geometry from surface reflectance and satellite sources, significantly reducing optimization complexity compared to volumetric approaches. Extensive evaluations demonstrate that SurfNeHF consistently outperforms state-of-the-art methods across diverse urban morphologies. Our framework achieves an average reconstruction accuracy of 94.6% while reducing computational overhead by 80% to 90% compared to baselines. With both higher data and system efficiency, SurfNeHF makes periodic large-scale urban map updates more practically feasible.
+            </p>
+        </section>
+
+        <section class="mb-4" id="principles-surface">
+            <h2 class="project-section-title">Surface Representation via Neural Height Fields (NeHF)</h2>
+            <p class="project-section-lead">
+                Instead of densely voxelizing 3D space, SurfNeHF represents building geometry as a continuous Neural Height Field (NeHF) $H:(x,y)\mapsto h$, and couples it with surface-aware ray sampling and RF-domain reflectance modeling.
+            </p>
+            <div class="project-page__section rounded-sm p-3 p-md-4 mb-3">
+                <p class="project-section-body mb-2">
+                    <strong>Satellite sources.</strong>
+                    GNSS satellites act as planar sources relative to a local reconstruction region. Owing to the extremely large transmitter distance, incident rays from each satellite are treated as parallel across the scene. We therefore characterize each source by a shared incoming direction $\hat{\omega}_s$ and a learnable transmit power $P^{\mathrm{tx}}_s$, jointly optimized with NeHF and BRDF.
+                </p>
+                <p class="project-section-body mb-2">
+                    <strong>Surface-aware ray sampling.</strong>
+                    Rays are uniformly cast over the upper hemisphere around the receiver to capture both LOS and NLOS paths. Differentiable surface intersections yield interaction points $\mathbf{x}^{(k)}$ with incident/outgoing directions $(\hat{\omega}_i^{(k)},\hat{\omega}_o^{(k)})$, so geometry can be supervised by scalar received power alone.
+                </p>
+                <p class="project-section-body mb-0">
+                    <strong>Half-angle parameterization.</strong>
+                    Signal-surface attenuation is modeled with a Spatially-Varying BRDF under the Rusinkiewicz half-angle parameterization. Reflection depends on the half-vector $\mathbf{h}=(\hat{\omega}_i+\hat{\omega}_o)/2$ through angular terms $(\theta_h,\theta_d)$, which compactly encode specular and diffuse behavior for neural prediction.
+                </p>
+            </div>
+            <div class="project-fig-grid project-fig-grid--4 project-fig-zoom project-fig-zoom--principles">
+                <figure class="project-fig">
+                    <div class="project-fig__media">
+                        <img src="{{ fig }}/satellite_source.png" alt="Satellite source modeling">
+                    </div>
+                    <figcaption>Satellite source as a plane wave with parallel incident rays.</figcaption>
+                </figure>
+                <figure class="project-fig">
+                    <div class="project-fig__media">
+                        <img src="{{ fig }}/Surface-Sampling.png" alt="Surface-aware ray sampling">
+                    </div>
+                    <figcaption>Surface-aware ray sampling over the upper hemisphere.</figcaption>
+                </figure>
+                <figure class="project-fig">
+                    <div class="project-fig__media">
+                        <img src="{{ fig }}/Surface-Sampling-2.png" alt="Differentiable surface sampling weights">
+                    </div>
+                    <figcaption>Differentiable surface sampling weights along each ray.</figcaption>
+                </figure>
+                <figure class="project-fig">
+                    <div class="project-fig__media">
+                        <img src="{{ fig }}/half-vector-encoding.png" alt="Half-vector encoding">
+                    </div>
+                    <figcaption>Rusinkiewicz half-angle parameterization for BRDF.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="mb-4" id="principles-rendering">
+            <h2 class="project-section-title">Forward Rendering Architecture</h2>
+            <p class="project-section-lead">
+                SurfNeHF combines ray sampling and surface-aware attenuation into a differentiable RF renderer. Sampled surface interactions are processed by NeHF (geometry/normal), a Shadow Renderer (visibility), and a Neural BRDF (reflectivity), then aggregated into received power $P^{\mathrm{rx}}$.
+            </p>
+            <div class="project-page__section rounded-sm p-3 p-md-4 mb-3">
+                <p class="project-section-body mb-0">
+                    Each intersection $\mathbf{x}^{(k)}$ yields a surface normal $\hat{\mathbf{n}}^{(k)}$ from NeHF. Conditioned on $(\mathbf{x}^{(k)},\hat{\omega}_i^{(k)},\hat{\omega}_o^{(k)})$, the BRDF network predicts reflectivity $f_r^{(k)}$, while the shadow renderer estimates visibility $v^{(k)}$. LOS and NLOS contributions are unified in the RF-domain power expression, enabling end-to-end learning of geometry and reflectance from crowdsourced GNSS measurements.
+                </p>
+            </div>
+            <div class="tikzjax-wrap" id="net-arch-wrap">
+                <img
+                    id="net-arch-fallback"
+                    class="img-fluid"
+                    src="{{ fig }}/net_arch.png"
+                    alt="Neural network architecture for surface-aware rendering">
+                {% include widgets/surfnehf_net_arch_tikz.html %}
+            </div>
+            <p class="small text-muted text-center mt-2 mb-0">
+                Neural network architecture for surface-aware rendering.
+            </p>
+            <script>
+                document.addEventListener('tikzjax-load-finished', function () {
+                    var el = document.getElementById('net-arch-fallback');
+                    if (el) el.remove();
+                });
+            </script>
+        </section>
+
+        <section class="mb-4" id="results-recon">
+            <h2 class="project-section-title">Reconstruction Demo</h2>
+            <p class="project-section-lead">
+                Controlled representation study on synthetic GNSS-like measurements (Sionna + Blender geometry): an A-frame house with steep ridges, a Tower with spike-like features, and a round-domed Temple with overhangs. Columns show ground truth, reconstruction under clean input (open sky), and reconstruction under noisy input (urban canyon).
+            </p>
+            <div class="project-recon project-fig-zoom">
+                <div class="project-recon-scene">
+                    <p class="project-result-row-label">A-frame</p>
+                    <div class="project-fig-grid project-fig-grid--3">
+                        <figure class="project-fig">
+                            <div class="project-fig__media">
+                                <img src="{{ fig }}/A_frame_vis.png" alt="A-frame ground truth">
+                            </div>
+                            <figcaption>A-frame · Ground Truth</figcaption>
+                        </figure>
+                        <figure class="project-fig">
+                            <div class="project-fig__media">
+                                <img src="{{ fig }}/A_frame_final.png" alt="A-frame clean input open sky">
+                            </div>
+                            <figcaption>A-frame · Clean Input (Open Sky)</figcaption>
+                        </figure>
+                        <figure class="project-fig">
+                            <div class="project-fig__media">
+                                <img src="{{ fig }}/A_frame_err.png" alt="A-frame noisy input urban canyon">
+                            </div>
+                            <figcaption>A-frame · Noisy Input (Urban Canyon)</figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="project-recon-scene">
+                    <p class="project-result-row-label">Tower</p>
+                    <div class="project-fig-grid project-fig-grid--3">
+                        <figure class="project-fig">
+                            <div class="project-fig__media">
+                                <img src="{{ fig }}/tower_vis.png" alt="Tower ground truth">
+                            </div>
+                            <figcaption>Tower · Ground Truth</figcaption>
+                        </figure>
+                        <figure class="project-fig">
+                            <div class="project-fig__media">
+                                <img src="{{ fig }}/tower_final.png" alt="Tower clean input open sky">
+                            </div>
+                            <figcaption>Tower · Clean Input (Open Sky)</figcaption>
+                        </figure>
+                        <figure class="project-fig">
+                            <div class="project-fig__media">
+                                <img src="{{ fig }}/tower_err.png" alt="Tower noisy input urban canyon">
+                            </div>
+                            <figcaption>Tower · Noisy Input (Urban Canyon)</figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="project-recon-scene">
+                    <p class="project-result-row-label">Temple</p>
+                    <div class="project-fig-grid project-fig-grid--3">
+                        <figure class="project-fig">
+                            <div class="project-fig__media">
+                                <img src="{{ fig }}/round_temple_vis.png" alt="Temple ground truth">
+                            </div>
+                            <figcaption>Temple · Ground Truth</figcaption>
+                        </figure>
+                        <figure class="project-fig">
+                            <div class="project-fig__media">
+                                <img src="{{ fig }}/round_temple_final.png" alt="Temple clean input open sky">
+                            </div>
+                            <figcaption>Temple · Clean Input (Open Sky)</figcaption>
+                        </figure>
+                        <figure class="project-fig">
+                            <div class="project-fig__media">
+                                <img src="{{ fig }}/round_temple_err.png" alt="Temple noisy input urban canyon">
+                            </div>
+                            <figcaption>Temple · Noisy Input (Urban Canyon)</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-4" id="results-brdf">
+            <h2 class="project-section-title">Material via BRDF</h2>
+            <p class="project-section-lead">
+                Because city-scale ground-truth materials are unavailable, we assess the learned Neural BRDF by physical plausibility. Supervised only by scalar omnidirectional power, the model still recovers anisotropic scattering with specular lobes that move opposite the incident direction as elevation changes, matching brick-wall roughness under the Rayleigh criterion.
+            </p>
+            <div class="project-fig-grid project-fig-grid--brdf project-fig-zoom">
+                <figure class="project-fig">
+                    <div class="project-fig__media">
+                        <img src="{{ fig }}/brdf-demo.png" alt="Signal-building intersection for BRDF interpretation">
+                    </div>
+                    <figcaption>Signal-building intersection during data collection.</figcaption>
+                </figure>
+                <figure class="project-fig">
+                    <div class="project-fig__media">
+                        <img src="{{ fig }}/brdf.png" alt="Learned BRDF hemisphere maps">
+                    </div>
+                    <figcaption>Learned BRDF energy over the outgoing hemisphere at different incident elevations.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="project-page__section rounded-sm p-4 mb-4" id="citation">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <h2 class="project-section-title mb-0">Citation</h2>
+                <button type="button" class="btn btn-sm btn-outline-secondary project-page__copy-btn" id="surfnehf-copy-bibtex" aria-label="Copy BibTeX">
+                    <i class="fa-regular fa-copy" aria-hidden="true"></i>
+                    <span>Copy</span>
+                </button>
+            </div>
+            <pre class="project-page__bibtex mb-0" id="surfnehf-bibtex"><code>@article{jia2026surfnehf,
+  title={SurfNeHF: Surface-Aware Neural Height Fields for Efficient 3D Urban Mapping Using Crowdsourced GNSS Data},
+  author={Jia, Haifeng and Ding, Xingyuan and Qu, Minyang and Pi, Yibo and Chen, Cailian},
+  journal={Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies},
+  volume={10},
+  number={2},
+  pages={1--31},
+  year={2026},
+  publisher={ACM New York, NY, USA}
+}</code></pre>
+        </section>
+
+        <p class="small text-muted text-center mb-2">
+            <a href="{{ '/publications#pub-2026-imwut-surfnehf' | relative_url }}">← Back to Publications</a>
+        </p>
+    </div>
+</div>

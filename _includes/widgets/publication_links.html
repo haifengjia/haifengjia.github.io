@@ -16,8 +16,10 @@
         {%- endif -%}
         {%- if href == '#' -%}
         <span class="{{ badge_class }}">
-        {%- else -%}
+        {%- elsif u contains '://' -%}
         <a class="{{ badge_class }}" href="{{ href }}" target="_blank" rel="noopener noreferrer">
+        {%- else -%}
+        <a class="{{ badge_class }}" href="{{ href }}">
         {%- endif -%}
             {%- case link.icon -%}
                 {%- when 'acmdl' -%}<i class="ai ai-acmdl" aria-hidden="true"></i>
@@ -28,7 +30,11 @@
                 {%- when 'gamepad' -%}<i class="fa-solid fa-gamepad" aria-hidden="true"></i>
                 {%- when 'code' -%}<i class="fa-solid fa-code" aria-hidden="true"></i>
                 {%- when 'github' -%}<i class="fab fa-github" aria-hidden="true"></i>
+                {%- when 'webpage' -%}<i class="fa-solid fa-globe" aria-hidden="true"></i>
+                {%- when 'demo' -%}<i class="fa-solid fa-cube" aria-hidden="true"></i>
             {%- endcase -%}
+
+
             <span>{{ link.label }}</span>
         {%- if href == '#' -%}
         </span>

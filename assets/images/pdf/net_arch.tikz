@@ -1,0 +1,234 @@
+% Neural Network Architecture TikZ Figure
+% This file is included by sample-sigconf.tex
+
+\begin{figure*}[t]
+    \centering
+    % --- Color Definitions (must be outside tikzpicture options) ---
+    % 7 distinct colors for the figure:
+    % 1. Neural Networks / Zoom box: Light Blue
+    \definecolor{nnblue}{HTML}{70acc8}
+    % 1b. NeHF: Darker Blue (distinct from NN)
+    \definecolor{nehfblue}{HTML}{386cb0}
+    % 2. Shadow Renderer: Light Pink/Beige
+    \definecolor{shadowpink}{HTML}{e9d5cd}
+    % 3. BRDF: Green
+    \definecolor{brdfgreen}{HTML}{7cb342}
+    % 4. Incident Direction: Orange
+    \definecolor{incidentorange}{HTML}{e97132}
+    % 5. Intersection Point: Blue (swapped with outgoing)
+    \definecolor{intersectblue}{HTML}{156082}
+    % 6. Outgoing Direction: Red (swapped with intersection)
+    \definecolor{outgoingred}{HTML}{C44536}
+    % Utility colors
+    \definecolor{samplinggreen}{HTML}{2C7A4A}
+    \definecolor{renderingyellow}{HTML}{fff0c4}
+
+    \begin{tikzpicture}[
+        % --- Global Scaling ---
+        scale=0.88, transform shape,
+        % --- Global Styles ---
+        font=\sffamily,
+        >={Triangle[width=3pt, length=4pt]},
+        node distance=1.2cm and 1.5cm,
+        % --- Block Styles (Unified line width) ---
+        basicblock/.style={
+                rectangle,
+                draw=gray!40,
+                fill=white,
+                rounded corners=3pt,
+                minimum height=0.8cm,
+                minimum width=1.8cm,
+                align=center,
+                line width=0.8pt
+            },
+        % --- Specific Module Styles ---
+        nehfblock/.style={
+                basicblock,
+                draw=nehfblue,
+                fill=nehfblue!10
+            },
+        submodule/.style={
+                rectangle,
+                draw=gray!40,
+                fill=softGray,
+                rounded corners=3pt,
+                minimum height=0.7cm,
+                minimum width=2.2cm,
+                font=\small\sffamily,
+                line width=0.8pt
+            },
+        % --- Connector Styles ---
+        connector/.style={->, thick, color=gray!70!black},
+        % Specific line colors for inputs - updated colors (intersection and outgoing swapped)
+        lineincident/.style={->, thick, color=incidentorange},
+        linegeometry/.style={->, thick, color=intersectblue},
+        lineoutgoing/.style={->, thick, color=outgoingred}
+        ]
+
+        % =================================================
+        % 1. MACRO PIPELINE (Bottom Row) - Moved down
+        % =================================================
+
+        % Nodes - shifted down further for better spacing
+        \node[font=\bfseries\sffamily] (pos) at (0, 0)
+        {Pos$_{rx}$};
+
+        \node[basicblock, fill=samplinggreen!15, font=\bfseries\sffamily, draw=none, right=0.8cm of pos] (sampling)
+        {Ray Sampling};
+
+        % [MODIFIED]: Balanced left/right spacing around Neural Networks
+        \node[basicblock, fill=nnblue!15, font=\bfseries\sffamily, draw=nnblue, right=2.2cm of sampling, minimum width=2.5cm] (nn)
+        {Neural Networks};
+
+        \node[basicblock, fill=renderingyellow, font=\bfseries\sffamily, draw=none, right=2.0cm of nn] (rendering)
+        {RF-Domain\\ Renderer};
+
+        \node[right=0.8cm of rendering, align=center, font=\bfseries\sffamily] (power) {Received\\ Power $P^{rx}$};
+
+        % Connections with colored variables
+        \draw[connector] (pos) -- (sampling);
+        \draw[connector] (sampling) -- node[above, font=\bfseries\sffamily, align=center] {$\{({\color{incidentorange}\hat{\omega}_i}, {\color{intersectblue}\mathbf{x}}, {\color{outgoingred}\hat{\omega}_o})^{(k)}\}$} (nn);
+        \draw[connector] (nn) -- node[above, font=\bfseries\sffamily] {$\{(f_r, v)^{(k)}\}$} (rendering);
+        \draw[connector] (rendering) -- (power);
+
+        % =================================================
+        % 2. MICRO ARCHITECTURE (Zoom-in Top Box)
+        % =================================================
+
+        % Coordinate for the center of the zoom box (relative to NN)
+        \coordinate (zoom_center) at ($(nn.north) + (0, 4.0cm)$);
+
+        % --- Center Modules (Vertical Stack) ---
+
+        % NeHF (The Core) - Placed in the visual center
+        \node[nehfblock, minimum width=2.0cm, minimum height=1.4cm] (nehf) at (zoom_center) {};
+        % Internal label for NeHF - bold, consistent with others
+        \node[anchor=south, font=\bfseries\sffamily] at ($(nehf.south) + (0, 0.05)$) {NeHF};
+        % Neural network layers inside NeHF - 5 rectangles, uniform color, wider and taller, shifted up
+        \foreach \i in {0, 1, 2, 3, 4} {
+                \fill[nehfblue!70, rounded corners=1pt]
+                ($(nehf.center) + (-0.6 + \i*0.26, -0.1)$) rectangle ++(0.18, 0.6);
+            }
+        % Theta_H label in center - bold black text (use \boldsymbol for math)
+        \node[text=black] at ($(nehf.center) + (0.05, 0.15)$) {$\boldsymbol{\Theta}_H$};
+
+        % Shadow Renderer (Top) - Light pink color, no border, no neural network rectangles
+        \node[submodule, above=0.8cm of nehf, fill=shadowpink, draw=none, minimum width=2.0cm, minimum height=0.9cm] (shadow) {};
+        \node[font=\bfseries\sffamily, align=center] at (shadow.center) {Shadow\\Renderer};
+
+        % BRDF (Bottom) - Green
+        \node[submodule, below=0.8cm of nehf, fill=brdfgreen!15, draw=brdfgreen, minimum width=2.0cm, minimum height=1.4cm] (brdf) {};
+        \node[anchor=south, font=\bfseries\sffamily] at ($(brdf.south) + (0, 0.05)$) {BRDF};
+        % Neural network layers inside BRDF - 3 rectangles, uniform color, wider and taller, shifted up
+        \foreach \i in {0, 1, 2} {
+                \fill[brdfgreen!70, rounded corners=1pt]
+                ($(brdf.center) + (-0.35 + \i*0.26, -0.1)$) rectangle ++(0.18, 0.6);
+            }
+        % Theta_r label in center - bold black text (use \boldsymbol for math)
+        \node[text=black] at ($(brdf.center) + (0.05, 0.15)$) {$\boldsymbol{\Theta}_r$};
+
+        % --- Inputs (Left Side) - [MODIFIED]: Variables in corresponding colors, bold font ---
+
+        % 1. Incident Direction (Orange #faad61)
+        \node[left=2.0cm of shadow.west, anchor=east, font=\bfseries\sffamily, align=right] (input_wi)
+        {\color{incidentorange} Incident Direction $\hat{\omega}_i^{(k)}$};
+
+        % 2. Intersection Point (Blue #156082) - centered between incident and outgoing
+        \node[left=2.0cm of nehf.west, anchor=east, yshift=-0.3cm, font=\bfseries\sffamily, align=right] (input_x)
+        {\color{intersectblue} Intersection Point $\mathbf{x}^{(k)}$};
+
+        % 3. Outgoing Direction (Red #C44536) - swapped, positioned to make arrow horizontal
+        \node[left=2.0cm of brdf.west, anchor=east, yshift=-0.35cm, font=\bfseries\sffamily, align=right] (input_wo)
+        {\color{outgoingred} Outgoing Direction $\hat{\omega}_o^{(k)}$};
+
+        % --- Outputs (Right Side) ---
+        \node[right=2.0cm of shadow.east, anchor=west, font=\bfseries\sffamily, align=left] (output_v)
+        {Visibility $v^{(k)}$};
+
+        \node[right=2.0cm of brdf.east, anchor=west, font=\bfseries\sffamily, align=left] (output_fr)
+        {Reflectivity $f_r^{(k)}$};
+
+        % --- Background Box for Zoom View ---
+        % Light blue background, solid line, only contains shadow/nehf/brdf, wider horizontally to reach textboxes
+        \begin{scope}[on background layer]
+            \node[fit=(shadow)(nehf)(brdf),
+                draw=nnblue, fill=nnblue!15, rounded corners=10pt, inner ysep=12pt, inner xsep=42pt, line width=0.8pt] (zoom_box) {};
+        \end{scope}
+
+        % =================================================
+        % 3. CONNECTIONS WITHIN ZOOM BOX (Circuit-style: horizontal and vertical only)
+        % =================================================
+
+        % Define entry points on modules (to avoid overlap at destination)
+        \coordinate (shadow_in_inc) at (shadow.west);                      % for incident (direct horizontal)
+        \coordinate (shadow_in_int) at ($(shadow.west) + (0, -0.15)$);     % for intersection
+        \coordinate (brdf_in_inc) at ($(brdf.west) + (0, 0.35)$);          % for incident
+        \coordinate (brdf_in_int) at (brdf.west);                           % for intersection
+        \coordinate (brdf_in_out) at ($(brdf.west) + (0, -0.35)$);         % for outgoing
+
+        % Define x-coordinates for vertical segments (grouped together for clean appearance)
+        % Incident and intersection columns are close together, forming a neat bundle
+        \coordinate (col_inc) at ($(nehf.west) + (-1.2, 0)$);    % incident -> brdf
+        \coordinate (col_int) at ($(nehf.west) + (-1.0, 0)$);    % intersection -> shadow & brdf (same column)
+        \coordinate (col_out) at ($(nehf.west) + (-0.8, 0)$);    % outgoing -> brdf
+
+        % All three intersection lines start from the same point (overlap before first turn)
+        \coordinate (x_out) at (input_x.east);   % shared starting point for all three lines
+
+        % --- Incident direction connections (orange) ---
+        % incident -> shadow: direct horizontal (same y-level)
+        \draw[lineincident] (input_wi.east) -- (shadow_in_inc);
+        % incident -> brdf: horizontal to col_inc, vertical to brdf_in_inc.y, horizontal to brdf_in_inc
+        \draw[lineincident]
+        (input_wi.east) -- (input_wi.east -| col_inc)
+        -- (col_inc |- brdf_in_inc) -- (brdf_in_inc);
+
+        % --- Intersection point connections (blue) ---
+        % All three lines start from x_out, overlap as much as possible
+        % Lines to shadow and nehf: overlap going up, then split at nehf.west y-level
+        % Line to brdf: split down at col_int
+
+        % intersection -> shadow: horizontal to col_int, up to nehf.west y, continue up to shadow_in_int.y, horizontal to shadow_in_int
+        \draw[linegeometry]
+        (x_out) -- (x_out -| col_int)
+        -- (col_int |- nehf.west)
+        -- (col_int |- shadow_in_int) -- (shadow_in_int);
+        % intersection -> nehf: horizontal to col_int, up to nehf.west y, horizontal to nehf.west
+        \draw[linegeometry]
+        (x_out) -- (x_out -| col_int)
+        -- (col_int |- nehf.west) -- (nehf.west);
+        % intersection -> brdf: horizontal to col_int, down to brdf_in_int.y, horizontal to brdf_in_int
+        \draw[linegeometry]
+        (x_out) -- (x_out -| col_int)
+        -- (col_int |- brdf_in_int) -- (brdf_in_int);
+
+        % --- Outgoing direction connections (red) ---
+        % outgoing -> brdf: horizontal to col_out, vertical to brdf_in_out.y, horizontal to brdf_in_out
+        \draw[lineoutgoing]
+        (input_wo.east) -- (input_wo.east -| col_out)
+        -- (col_out |- brdf_in_out) -- (brdf_in_out);
+
+        % Internal Flows
+        % Query Heights (Shadow <-> NeHF) - dashed, double-headed arrow
+        \draw[{Triangle[width=3pt, length=4pt]}-{Triangle[width=3pt, length=4pt]}, dashed, thick, color=gray!70!black] (shadow.south) -- node[right, font=\bfseries\sffamily, black] {Query Heights} (nehf.north);
+        % Normal n (NeHF -> BRDF)
+        \draw[linegeometry] (nehf.south) -- node[right, font=\bfseries\sffamily, black] {Surface Normal $\hat{\mathbf{n}}$} (brdf.north);
+
+        % Outputs -> Output labels
+        \draw[connector] (shadow.east) -- (output_v.west);
+        \draw[connector] (brdf.east) -- (output_fr.west);
+
+        % =================================================
+        % 4. ZOOM LINES (Connecting Bottom to Top)
+        % =================================================
+        \draw[dashed, color=nnblue, line width=0.5pt] (nn.north west) -- (zoom_box.south west);
+        \draw[dashed, color=nnblue, line width=0.5pt] (nn.north east) -- (zoom_box.south east);
+
+    \end{tikzpicture}
+    \caption{\textbf{Neural Network Architecture for Surface-Aware Rendering.}
+    Surface-aware ray sampling provides a set of intersection points $\mathbf{x}^{(k)}$
+    and corresponding incident/outgoing directions $(\hat{\boldsymbol{\omega}}_{i}^{(k)}, \hat{\boldsymbol{\omega}}_{o}^{(k)})$,
+    which are processed by NeHF and BRDF networks to estimate reflectivity $f_r^{(k)}$ and visibility $v^{(k)}$,
+    followed by RF-domain rendering to predict the received power $P_{\mathrm{rx}}$.}
+    \label{fig:net-arch}
+\end{figure*}

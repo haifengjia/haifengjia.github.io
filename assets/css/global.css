@@ -681,3 +681,110 @@ div.lazy {
     color: #fff;
     background-color: #0d6efd;
 }
+
+/* Project landing pages (e.g. /surfnehf/) */
+.project-page__brand {
+    font-family: "Fredoka", "Lato", sans-serif;
+    font-size: clamp(2.1rem, 4vw, 2.75rem);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    color: #2c3d52;
+    line-height: 1.15;
+}
+
+.project-page__subtitle {
+    max-width: 44rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.05rem;
+    line-height: 1.45;
+    color: #4a5568;
+}
+
+.project-page__header .pub-link-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project-page__teaser {
+    max-width: 52rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.project-page__video-slot {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 0.35rem;
+    background: #1a2332;
+    box-shadow: 0 8px 28px rgba(45, 55, 72, 0.16);
+}
+
+.project-page__video,
+.project-page__video-poster {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-page__video-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background: linear-gradient(180deg, rgba(26, 35, 50, 0.35) 0%, rgba(26, 35, 50, 0.55) 100%);
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+.project-page__video-play {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.4rem;
+    height: 3.4rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.92);
+    color: #2c3d52;
+    font-size: 1.05rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+}
+
+.project-page__video-label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+.project-page__figure img {
+    width: 100%;
+    max-height: 28rem;
+    object-fit: contain;
+    background: transparent;
+}
+
+.project-page__bibtex {
+    background: #f4f6f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.25rem;
+    padding: 1rem 1.1rem;
+    font-size: 0.82rem;
+    line-height: 1.55;
+    overflow-x: auto;
+    white-space: pre;
+}
+
+.project-page__copy-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}

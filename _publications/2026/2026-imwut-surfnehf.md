@@ -17,10 +17,18 @@ authors:
   - Yibo Pi#
   - Cailian Chen
 links:
+  - label: "Project"
+    icon: webpage
+    url: /surfnehf/
   - label: "ACM DL"
     icon: acmdl
     url: "https://doi.org/10.1145/3810234"
-  - label: "SurfNeHF (implementation) · Coming soon"
+  - label: "Minimal Viable Demo · Coming soon"
+    icon: demo
+    url: "#"
+  - label: "Full Implementation · Coming soon"
     icon: github
     url: "#"
 ---
+
+
