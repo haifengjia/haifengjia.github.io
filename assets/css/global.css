@@ -274,6 +274,27 @@ h2.research-topic-heading .research-topic-years {
     font-weight: 400;
 }
 
+.author-note {
+    color: #6b7280;
+    background: transparent;
+    font-size: 0.85em;
+    font-weight: 400;
+    font-style: normal;
+    white-space: nowrap;
+}
+
+.publication-time {
+    color: #6b7280;
+    font-family: inherit;
+    font-size: 0.88em;
+    font-style: normal;
+    white-space: nowrap;
+}
+
+.publication-title-times {
+    font-family: "Times New Roman", Times, serif;
+}
+
 .navbar {
     opacity: 0.95;
 }
@@ -682,6 +703,66 @@ div.lazy {
     background-color: #0d6efd;
 }
 
+/* Full-page publication / research / demo timelines. */
+.page-timeline-entry {
+    position: relative;
+}
+
+.page-timeline-rail {
+    --timeline-axis: 75%;
+    position: relative;
+    min-height: 100%;
+}
+
+.page-timeline-rail::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--timeline-axis);
+    width: 1px;
+    background: #d7dee8;
+    transform: translateX(-50%);
+}
+
+.page-timeline-entry--first .page-timeline-rail::before {
+    top: 2rem;
+}
+
+.page-timeline-knot {
+    position: absolute;
+    top: 2rem;
+    left: var(--timeline-axis);
+    width: 9px;
+    height: 9px;
+    border: 2px solid #f8f9fa;
+    border-radius: 50%;
+    background: #0d6efd;
+    box-shadow: 0 0 0 1px #0d6efd;
+    transform: translate(-50%, -50%);
+}
+
+.page-timeline-label {
+    position: absolute;
+    top: 2rem;
+    right: calc(100% - var(--timeline-axis) + 0.9rem);
+    color: #687589;
+    font-family: "Fredoka", "Lato", sans-serif;
+    font-size: 1.08rem;
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+    transform: translateY(-50%);
+}
+
+.page-timeline-mobile-label {
+    margin: 0 0 0.65rem;
+    color: #687589;
+    font-family: "Fredoka", "Lato", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
 /* Project landing pages (e.g. /surfnehf/) */
 .project-page__brand {
     font-family: "Fredoka", "Lato", sans-serif;
@@ -787,4 +868,266 @@ div.lazy {
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
+}
+
+/* Dark academic-site theme, aligned with the SurfNeHF project palette. */
+body.site-dark {
+    --site-bg: #0a1018;
+    --site-elev: #101826;
+    --site-panel: #141e2e;
+    --site-line: #1e2a3d;
+    --site-line-strong: #2c3d56;
+    --site-text: #e8eef7;
+    --site-text-dim: #9aadc4;
+    --site-text-muted: #6b7f99;
+    --site-accent: #5aa2ff;
+    --site-accent-2: #3d7fd9;
+    --site-accent-strong: #86bcff;
+    --site-accent-soft: rgba(90, 162, 255, 0.14);
+    background: var(--site-bg);
+    color: var(--site-text);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+}
+
+.site-dark a {
+    color: var(--site-accent);
+}
+
+.site-dark a:hover,
+.site-dark a:focus {
+    color: var(--site-accent-strong);
+}
+
+.site-dark .site-navbar {
+    background: rgba(10, 16, 24, 0.9);
+    border-bottom: 1px solid var(--site-line);
+    opacity: 1;
+    backdrop-filter: blur(12px);
+}
+
+.site-dark .navbar-brand,
+.site-dark .navbar-dark .navbar-nav .nav-link {
+    color: var(--site-text-dim);
+}
+
+.site-dark .navbar-brand,
+.site-dark .navbar-dark .navbar-nav .active > .nav-link,
+.site-dark .navbar-dark .navbar-nav .nav-link:hover,
+.site-dark .navbar-dark .navbar-nav .nav-link:focus {
+    color: var(--site-text);
+}
+
+.site-dark .navbar-brand {
+    font-family: inherit;
+}
+
+.site-dark .navbar-dark .navbar-nav .active > .nav-link {
+    box-shadow: inset 0 -1px 0 var(--site-accent);
+}
+
+.site-dark .navbar-toggler {
+    color: var(--site-text-dim);
+    border-color: var(--site-line-strong);
+}
+
+.site-dark .bg-white,
+.site-dark .card,
+.site-dark .modal-content {
+    background-color: var(--site-elev) !important;
+    color: var(--site-text);
+}
+
+.site-dark .border,
+.site-dark .border-top,
+.site-dark .border-bottom,
+.site-dark .border-left,
+.site-dark .border-right,
+.site-dark .border-gray,
+.site-dark hr {
+    border-color: var(--site-line) !important;
+}
+
+.site-dark .text-body,
+.site-dark .text-dark {
+    color: var(--site-text) !important;
+}
+
+.site-dark .text-muted,
+.site-dark .project-page__subtitle,
+.site-dark .research-topic-years {
+    color: var(--site-text-dim) !important;
+}
+
+.site-dark h1,
+.site-dark h2,
+.site-dark h3,
+.site-dark h4,
+.site-dark h5,
+.site-dark h6,
+.site-dark .h1,
+.site-dark .h2,
+.site-dark .h3,
+.site-dark .h4,
+.site-dark .h5,
+.site-dark .h6,
+.site-dark h2.publications-category-heading,
+.site-dark h2.research-topic-heading,
+.site-dark .project-page__brand {
+    color: var(--site-text);
+}
+
+.site-dark .img-thumbnail {
+    background-color: var(--site-panel);
+    border-color: var(--site-line-strong);
+}
+
+.site-dark .year-nav {
+    background-color: var(--site-elev);
+    border-color: var(--site-line);
+}
+
+.site-dark .year-nav .nav-link {
+    color: var(--site-text-dim);
+}
+
+.site-dark .year-nav .nav-link:hover {
+    color: var(--site-accent-strong);
+    background-color: var(--site-accent-soft);
+}
+
+.site-dark .year-nav .nav-link.active {
+    color: var(--site-text);
+    background-color: var(--site-accent-2);
+}
+
+.site-dark .publication-time,
+.site-dark .author-note {
+    color: var(--site-text-muted);
+}
+
+.site-dark .page-timeline-rail::before {
+    background: var(--site-line-strong);
+}
+
+.site-dark .page-timeline-knot {
+    border-color: var(--site-bg);
+    background: var(--site-accent);
+    box-shadow: 0 0 0 1px var(--site-accent);
+}
+
+.site-dark .page-timeline-label,
+.site-dark .page-timeline-mobile-label {
+    color: var(--site-text-muted);
+}
+
+.site-dark .profile-contact-ch {
+    color: var(--site-text-dim);
+}
+
+.site-dark .profile-contact-ch:hover {
+    color: var(--site-accent-strong);
+}
+
+.site-dark .profile-contact-ch--stack:hover {
+    background-color: var(--site-accent-soft);
+}
+
+.site-dark .publication-compact-card {
+    color: var(--site-text);
+    background: var(--site-panel);
+    border-color: var(--site-line-strong);
+}
+
+.site-dark .publication-compact-card:hover,
+.site-dark .publication-compact-card:focus-visible {
+    color: var(--site-text);
+    border-color: var(--site-accent);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+}
+
+.site-dark .publication-compact-card__cover {
+    background: var(--site-bg);
+}
+
+.site-dark .publication-cover-zoom__flyout {
+    background: linear-gradient(160deg, var(--site-panel) 0%, var(--site-elev) 100%);
+    border-color: var(--site-line-strong);
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.48);
+}
+
+.site-dark .publication-cover-zoom__flyout::before {
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.site-dark .publication-entry:target {
+    background-color: var(--site-accent-soft);
+}
+
+.site-dark .publication-entry .w-100[style*="background-color"] {
+    background-color: rgba(16, 24, 38, 0.94) !important;
+}
+
+.site-dark .pub-link-badge {
+    color: #b9d8ff;
+    background-color: var(--site-accent-soft);
+    border-color: #315477;
+}
+
+.site-dark .pub-link-badge:hover {
+    color: var(--site-text);
+    background-color: rgba(90, 162, 255, 0.22);
+    border-color: var(--site-accent);
+}
+
+.site-dark .pub-link-badge--muted,
+.site-dark .pub-link-badge--muted:hover {
+    color: var(--site-text-muted);
+    background-color: rgba(107, 127, 153, 0.1);
+    border-color: var(--site-line-strong);
+}
+
+.site-dark .badge-venue {
+    background-color: #26364b;
+    color: var(--site-text);
+}
+
+.site-dark .badge-venue.badge-rank-a {
+    background: linear-gradient(145deg, #c41e4a 0%, #9b1538 100%);
+    color: #fff;
+    box-shadow: 0 1px 4px rgba(155, 21, 56, 0.35);
+}
+
+.site-dark .badge-venue.badge-rank-b {
+    background: linear-gradient(145deg, #d97706 0%, #b45309 100%);
+    color: #fff;
+    box-shadow: 0 1px 3px rgba(180, 83, 9, 0.3);
+}
+
+.site-dark .badge-venue.badge-rank-c {
+    background: #2c5282;
+    color: #fff;
+    box-shadow: 0 1px 2px rgba(44, 82, 130, 0.25);
+}
+
+.site-dark .homepage-visitor-map,
+.site-dark .footer-visitor-map-row {
+    border-color: var(--site-line);
+}
+
+.site-dark .project-page__bibtex {
+    color: var(--site-text-dim);
+    background: var(--site-elev);
+    border-color: var(--site-line);
+}
+
+.site-dark .footer {
+    color: var(--site-text-muted);
+}
+
+@media (prefers-reduced-transparency: reduce) {
+    .site-dark .site-navbar {
+        background: var(--site-bg);
+        backdrop-filter: none;
+    }
 }

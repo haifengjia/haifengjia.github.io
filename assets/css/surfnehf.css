@@ -186,12 +186,13 @@ a:hover {
     border-bottom: none !important;
 }
 
-.authors mark {
+.authors .author-note {
     background: transparent;
-    color: var(--text-mute);
+    color: var(--text-mute) !important;
     font-size: 0.85em;
     font-family: inherit;
-    font-weight: inherit;
+    font-weight: 400;
+    white-space: nowrap;
 }
 
 .affils {

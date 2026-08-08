@@ -55,6 +55,14 @@
 {%- if fmt == 'stack' -%}</li>{%- endif -%}
 {%- endif -%}
 
+{%- if site.data.profile.xiaohongshu -%}
+{%- if fmt == 'stack' -%}<li>{%- endif -%}
+<a class="profile-contact-ch profile-contact-ch--{{ fmt }}" target="_blank" rel="noopener noreferrer" href="{{ site.data.profile.xiaohongshu }}">
+    <i class="fas fa-book-open {% if fmt == 'stack' %}fa-fw{% endif %}"></i>{% if fmt == 'stack' %}<span>RedNote</span>{% else %} RedNote{% endif %}
+</a>
+{%- if fmt == 'stack' -%}</li>{%- endif -%}
+{%- endif -%}
+
 {%- if site.data.profile.orcid -%}
 {%- if fmt == 'stack' -%}<li>{%- endif -%}
 <a class="profile-contact-ch profile-contact-ch--{{ fmt }}" target="_blank" href="https://orcid.org/{{ site.data.profile.orcid }}">

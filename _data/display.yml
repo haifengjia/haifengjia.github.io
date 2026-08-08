@@ -8,7 +8,7 @@ homepage:
     placement: "sidebar"
     mapmyvisitors_site_id: "5FrgfB2ufL-yYAKy6-iPerK33s_0DfjX-vrkMnVmkTE"
     mapmyvisitors_stats_slug: "1c4rl"
-    mapmyvisitors_background: "ffffff"
+    mapmyvisitors_background: "0a1018"
     mapmyvisitors_width: "a"
     # t=n hides pageview/date text on the interactive map.js widget, keeps scatter dots.
     mapmyvisitors_map_type: "n"

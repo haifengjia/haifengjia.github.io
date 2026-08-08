@@ -2,31 +2,25 @@
 layout: default
 title : Demo
 navbar_title: Demo
-body_attr: >-
-  data-spy="scroll" data-target="#navbar-year" data-offset="100"
 ---
 
 {% assign demos_by_year = site.demos | sort: "date" | reverse | group_by_exp: "item", "item.date | date: '%Y'" %}
 
-<div class="row">
-    <aside class="col-lg-2 mb-3 mb-lg-0 pr-lg-3 d-none d-lg-block year-nav-aside" aria-label="Year navigation">
-        <div class="year-nav-sticky">
-            <nav id="navbar-year" class="year-nav nav flex-column" aria-label="Demo years">
-                {% for year in demos_by_year %}
-                <a class="nav-link d-block" href="#year-{{ year.name }}">{{ year.name }}</a>
-                {% endfor %}
-            </nav>
+<div class="page-timeline" aria-label="Demos timeline">
+    {% for year in demos_by_year %}
+    <section class="row page-timeline-entry{% if forloop.first %} page-timeline-entry--first{% endif %}" id="year-{{ year.name }}">
+        <div class="col-lg-2 d-none d-lg-block page-timeline-rail" aria-hidden="true">
+            <span class="page-timeline-label">{{ year.name }}</span>
+            <span class="page-timeline-knot"></span>
         </div>
-    </aside>
-
-    <div class="col-lg-10 col-12">
-        {% for year in demos_by_year %}
-        <h2 class="pt-4" id="year-{{ year.name }}">{{ year.name }}</h2>
+        <div class="col-lg-10 col-12 page-timeline-content pt-4">
+            <h2 class="d-lg-none page-timeline-mobile-label">{{ year.name }}</h2>
         <div class="my-0 p-0 bg-white shadow-sm rounded-sm">
             {% for item in year.items %}
                 {% include widgets/publication_item.html item=item hide_bottom_border=forloop.last first=forloop.first last=forloop.last %}
             {% endfor %}
         </div>
-        {% endfor %}
-    </div>
+        </div>
+    </section>
+    {% endfor %}
 </div>

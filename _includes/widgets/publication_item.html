@@ -1,5 +1,9 @@
 {% assign item = include.item %}
 {% assign pub_anchor = item.path | split: '/' | last | replace: '.md', '' %}
+{% assign is_publication = false %}
+{% if item.path contains '_publications/' %}
+{% assign is_publication = true %}
+{% endif %}
 <div id="pub-{{ pub_anchor }}" class="publication-entry">
 <div class="d-none d-md-block">
     <div class="row no-gutters {% unless include.hide_bottom_border %}border-bottom{% endunless %} border-gray">
@@ -7,9 +11,9 @@
             {% include widgets/publication_cover_zoom.html item=item %}
         </div>
         <div class="col-md-9 col-xl-10 p-3 pl-md-0">
-            <h5 class="mt-0 mb-1 font-weight-normal">{% if item.pub_venue_badge %}<span class="badge badge-pill badge-venue{% if item.pub_venue_rank %} badge-rank-{{ item.pub_venue_rank | downcase }}{% endif %} mr-2 align-text-bottom">{{ item.pub_venue_badge }}</span>{% endif %}{{ item.title }}</h5>
+            <h5 class="mt-0 mb-1 font-weight-normal">{% if item.pub_venue_badge %}<span class="badge badge-pill badge-venue{% if item.pub_venue_rank %} badge-rank-{{ item.pub_venue_rank | downcase }}{% endif %} mr-2 align-text-bottom">{{ item.pub_venue_badge }}</span>{% endif %}{% if is_publication %}<span class="publication-title-times">{{ item.title }}</span>{% else %}{{ item.title }}{% endif %}</h5>
             <p class="mt-0 mb-0 small">{% include widgets/author_list.html authors=item.authors %}</p>
-            <p class="mt-0 mb-0 small">{{item.pub_pre}}<i>{{ item.pub }}</i>{{ item.pub_post }} {{ item.pub_date }} {{ item.pub_last }}</p>
+            <p class="mt-0 mb-0 small">{{item.pub_pre}}<i>{{ item.pub }}</i>{{ item.pub_post }} <span class="publication-time">{{ item.pub_date }}</span> {{ item.pub_last }}</p>
             <p class="mt-0 mb-0 small text-muted">{{ item.abstract }}</p>
             
             {% include widgets/publication_links.html item=item %}
@@ -23,9 +27,9 @@
         <div class="d-flex align-items-start flex-column py-3 px-4">
             <div class="mb-auto"></div>
             <div>
-                <h5 class="mt-0 mb-1 font-weight-normal">{% if item.pub_venue_badge %}<span class="badge badge-pill badge-venue{% if item.pub_venue_rank %} badge-rank-{{ item.pub_venue_rank | downcase }}{% endif %} mr-2 align-text-bottom">{{ item.pub_venue_badge }}</span>{% endif %}{{ item.title }}</h5>
+                <h5 class="mt-0 mb-1 font-weight-normal">{% if item.pub_venue_badge %}<span class="badge badge-pill badge-venue{% if item.pub_venue_rank %} badge-rank-{{ item.pub_venue_rank | downcase }}{% endif %} mr-2 align-text-bottom">{{ item.pub_venue_badge }}</span>{% endif %}{% if is_publication %}<span class="publication-title-times">{{ item.title }}</span>{% else %}{{ item.title }}{% endif %}</h5>
                 <p class="mt-0 mb-0 small">{% include widgets/author_list.html authors=item.authors %}</p>
-                <p class="mt-0 mb-0 small">{{item.pub_pre}}<i>{{ item.pub }}</i>{{ item.pub_post }} {{ item.pub_date }} {{ item.pub_last }}</p>
+                <p class="mt-0 mb-0 small">{{item.pub_pre}}<i>{{ item.pub }}</i>{{ item.pub_post }} <span class="publication-time">{{ item.pub_date }}</span> {{ item.pub_last }}</p>
                 <p class="mt-0 mb-0 small text-muted">{{ item.abstract }}</p>
                 
                 {% include widgets/publication_links.html item=item %}
