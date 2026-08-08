@@ -17,12 +17,12 @@ authors:
   - Yibo Pi#
   - Cailian Chen
 links:
-  - label: "Project"
-    icon: webpage
-    url: /surfnehf/
   - label: "ACM DL"
     icon: acmdl
     url: "https://doi.org/10.1145/3810234"
+  - label: "Project"
+    icon: webpage
+    url: /surfnehf/
   - label: "Minimal Viable Demo · Coming soon"
     icon: demo
     url: "#"

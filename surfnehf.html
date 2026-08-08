@@ -1,289 +1,384 @@
 ---
-layout: project
+layout: surfnehf
 title: SurfNeHF
 permalink: /surfnehf/
-body_attr: >-
-  data-spy="scroll" data-target="#project-side-nav" data-offset="120"
 ---
 
 {% assign pub = site.publications | where_exp: "item", "item.path contains '2026-imwut-surfnehf'" | first %}
 {% assign fig = '/assets/images/surfnehf' | relative_url %}
 
-<div class="row project-page my-3 my-lg-4">
-    <aside class="col-lg-2 mb-3 mb-lg-0 pr-lg-3 d-none d-lg-block project-nav-aside" aria-label="Section navigation">
-        <div class="project-nav-sticky">
-            <nav id="project-side-nav" class="project-nav nav flex-column" aria-label="SurfNeHF sections">
-                <span class="nav-label">On this page</span>
-                <a class="nav-link" href="#overview">Overview</a>
-                <a class="nav-link" href="#abstract">Abstract</a>
-                <a class="nav-link" href="#principles-surface">Surface via NeHF</a>
-                <a class="nav-link" href="#principles-rendering">Forward Rendering</a>
-                <a class="nav-link" href="#results-recon">Reconstruction</a>
-                <a class="nav-link" href="#results-brdf">Material via BRDF</a>
-                <a class="nav-link" href="#citation">Citation</a>
-            </nav>
+<header class="topbar">
+    <div class="topbar-inner">
+        <div class="brand">
+            <span class="brand-name">SurfNeHF</span>
+            <span class="brand-sub">UbiComp '26</span>
         </div>
-    </aside>
+        <a class="back-link" href="{{ '/' | relative_url }}">← Back to homepage</a>
+    </div>
+</header>
 
-    <div class="col-lg-10 col-12">
-        <div class="project-mobile-nav">
-            <label class="sr-only" for="project-mobile-jump">Jump to section</label>
-            <select id="project-mobile-jump">
-                <option value="">Jump to section…</option>
-                <option value="overview">Overview</option>
-                <option value="abstract">Abstract</option>
-                <option value="principles-surface">Surface via NeHF</option>
-                <option value="principles-rendering">Forward Rendering</option>
-                <option value="results-recon">Reconstruction</option>
-                <option value="results-brdf">Material via BRDF</option>
-                <option value="citation">Citation</option>
-            </select>
+<section class="hero">
+    <div class="wrap">
+        <div class="hero-meta">
+            ACM UbiComp 2026 <span class="dot"></span> Shanghai
         </div>
+        <h1>
+            <span class="name-mark">SurfNeHF</span>: <u>Surf</u>ace-Aware <u>N</u><u>e</u>ural <u>H</u>eight <u>F</u>ields<br>
+            for Efficient 3D Urban Mapping Using Crowdsourced GNSS Data
+        </h1>
+        <div class="authors">
+            {% include widgets/author_list.html authors=pub.authors %}
+        </div>
+        <div class="affils">Shanghai Jiao Tong University</div>
+        <div class="btn-row">
+            <a class="btn primary" href="https://doi.org/10.1145/3810234" target="_blank" rel="noopener noreferrer">Paper</a>
+            <span class="btn muted">Minimal Viable Demo · Coming soon</span>
+            <span class="btn muted">Full Implementation · Coming soon</span>
+            <a class="btn" href="#citation">BibTeX</a>
+        </div>
+    </div>
+</section>
 
-        <header class="project-page__header text-center mb-4" id="overview">
-            <p class="project-page__venue small mb-2">
-                ACM IMWUT / UbiComp 2026 · Shanghai
-            </p>
-            <h1 class="project-page__brand mb-2">SurfNeHF</h1>
-            <p class="project-page__subtitle mb-3">
-                Surface-Aware Neural Height Fields for Efficient 3D Urban Mapping<br class="d-none d-md-inline">
-                Using Crowdsourced GNSS Data
-            </p>
-            <p class="mb-2">
-                {% include widgets/author_list.html authors=pub.authors %}
-            </p>
-            <p class="small text-muted mb-3">
-                Shanghai Jiao Tong University
-            </p>
-            <p class="pub-link-badges justify-content-center mb-0">
-                <a class="pub-link-badge" href="https://doi.org/10.1145/3810234" target="_blank" rel="noopener noreferrer">
-                    <i class="ai ai-acmdl" aria-hidden="true"></i>
-                    <span>Paper</span>
-                </a>
-                <span class="pub-link-badge pub-link-badge--muted pub-link-badge--static" title="Coming soon">
-                    <i class="fa-solid fa-cube" aria-hidden="true"></i>
-                    <span>Minimal Viable Demo · Coming soon</span>
-                </span>
-                <span class="pub-link-badge pub-link-badge--muted pub-link-badge--static" title="Coming soon">
-                    <i class="fab fa-github" aria-hidden="true"></i>
-                    <span>Full Implementation · Coming soon</span>
-                </span>
-                <a class="pub-link-badge" href="#citation">
-                    <i class="fa-solid fa-quote-right" aria-hidden="true"></i>
-                    <span>BibTeX</span>
-                </a>
-            </p>
-        </header>
-
-        <section class="project-page__teaser mb-4" aria-label="Teaser video">
-            <div class="project-page__video-slot">
-                <img
-                    class="project-page__video-poster"
-                    src="{{ '/assets/images/covers/surfnehf-framework.png' | relative_url }}"
-                    alt="SurfNeHF framework overview">
-                <div class="project-page__video-overlay">
-                    <span class="project-page__video-play" aria-hidden="true">
-                        <i class="fa-solid fa-play"></i>
-                    </span>
-                    <p class="project-page__video-label mb-0">Teaser video · Coming soon</p>
+<section class="overview" aria-label="Framework overview">
+    <div class="wrap">
+        <div class="overview-grid">
+            <article class="viz-card">
+                <div class="viz-stage">
+                    <svg viewBox="0 0 420 320" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="scSatBody" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#e8eef7"/>
+                                <stop offset="100%" stop-color="#8a97a8"/>
+                            </linearGradient>
+                            <linearGradient id="scPanel" x1="0" y1="0" x2="1" y2="0">
+                                <stop offset="0%" stop-color="#1a3a6e"/>
+                                <stop offset="50%" stop-color="#3d7fd9"/>
+                                <stop offset="100%" stop-color="#1a3a6e"/>
+                            </linearGradient>
+                            <radialGradient id="scGlow" cx="50%" cy="100%" r="70%">
+                                <stop offset="0%" stop-color="#5aa2ff" stop-opacity="0.22"/>
+                                <stop offset="100%" stop-color="#5aa2ff" stop-opacity="0"/>
+                            </radialGradient>
+                        </defs>
+                        <ellipse cx="210" cy="340" rx="260" ry="120" fill="url(#scGlow)"/>
+                        <g fill="#9aadc4" opacity="0.75">
+                            <circle class="star" cx="40" cy="28" r="0.9"/>
+                            <circle class="star" cx="90" cy="50" r="0.6" style="animation-delay:0.8s"/>
+                            <circle class="star" cx="150" cy="22" r="0.7" style="animation-delay:1.4s"/>
+                            <circle class="star" cx="280" cy="36" r="0.8" style="animation-delay:0.4s"/>
+                            <circle class="star" cx="350" cy="58" r="0.55" style="animation-delay:1.9s"/>
+                            <circle class="star" cx="390" cy="30" r="0.7" style="animation-delay:1.1s"/>
+                        </g>
+                        <path d="M 30,250 Q 210,40 390,250" fill="none" stroke="#5aa2ff" stroke-opacity="0.35" stroke-width="1.4"/>
+                        <ellipse cx="190" cy="250" rx="155" ry="42" fill="none" stroke="#2c3d56" stroke-width="1.4"/>
+                        <rect x="255" y="118" width="63" height="110" rx="2" fill="#1b3354" stroke="#5aa2ff" stroke-width="1.2"/>
+                        <g fill="#0f2038" opacity="0.85">
+                            <rect x="264" y="132" width="16" height="12" rx="1"/>
+                            <rect x="290" y="132" width="16" height="12" rx="1"/>
+                            <rect x="264" y="156" width="16" height="12" rx="1"/>
+                            <rect x="290" y="156" width="16" height="12" rx="1"/>
+                            <rect x="264" y="180" width="16" height="12" rx="1"/>
+                            <rect x="290" y="180" width="16" height="12" rx="1"/>
+                        </g>
+                        <line id="sc-los" x1="0" y1="0" x2="0" y2="0" stroke="#5fd08a" stroke-width="1.8" opacity="0"/>
+                        <line id="sc-nlos-a" x1="0" y1="0" x2="0" y2="0" stroke="#ef6b6b" stroke-width="1.5" opacity="0"/>
+                        <line id="sc-nlos-b" x1="0" y1="0" x2="0" y2="0" stroke="#ef6b6b" stroke-width="1.8" opacity="0"/>
+                        <circle id="sc-hit" cx="0" cy="0" r="3.5" fill="#ef6b6b" opacity="0"/>
+                        <g id="sc-sat">
+                            <rect x="-20" y="-4" width="12" height="8" fill="url(#scPanel)" stroke="#0a1422" stroke-width="0.4"/>
+                            <rect x="8" y="-4" width="12" height="8" fill="url(#scPanel)" stroke="#0a1422" stroke-width="0.4"/>
+                            <rect x="-6" y="-5" width="12" height="10" rx="1.2" fill="url(#scSatBody)" stroke="#2a2630" stroke-width="0.5"/>
+                            <circle cx="0" cy="-7" r="1.6" fill="#5aa2ff"/>
+                        </g>
+                        <g id="sc-person">
+                            <circle cx="0" cy="-30" r="4.2" fill="#e8eef7"/>
+                            <line x1="0" y1="-25" x2="0" y2="-10" stroke="#e8eef7" stroke-width="2.2" stroke-linecap="round"/>
+                            <line x1="0" y1="-20" x2="-7" y2="-12" stroke="#e8eef7" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="0" y1="-20" x2="7" y2="-12" stroke="#e8eef7" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="0" y1="-10" x2="-5" y2="0" stroke="#e8eef7" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="0" y1="-10" x2="5" y2="0" stroke="#e8eef7" stroke-width="2" stroke-linecap="round"/>
+                        </g>
+                        <text id="sc-badge" x="24" y="300" font-family="JetBrains Mono, monospace" font-size="11" fill="#5fd08a" letter-spacing="1">LOS</text>
+                    </svg>
                 </div>
-            </div>
-            <p class="small text-muted text-center mt-2 mb-0">Overview of the SurfNeHF framework.</p>
-        </section>
+                <div class="viz-caption"><span class="num">01</span> Crowdsensed Scenario</div>
+            </article>
 
-        <section class="project-page__section rounded-sm p-4 mb-4" id="abstract">
-            <h2 class="project-section-title">Abstract</h2>
-            <p class="mb-0 text-justify">
+            <article class="viz-card">
+                <div class="viz-stage">
+                    <svg viewBox="0 0 420 320" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                        <defs>
+                            <linearGradient id="nehfFloor" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#152238"/>
+                                <stop offset="100%" stop-color="#0a1018"/>
+                            </linearGradient>
+                        </defs>
+                        <ellipse cx="210" cy="230" rx="180" ry="55" fill="url(#nehfFloor)" stroke="#2c3d56" stroke-width="1"/>
+                        <g stroke="#2c3d56" stroke-width="0.7" opacity="0.55">
+                            <path d="M 50,230 L 210,175 L 370,230 L 210,285 Z"/>
+                            <path d="M 90,218 L 210,185 L 330,218"/>
+                            <path d="M 120,245 L 210,265 L 300,245"/>
+                        </g>
+                        <g id="nehf-surface"></g>
+                        <text x="24" y="300" font-family="JetBrains Mono, monospace" font-size="11" fill="#6b7f99" letter-spacing="1">NeHF · noisy rise</text>
+                    </svg>
+                </div>
+                <div class="viz-caption"><span class="num">02</span> SurfNeHF Reconstruction</div>
+            </article>
+
+            <article class="viz-card">
+                <div class="viz-stage">
+                    <svg viewBox="0 0 420 320" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+                        <text x="42" y="36" font-family="JetBrains Mono, monospace" font-size="10" fill="#5aa2ff" letter-spacing="1.2">POINT CLOUD</text>
+                        <text x="230" y="36" font-family="JetBrains Mono, monospace" font-size="10" fill="#5fd08a" letter-spacing="1.2">VOXEL MAP</text>
+                        <g id="ex-points"></g>
+                        <g id="ex-voxels"></g>
+                        <text id="ex-mode" x="210" y="300" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#6b7f99" letter-spacing="1">surface point cloud</text>
+                    </svg>
+                </div>
+                <div class="viz-caption"><span class="num">03</span> Map Export</div>
+            </article>
+        </div>
+        <p class="overview-note">
+            SurfNeHF pipeline: crowdsensed GNSS links, surface-aware neural height fields, and exportable 3D maps.
+        </p>
+    </div>
+</section>
+
+<section class="block" id="abstract">
+    <div class="wrap">
+        <div class="section-head">
+            <h2 class="section-title">Abstract</h2>
+        </div>
+        <div class="prose">
+            <p>
                 Modern cities increasingly rely on 3D urban maps as digital infrastructures to support applications such as navigation, autonomous driving, urban development, and cellular network planning. Maintaining these maps with high fidelity and timely updates, however, remains challenging due to the high cost and limited availability of aerial imagery or LiDAR data. In this work, we present SurfNeHF, a lightweight deep learning framework that accurately infers building shapes from noisy crowdsourced GNSS data. By adapting optical inverse rendering to the radio frequency domain, SurfNeHF represents building surfaces as neural height fields and explicitly models signal-surface interactions. This surface-aware formulation enables the framework to effectively disentangle building geometry from surface reflectance and satellite sources, significantly reducing optimization complexity compared to volumetric approaches. Extensive evaluations demonstrate that SurfNeHF consistently outperforms state-of-the-art methods across diverse urban morphologies. Our framework achieves an average reconstruction accuracy of 94.6% while reducing computational overhead by 80% to 90% compared to baselines. With both higher data and system efficiency, SurfNeHF makes periodic large-scale urban map updates more practically feasible.
             </p>
-        </section>
+        </div>
+    </div>
+</section>
 
-        <section class="mb-4" id="principles-surface">
-            <h2 class="project-section-title">Surface Representation via Neural Height Fields (NeHF)</h2>
-            <p class="project-section-lead">
+<section class="block" id="principles-surface">
+    <div class="wrap">
+        <div class="section-head">
+            <h2 class="section-title">Surface Representation via Neural Height Fields (NeHF)</h2>
+        </div>
+        <div class="prose">
+            <p>
                 Instead of densely voxelizing 3D space, SurfNeHF represents building geometry as a continuous Neural Height Field (NeHF) $H:(x,y)\mapsto h$, and couples it with surface-aware ray sampling and RF-domain reflectance modeling.
             </p>
-            <div class="project-page__section rounded-sm p-3 p-md-4 mb-3">
-                <p class="project-section-body mb-2">
-                    <strong>Satellite sources.</strong>
-                    GNSS satellites act as planar sources relative to a local reconstruction region. Owing to the extremely large transmitter distance, incident rays from each satellite are treated as parallel across the scene. We therefore characterize each source by a shared incoming direction $\hat{\omega}_s$ and a learnable transmit power $P^{\mathrm{tx}}_s$, jointly optimized with NeHF and BRDF.
-                </p>
-                <p class="project-section-body mb-2">
-                    <strong>Surface-aware ray sampling.</strong>
-                    Rays are uniformly cast over the upper hemisphere around the receiver to capture both LOS and NLOS paths. Differentiable surface intersections yield interaction points $\mathbf{x}^{(k)}$ with incident/outgoing directions $(\hat{\omega}_i^{(k)},\hat{\omega}_o^{(k)})$, so geometry can be supervised by scalar received power alone.
-                </p>
-                <p class="project-section-body mb-0">
-                    <strong>Half-angle parameterization.</strong>
-                    Signal-surface attenuation is modeled with a Spatially-Varying BRDF under the Rusinkiewicz half-angle parameterization. Reflection depends on the half-vector $\mathbf{h}=(\hat{\omega}_i+\hat{\omega}_o)/2$ through angular terms $(\theta_h,\theta_d)$, which compactly encode specular and diffuse behavior for neural prediction.
-                </p>
-            </div>
-            <div class="project-fig-grid project-fig-grid--4 project-fig-zoom project-fig-zoom--principles">
-                <figure class="project-fig">
-                    <div class="project-fig__media">
-                        <img src="{{ fig }}/satellite_source.png" alt="Satellite source modeling">
-                    </div>
+            <p>
+                <strong>Satellite sources.</strong>
+                GNSS satellites act as planar sources relative to a local reconstruction region. Owing to the extremely large transmitter distance, incident rays from each satellite are treated as parallel across the scene. We therefore characterize each source by a shared incoming direction $\hat{\omega}_s$ and a learnable transmit power $P^{\mathrm{tx}}_s$, jointly optimized with NeHF and BRDF.
+            </p>
+            <p>
+                <strong>Surface-aware ray sampling.</strong>
+                Rays are uniformly cast over the upper hemisphere around the receiver to capture both LOS and NLOS paths. Differentiable surface intersections yield interaction points $\mathbf{x}^{(k)}$ with incident/outgoing directions $(\hat{\omega}_i^{(k)},\hat{\omega}_o^{(k)})$, so geometry can be supervised by scalar received power alone.
+            </p>
+            <p>
+                <strong>Half-angle parameterization.</strong>
+                Signal-surface attenuation is modeled with a Spatially-Varying BRDF under the Rusinkiewicz half-angle parameterization. Reflection depends on the half-vector $\mathbf{h}=(\hat{\omega}_i+\hat{\omega}_o)/2$ through angular terms $(\theta_h,\theta_d)$, which compactly encode specular and diffuse behavior for neural prediction.
+            </p>
+        </div>
+        <div class="fig-panel">
+            <div class="fig-grid fig-grid--4">
+                <figure class="fig">
+                    <img src="{{ fig }}/satellite_source.png" alt="Satellite source modeling">
                     <figcaption>Satellite source as a plane wave with parallel incident rays.</figcaption>
                 </figure>
-                <figure class="project-fig">
-                    <div class="project-fig__media">
-                        <img src="{{ fig }}/Surface-Sampling.png" alt="Surface-aware ray sampling">
-                    </div>
+                <figure class="fig">
+                    <img src="{{ fig }}/Surface-Sampling.png" alt="Surface-aware ray sampling">
                     <figcaption>Surface-aware ray sampling over the upper hemisphere.</figcaption>
                 </figure>
-                <figure class="project-fig">
-                    <div class="project-fig__media">
-                        <img src="{{ fig }}/Surface-Sampling-2.png" alt="Differentiable surface sampling weights">
-                    </div>
+                <figure class="fig">
+                    <img src="{{ fig }}/Surface-Sampling-2.png" alt="Differentiable surface sampling weights">
                     <figcaption>Differentiable surface sampling weights along each ray.</figcaption>
                 </figure>
-                <figure class="project-fig">
-                    <div class="project-fig__media">
-                        <img src="{{ fig }}/half-vector-encoding.png" alt="Half-vector encoding">
-                    </div>
+                <figure class="fig">
+                    <img src="{{ fig }}/half-vector-encoding.png" alt="Half-vector encoding">
                     <figcaption>Rusinkiewicz half-angle parameterization for BRDF.</figcaption>
                 </figure>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
 
-        <section class="mb-4" id="principles-rendering">
-            <h2 class="project-section-title">Forward Rendering Architecture</h2>
-            <p class="project-section-lead">
-                SurfNeHF combines ray sampling and surface-aware attenuation into a differentiable RF renderer. Sampled surface interactions are processed by NeHF (geometry/normal), a Shadow Renderer (visibility), and a Neural BRDF (reflectivity), then aggregated into received power $P^{\mathrm{rx}}$.
-            </p>
-            <div class="project-page__section rounded-sm p-3 p-md-4 mb-3">
-                <p class="project-section-body mb-0">
+<section class="block" id="principles-rendering">
+    <div class="wrap">
+        <div class="section-head">
+            <h2 class="section-title">Surface-Aware Rendering</h2>
+        </div>
+        <div class="split-row">
+            <div class="prose">
+                <p>
+                    SurfNeHF combines ray sampling and surface-aware attenuation into a differentiable RF renderer. Sampled surface interactions are processed by NeHF (geometry/normal), a Shadow Renderer (visibility), and a Neural BRDF (reflectivity), then aggregated into received power $P^{\mathrm{rx}}$.
+                </p>
+                <p>
                     Each intersection $\mathbf{x}^{(k)}$ yields a surface normal $\hat{\mathbf{n}}^{(k)}$ from NeHF. Conditioned on $(\mathbf{x}^{(k)},\hat{\omega}_i^{(k)},\hat{\omega}_o^{(k)})$, the BRDF network predicts reflectivity $f_r^{(k)}$, while the shadow renderer estimates visibility $v^{(k)}$. LOS and NLOS contributions are unified in the RF-domain power expression, enabling end-to-end learning of geometry and reflectance from crowdsourced GNSS measurements.
                 </p>
             </div>
-            <div class="tikzjax-wrap" id="net-arch-wrap">
-                <img
-                    id="net-arch-fallback"
-                    class="img-fluid"
-                    src="{{ fig }}/net_arch.png"
-                    alt="Neural network architecture for surface-aware rendering">
+            <div class="tikzjax-wrap">
                 {% include widgets/surfnehf_net_arch_tikz.html %}
+                <p class="fig-note">Neural network architecture for surface-aware rendering.</p>
             </div>
-            <p class="small text-muted text-center mt-2 mb-0">
-                Neural network architecture for surface-aware rendering.
+        </div>
+    </div>
+</section>
+
+<section class="block" id="results-brdf">
+    <div class="wrap">
+        <div class="section-head">
+            <h2 class="section-title">Material via Spatially Varying Bidirectional Reflectance Distribution Function (BRDF)</h2>
+        </div>
+        <div class="prose">
+            <p>
+                Because city-scale ground-truth materials are unavailable, we assess the learned neural BRDF by physical plausibility. Supervised only by scalar omnidirectional power, the model still recovers anisotropic scattering with specular lobes that move opposite the incident direction as elevation changes, matching brick-wall roughness under the Rayleigh criterion.
             </p>
-            <script>
-                document.addEventListener('tikzjax-load-finished', function () {
-                    var el = document.getElementById('net-arch-fallback');
-                    if (el) el.remove();
-                });
-            </script>
-        </section>
-
-        <section class="mb-4" id="results-recon">
-            <h2 class="project-section-title">Reconstruction Demo</h2>
-            <p class="project-section-lead">
-                Controlled representation study on synthetic GNSS-like measurements (Sionna + Blender geometry): an A-frame house with steep ridges, a Tower with spike-like features, and a round-domed Temple with overhangs. Columns show ground truth, reconstruction under clean input (open sky), and reconstruction under noisy input (urban canyon).
-            </p>
-            <div class="project-recon project-fig-zoom">
-                <div class="project-recon-scene">
-                    <p class="project-result-row-label">A-frame</p>
-                    <div class="project-fig-grid project-fig-grid--3">
-                        <figure class="project-fig">
-                            <div class="project-fig__media">
-                                <img src="{{ fig }}/A_frame_vis.png" alt="A-frame ground truth">
-                            </div>
-                            <figcaption>A-frame · Ground Truth</figcaption>
-                        </figure>
-                        <figure class="project-fig">
-                            <div class="project-fig__media">
-                                <img src="{{ fig }}/A_frame_final.png" alt="A-frame clean input open sky">
-                            </div>
-                            <figcaption>A-frame · Clean Input (Open Sky)</figcaption>
-                        </figure>
-                        <figure class="project-fig">
-                            <div class="project-fig__media">
-                                <img src="{{ fig }}/A_frame_err.png" alt="A-frame noisy input urban canyon">
-                            </div>
-                            <figcaption>A-frame · Noisy Input (Urban Canyon)</figcaption>
-                        </figure>
-                    </div>
-                </div>
-
-                <div class="project-recon-scene">
-                    <p class="project-result-row-label">Tower</p>
-                    <div class="project-fig-grid project-fig-grid--3">
-                        <figure class="project-fig">
-                            <div class="project-fig__media">
-                                <img src="{{ fig }}/tower_vis.png" alt="Tower ground truth">
-                            </div>
-                            <figcaption>Tower · Ground Truth</figcaption>
-                        </figure>
-                        <figure class="project-fig">
-                            <div class="project-fig__media">
-                                <img src="{{ fig }}/tower_final.png" alt="Tower clean input open sky">
-                            </div>
-                            <figcaption>Tower · Clean Input (Open Sky)</figcaption>
-                        </figure>
-                        <figure class="project-fig">
-                            <div class="project-fig__media">
-                                <img src="{{ fig }}/tower_err.png" alt="Tower noisy input urban canyon">
-                            </div>
-                            <figcaption>Tower · Noisy Input (Urban Canyon)</figcaption>
-                        </figure>
-                    </div>
-                </div>
-
-                <div class="project-recon-scene">
-                    <p class="project-result-row-label">Temple</p>
-                    <div class="project-fig-grid project-fig-grid--3">
-                        <figure class="project-fig">
-                            <div class="project-fig__media">
-                                <img src="{{ fig }}/round_temple_vis.png" alt="Temple ground truth">
-                            </div>
-                            <figcaption>Temple · Ground Truth</figcaption>
-                        </figure>
-                        <figure class="project-fig">
-                            <div class="project-fig__media">
-                                <img src="{{ fig }}/round_temple_final.png" alt="Temple clean input open sky">
-                            </div>
-                            <figcaption>Temple · Clean Input (Open Sky)</figcaption>
-                        </figure>
-                        <figure class="project-fig">
-                            <div class="project-fig__media">
-                                <img src="{{ fig }}/round_temple_err.png" alt="Temple noisy input urban canyon">
-                            </div>
-                            <figcaption>Temple · Noisy Input (Urban Canyon)</figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="mb-4" id="results-brdf">
-            <h2 class="project-section-title">Material via BRDF</h2>
-            <p class="project-section-lead">
-                Because city-scale ground-truth materials are unavailable, we assess the learned Neural BRDF by physical plausibility. Supervised only by scalar omnidirectional power, the model still recovers anisotropic scattering with specular lobes that move opposite the incident direction as elevation changes, matching brick-wall roughness under the Rayleigh criterion.
-            </p>
-            <div class="project-fig-grid project-fig-grid--brdf project-fig-zoom">
-                <figure class="project-fig">
-                    <div class="project-fig__media">
-                        <img src="{{ fig }}/brdf-demo.png" alt="Signal-building intersection for BRDF interpretation">
-                    </div>
+        </div>
+        <div class="fig-panel fig-panel--brdf">
+            <div class="fig-grid fig-grid--brdf">
+                <figure class="fig">
+                    <img src="{{ fig }}/brdf-demo.png" alt="Signal-building intersection">
                     <figcaption>Signal-building intersection during data collection.</figcaption>
                 </figure>
-                <figure class="project-fig">
-                    <div class="project-fig__media">
-                        <img src="{{ fig }}/brdf.png" alt="Learned BRDF hemisphere maps">
-                    </div>
+                <figure class="fig">
+                    <img src="{{ fig }}/brdf.png" alt="Learned BRDF hemisphere maps">
                     <figcaption>Learned BRDF energy over the outgoing hemisphere at different incident elevations.</figcaption>
                 </figure>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
 
-        <section class="project-page__section rounded-sm p-4 mb-4" id="citation">
-            <div class="d-flex align-items-center justify-content-between mb-3">
-                <h2 class="project-section-title mb-0">Citation</h2>
-                <button type="button" class="btn btn-sm btn-outline-secondary project-page__copy-btn" id="surfnehf-copy-bibtex" aria-label="Copy BibTeX">
-                    <i class="fa-regular fa-copy" aria-hidden="true"></i>
-                    <span>Copy</span>
-                </button>
+<section class="block" id="results-recon">
+    <div class="wrap">
+        <div class="section-head">
+            <h2 class="section-title">Complex Building Surface Reconstruction Results</h2>
+        </div>
+        <div class="prose">
+            <p>
+                Controlled study on synthetic GNSS-like measurements (Sionna + Blender geometry): an A-frame house with steep ridges, a Tower with spike-like features, and a round-domed Temple with overhangs. Columns show ground truth, reconstruction under clean input, and reconstruction under noisy urban-canyon input.
+            </p>
+        </div>
+        <div class="recon-row recon">
+            <div class="recon-scene">
+                <div class="recon-scene-name">A-frame</div>
+                <div class="fig-panel recon-panel">
+                    <figure class="fig">
+                        <div class="fig-media"><img src="{{ fig }}/A_frame_vis.png" alt="A-frame ground truth"></div>
+                        <figcaption>Ground Truth</figcaption>
+                    </figure>
+                    <figure class="fig">
+                        <div class="fig-media"><img src="{{ fig }}/A_frame_final.png" alt="A-frame clean"></div>
+                        <figcaption>Clean</figcaption>
+                    </figure>
+                    <figure class="fig">
+                        <div class="fig-media"><img src="{{ fig }}/A_frame_err.png" alt="A-frame noisy"></div>
+                        <figcaption>Noisy</figcaption>
+                    </figure>
+                </div>
             </div>
-            <pre class="project-page__bibtex mb-0" id="surfnehf-bibtex"><code>@article{jia2026surfnehf,
+            <div class="recon-scene">
+                <div class="recon-scene-name">Tower</div>
+                <div class="fig-panel recon-panel">
+                    <figure class="fig">
+                        <div class="fig-media"><img src="{{ fig }}/tower_vis.png" alt="Tower ground truth"></div>
+                        <figcaption>Ground Truth</figcaption>
+                    </figure>
+                    <figure class="fig">
+                        <div class="fig-media"><img src="{{ fig }}/tower_final.png" alt="Tower clean"></div>
+                        <figcaption>Clean</figcaption>
+                    </figure>
+                    <figure class="fig">
+                        <div class="fig-media"><img src="{{ fig }}/tower_err.png" alt="Tower noisy"></div>
+                        <figcaption>Noisy</figcaption>
+                    </figure>
+                </div>
+            </div>
+            <div class="recon-scene">
+                <div class="recon-scene-name">Temple</div>
+                <div class="fig-panel recon-panel">
+                    <figure class="fig">
+                        <div class="fig-media"><img src="{{ fig }}/round_temple_vis.png" alt="Temple ground truth"></div>
+                        <figcaption>Ground Truth</figcaption>
+                    </figure>
+                    <figure class="fig">
+                        <div class="fig-media"><img src="{{ fig }}/round_temple_final.png" alt="Temple clean"></div>
+                        <figcaption>Clean</figcaption>
+                    </figure>
+                    <figure class="fig">
+                        <div class="fig-media"><img src="{{ fig }}/round_temple_err.png" alt="Temple noisy"></div>
+                        <figcaption>Noisy</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="block" id="results-realworld">
+    <div class="wrap">
+        <div class="section-head">
+            <h2 class="section-title">Real-World City Voxel Reconstruction Results</h2>
+        </div>
+        <div class="prose">
+            <p>
+                Qualitative results on five open-sourced urban scenes from Avenue to Rectory. Rows compare SurfNeHF, SaRF, and SenseMyCity over Google Earth backgrounds.
+            </p>
+        </div>
+        {% assign rw = fig | append: '/realworld' %}
+        {% assign methods = "surfnehf:SurfNeHF|sarf:SaRF|sensemycity:SenseMyCity" | split: "|" %}
+        {% assign scenes = "avenue|canyon|intersection|library|rectory" | split: "|" %}
+        <div class="cmp-table realworld" role="table" aria-label="Real-world reconstruction comparison">
+            <div class="cmp-row cmp-head" role="row">
+                <div class="cmp-label" role="columnheader"></div>
+                <div class="cmp-head-cells">
+                    <div class="cmp-cell" role="columnheader">Avenue</div>
+                    <div class="cmp-cell" role="columnheader">Canyon</div>
+                    <div class="cmp-cell" role="columnheader">Intersection</div>
+                    <div class="cmp-cell" role="columnheader">Library</div>
+                    <div class="cmp-cell" role="columnheader">Rectory</div>
+                </div>
+            </div>
+            <div class="cmp-body">
+                <div class="cmp-labels">
+                    {% for mpair in methods %}
+                    {% assign mparts = mpair | split: ":" %}
+                    {% assign mkey = mparts[0] %}
+                    {% assign mlabel = mparts[1] %}
+                    <div class="cmp-label{% if mkey == 'surfnehf' %} cmp-label--ours{% endif %}" role="rowheader">{% if mkey == 'surfnehf' %}SurfNeHF<br><span class="cmp-ours">(Ours)</span>{% else %}{{ mlabel }}{% endif %}</div>
+                    {% endfor %}
+                </div>
+                <div class="fig-panel cmp-panel">
+                    {% for mpair in methods %}
+                    {% assign mparts = mpair | split: ":" %}
+                    {% assign mkey = mparts[0] %}
+                    {% assign mlabel = mparts[1] %}
+                    {% for scene in scenes %}
+                    <figure class="cmp-cell fig" role="cell">
+                        <div class="fig-media">
+                            <img src="{{ rw }}/{{ scene }}-{{ mkey }}.jpg" alt="{{ scene }} {{ mlabel }}" loading="lazy">
+                        </div>
+                    </figure>
+                    {% endfor %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="block" id="citation">
+    <div class="wrap">
+        <div class="section-head">
+            <h2 class="section-title">Citation</h2>
+        </div>
+        <div class="cite-panel">
+            <div class="cite-head">
+                <span>surfnehf · ubicomp '26</span>
+                <button type="button" class="copy-btn" id="surfnehf-copy-bibtex">Copy</button>
+            </div>
+            <pre id="surfnehf-bibtex"><code>@article{jia2026surfnehf,
   title={SurfNeHF: Surface-Aware Neural Height Fields for Efficient 3D Urban Mapping Using Crowdsourced GNSS Data},
   author={Jia, Haifeng and Ding, Xingyuan and Qu, Minyang and Pi, Yibo and Chen, Cailian},
   journal={Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies},
@@ -293,10 +388,10 @@ body_attr: >-
   year={2026},
   publisher={ACM New York, NY, USA}
 }</code></pre>
-        </section>
-
-        <p class="small text-muted text-center mb-2">
-            <a href="{{ '/publications#pub-2026-imwut-surfnehf' | relative_url }}">← Back to Publications</a>
-        </p>
+        </div>
     </div>
+</section>
+
+<div class="page-end">
+    <a href="{{ '/' | relative_url }}">← Back to homepage</a>
 </div>

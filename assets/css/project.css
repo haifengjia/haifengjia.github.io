@@ -105,62 +105,55 @@
     border-color: #d5dbe3;
 }
 
-.project-page__teaser {
-    max-width: 52rem;
+.project-overview {
+    max-width: 56rem;
     margin-left: auto;
     margin-right: auto;
 }
 
-.project-page__video-slot {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-    border-radius: 0.35rem;
-    background: #1a2332;
-    box-shadow: var(--proj-shadow);
+.project-overview__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.85rem;
 }
 
-.project-page__video,
-.project-page__video-poster {
+@media (max-width: 767.98px) {
+    .project-overview__grid {
+        grid-template-columns: 1fr;
+        max-width: 22rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.project-overview__card {
+    margin: 0;
+    background: transparent;
+}
+
+.project-overview__card img {
     display: block;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    border-radius: 0.35rem;
+    background: #eef2f6;
 }
 
-.project-page__video-overlay {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    background: linear-gradient(180deg, rgba(26, 35, 50, 0.35) 0%, rgba(26, 35, 50, 0.55) 100%);
-    color: #fff;
+.project-overview__card figcaption {
+    margin-top: 0.55rem;
     text-align: center;
-    padding: 1rem;
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: var(--proj-text);
+    line-height: 1.35;
 }
 
-.project-page__video-play {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 3.4rem;
-    height: 3.4rem;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.92);
-    color: #2c3d52;
-    font-size: 1.05rem;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
-}
-
-.project-page__video-label {
-    font-size: 0.95rem;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+.project-overview__step {
+    display: inline-block;
+    margin-right: 0.25rem;
+    color: var(--proj-muted);
+    font-weight: 700;
+    letter-spacing: 0.04em;
 }
 
 .project-page__copy-btn {
@@ -459,7 +452,7 @@
     border-radius: 0;
     padding: 0.25rem 0;
     text-align: center;
-    min-height: 12rem;
+    min-height: 2rem;
 }
 
 .tikzjax-wrap svg {
