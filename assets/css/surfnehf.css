@@ -256,7 +256,7 @@ a:hover {
 .overview-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
+    gap: 1.1rem;
 }
 
 @media (max-width: 900px) {
@@ -266,10 +266,31 @@ a:hover {
 }
 
 .viz-card {
-    background: var(--bg-elev);
-    border: 1px solid var(--line);
-    border-radius: 6px;
+    position: relative;
+    background: linear-gradient(180deg, #121d2d 0%, var(--bg-elev) 100%);
+    border: 1px solid #263751;
+    border-radius: 12px;
     overflow: hidden;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.025);
+    transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.viz-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    z-index: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 8%, rgba(112, 174, 250, 0.6), transparent 92%);
+    pointer-events: none;
+}
+
+@media (hover: hover) {
+    .viz-card:hover {
+        transform: translateY(-3px);
+        border-color: #355176;
+        box-shadow: 0 18px 42px rgba(0, 0, 0, 0.26), 0 0 28px rgba(90, 162, 255, 0.045);
+    }
 }
 
 .viz-stage {
@@ -277,8 +298,11 @@ a:hover {
     width: 100%;
     aspect-ratio: 5 / 4;
     background:
-        radial-gradient(ellipse at 50% 0%, rgba(90, 162, 255, 0.12), transparent 55%),
-        linear-gradient(180deg, #0d1522 0%, #0a1018 100%);
+        linear-gradient(rgba(98, 138, 190, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(98, 138, 190, 0.025) 1px, transparent 1px),
+        radial-gradient(ellipse at 50% 0%, rgba(90, 162, 255, 0.14), transparent 58%),
+        linear-gradient(180deg, #0e1725 0%, #090f17 100%);
+    background-size: 24px 24px, 24px 24px, auto, auto;
 }
 
 .viz-stage svg {
@@ -287,11 +311,28 @@ a:hover {
     height: 100%;
 }
 
+#sc-los-packet,
+#sc-nlos-packet,
+#sc-diff-packet,
+#sc-diff-hit,
+#sc-hit,
+#sc-source,
+#nehf-net-packet,
+#nehf-query-ground,
+#nehf-query-top {
+    filter: drop-shadow(0 0 4px currentColor);
+}
+
+#nehf-scan,
+#ex-point-scan {
+    filter: drop-shadow(0 0 3px rgba(120, 184, 255, 0.65));
+}
+
 .viz-caption {
     display: flex;
     align-items: baseline;
     gap: 0.55rem;
-    padding: 0.75rem 0.9rem;
+    padding: 0.78rem 0.95rem 0.82rem;
     border-top: 1px solid var(--line);
     font-size: 0.86rem;
     font-weight: 600;
@@ -303,6 +344,10 @@ a:hover {
     font-size: 0.72rem;
     color: var(--accent);
     letter-spacing: 0.08em;
+    border: 1px solid rgba(90, 162, 255, 0.28);
+    border-radius: 999px;
+    padding: 0.08rem 0.38rem;
+    background: rgba(90, 162, 255, 0.07);
 }
 
 .overview-note {
@@ -350,6 +395,80 @@ section.block {
 .prose strong {
     color: var(--text);
     font-weight: 600;
+}
+
+.abstract-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    gap: clamp(1rem, 1.8vw, 1.5rem);
+    align-items: center;
+}
+
+.abstract-copy {
+    position: relative;
+    padding-left: 2rem;
+    line-height: 1.55;
+}
+
+.abstract-copy::before {
+    content: "";
+    position: absolute;
+    top: 0.72rem;
+    bottom: 0.72rem;
+    left: 0.37rem;
+    width: 1px;
+    background: linear-gradient(180deg, rgba(90, 162, 255, 0.9), rgba(90, 162, 255, 0.2));
+}
+
+.abstract-copy p {
+    position: relative;
+    margin-bottom: 0.6rem;
+}
+
+.abstract-copy p::before {
+    content: "";
+    position: absolute;
+    top: 0.55rem;
+    left: calc(-2rem + 0.04rem);
+    width: 0.72rem;
+    height: 0.72rem;
+    border: 2px solid #8bc1ff;
+    border-radius: 50%;
+    background: var(--bg);
+    box-shadow: 0 0 0 4px rgba(90, 162, 255, 0.08), 0 0 10px rgba(90, 162, 255, 0.28);
+}
+
+.abstract-copy p:last-child {
+    margin-bottom: 0;
+}
+
+.abstract-framework {
+    min-width: 0;
+    margin: 0;
+    padding: 0.5rem;
+    background: #f7f9fc;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.2);
+}
+
+.abstract-framework img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+@media (max-width: 900px) {
+    .abstract-layout {
+        grid-template-columns: 1fr;
+        align-items: start;
+    }
+
+    .abstract-framework {
+        width: min(100%, 680px);
+        margin-inline: auto;
+    }
 }
 
 /* Split layouts: text left, media right */
@@ -712,4 +831,12 @@ section.block {
 @keyframes twinkle {
     0%, 100% { opacity: 0.35; }
     50% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .viz-card,
+    .star {
+        animation: none;
+        transition: none;
+    }
 }
