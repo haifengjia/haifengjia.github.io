@@ -12,7 +12,7 @@ authors:
   - Yibo Pi#
   - Cailian Chen
 links:
-  - label: Project Site
+  - label: Project Page
     icon: webpage
     url: /surfnehf/
   - label: Paper

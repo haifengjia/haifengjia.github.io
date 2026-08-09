@@ -631,6 +631,18 @@ div.lazy {
     color: #0a58ca;
 }
 
+.profile-contact-icon {
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+    vertical-align: -0.125em;
+}
+
+.profile-contact-icon--fixed {
+    flex: 0 0 1.25em;
+    width: 1.25em;
+}
+
 .homepage-contact-sidebar-list li:last-child .profile-contact-ch--stack {
     margin-bottom: 0;
 }
