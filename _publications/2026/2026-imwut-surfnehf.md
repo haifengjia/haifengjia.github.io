@@ -20,7 +20,7 @@ links:
   - label: "ACM DL"
     icon: acmdl
     url: "https://doi.org/10.1145/3810234"
-  - label: "Project"
+  - label: "Project Site"
     icon: webpage
     url: /surfnehf/
   - label: "Minimal Viable Demo · Coming soon"
@@ -30,5 +30,4 @@ links:
     icon: github
     url: "#"
 ---
-
 
