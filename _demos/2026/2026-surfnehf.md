@@ -18,4 +18,7 @@ links:
   - label: Paper
     icon: acmdl
     url: https://doi.org/10.1145/3810234
+  - label: Minimal Viable Demo
+    icon: demo
+    url: https://github.com/SJTU-NetSense-Lab/SurfNeHF-MinimalViableDemo
 ---
