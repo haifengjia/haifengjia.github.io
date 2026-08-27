@@ -519,6 +519,20 @@ div.lazy {
     box-shadow: 0 1px 4px rgba(155, 21, 56, 0.35);
 }
 
+.badge-acceptance {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+    vertical-align: text-bottom;
+}
+
+.badge-acceptance-star {
+    color: #ffd56a;
+    font-size: 0.82em;
+    line-height: 1;
+    filter: drop-shadow(0 0 3px rgba(255, 213, 106, 0.7));
+}
+
 /* B: deep amber/orange gradient; C: solid steel blue (previously used by B). */
 .badge-publication.badge-rank-b {
     background: linear-gradient(145deg, #d97706 0%, #b45309 100%);
