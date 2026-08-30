@@ -1,6 +1,6 @@
 topics:
-  - id: robot-networking
-    title: "Robot Networking and Spatial Intelligence"
+  - id: embodied-ai
+    title: "Embodied AI and Spatial Intelligence"
     start_year: 2026
     end_year: "now"
     description: >-
@@ -8,7 +8,7 @@ topics:
 
   - id: next-gen-wireless-sensing
     title: "Next Generation Wireless Sensing"
-    start_year: 2026
+    start_year: 2025
     end_year: "now"
     description: >-
       Coming soon.

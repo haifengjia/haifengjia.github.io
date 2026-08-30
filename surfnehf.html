@@ -19,9 +19,6 @@ permalink: /surfnehf/
 
 <section class="hero">
     <div class="wrap">
-        <div class="hero-meta">
-            ACM UbiComp 2026 <span class="dot"></span> Shanghai
-        </div>
         <h1>
             <span class="name-mark">SurfNeHF</span>: <u>Surf</u>ace-Aware <u>N</u><u>e</u>ural <u>H</u>eight <u>F</u>ields<br>
             for Efficient 3D Urban Mapping Using Crowdsourced GNSS Data
@@ -30,8 +27,15 @@ permalink: /surfnehf/
             {% include widgets/author_list.html authors=pub.authors %}
         </div>
         <div class="affils">Shanghai Jiao Tong University</div>
+        <div class="hero-venue">
+            <i>{{ pub.pub | replace: "UbiComp)", "UbiComp'26)" }}</i>
+            <span class="dot" aria-hidden="true"></span>
+            <span class="hero-venue-place">Shanghai</span>
+            <span class="dot" aria-hidden="true"></span>
+            <span class="badge badge-pill badge-publication badge-rank-a badge-acceptance"><i class="fas fa-star badge-acceptance-star" aria-hidden="true"></i> Acceptance Rate: 13% (127/955)</span>
+        </div>
         <div class="btn-row">
-            <a class="btn primary" href="https://doi.org/10.1145/3810234" target="_blank" rel="noopener noreferrer"><i class="ai ai-acmdl" aria-hidden="true"></i><span>Paper</span></a>
+            <a class="btn" href="https://doi.org/10.1145/3810234" target="_blank" rel="noopener noreferrer"><i class="ai ai-acmdl" aria-hidden="true"></i><span>Paper</span></a>
             <a class="btn" href="https://github.com/SJTU-NetSense-Lab/SurfNeHF-MinimalViableDemo" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-cube" aria-hidden="true"></i><span>Minimal Viable Demo</span></a>
             <span class="btn muted"><i class="fa-brands fa-github" aria-hidden="true"></i><span>Full Implementation · Coming soon</span></span>
             <a class="btn" href="#citation"><i class="fa-solid fa-quote-left" aria-hidden="true"></i><span>BibTeX</span></a>

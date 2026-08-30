@@ -119,25 +119,6 @@ a:hover {
     border-bottom: 1px solid var(--line);
 }
 
-.hero-meta {
-    font-family: var(--font-mono);
-    font-size: 0.78rem;
-    color: var(--text-mute);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-}
-
-.hero-meta .dot {
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    border-radius: 999px;
-    background: var(--accent);
-    margin: 0 0.55rem;
-    vertical-align: middle;
-}
-
 .hero h1 {
     font-family: var(--font-display);
     font-weight: 500;
@@ -172,6 +153,57 @@ a:hover {
     margin-bottom: 0.35rem;
 }
 
+.hero-venue {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem 0.55rem;
+    margin: 0 0 1.35rem;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    line-height: 1.45;
+}
+
+.hero-venue i {
+    font-style: italic;
+    color: #ff9a3c;
+}
+
+.hero-venue-place {
+    color: #ff9a3c;
+}
+
+.hero-venue .dot {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 999px;
+    background: #ff9a3c;
+    flex-shrink: 0;
+}
+
+.hero-venue .badge-acceptance {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+    padding: 0.28em 0.7em;
+    border-radius: 999px;
+    background: linear-gradient(145deg, #c41e4a 0%, #9b1538 100%);
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    box-shadow: 0 1px 4px rgba(155, 21, 56, 0.35);
+}
+
+.hero-venue .badge-acceptance-star {
+    color: #ffd56a;
+    font-size: 0.82em;
+    line-height: 1;
+    filter: drop-shadow(0 0 3px rgba(255, 213, 106, 0.7));
+}
+
 .authors a,
 .authors a:hover,
 .authors a:visited,
@@ -199,7 +231,7 @@ a:hover {
     font-family: var(--font-mono);
     font-size: 0.78rem;
     color: var(--text-mute);
-    margin-bottom: 1.35rem;
+    margin-bottom: 0.7rem;
 }
 
 .btn-row {
