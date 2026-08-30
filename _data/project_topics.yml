@@ -6,6 +6,13 @@ topics:
     description: >-
       Coming soon.
 
+  - id: next-gen-wireless-sensing
+    title: "Next Generation Wireless Sensing"
+    start_year: 2026
+    end_year: "now"
+    description: >-
+      Coming soon.
+
   - id: urban-mapping
     title: "Radio Frequency Digital Twin"
     start_year: 2024
