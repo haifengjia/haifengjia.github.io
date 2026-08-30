@@ -1,6 +1,6 @@
 topics:
-  - id: embodied-ai
-    title: "Embodied AI and Spatial Intelligence"
+  - id: robot-networking
+    title: "Robot Networking and Spatial Intelligence"
     start_year: 2026
     end_year: "now"
     description: >-
@@ -14,6 +14,7 @@ topics:
       We build radio frequency (RF) digital twins by reconstructing urban 3D geometry and RF signal propagation environments from mobile sensing data, leveraging neural networks as a powerful tool for accurate and efficient reconstruction.
     publications:
       - 2026/2026-imwut-surfnehf
+      - 2026/2026-wcl-urc-sim-reality
       - 2024/2024-globecom
 
   - id: wireless-sensing
