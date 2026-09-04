@@ -21,3 +21,10 @@ academic_services:
     title: Artifact Evaluation Committee (AEC)
     rank: a
     date: 2026
+  - code: MEIE'26
+    title: Reviewer
+    date: 2026
+  - code: SenSys'24 RFCom
+    title: Reviewer
+    rank: b
+    date: 2024
