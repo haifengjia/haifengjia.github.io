@@ -23,10 +23,10 @@ links:
   - label: "Project Page"
     icon: webpage
     url: /surfnehf/
-  - label: "Minimal Viable Demo"
-    icon: demo
-    url: "https://github.com/SJTU-NetSense-Lab/SurfNeHF-MinimalViableDemo"
-  - label: "Full Implementation · Coming soon"
+  - label: "Code"
     icon: github
-    url: "#"
+    url: "https://github.com/SJTU-NetSense-Lab/SurfNeHF"
+  - label: "Cite"
+    icon: cite
+    url: /surfnehf/#citation
 ---
