@@ -12,13 +12,7 @@ authors:
   - Yibo Pi#
   - Cailian Chen
 links:
-  - label: Project Page
-    icon: webpage
-    url: /surfnehf/
-  - label: Paper
-    icon: acmdl
-    url: https://doi.org/10.1145/3810234
-  - label: Code
-    icon: github
-    url: https://github.com/SJTU-NetSense-Lab/SurfNeHF
+  - label: Teaser
+    icon: video
+    url: https://drive.google.com/file/d/1FRrIBLn-Vdr0U1G-TTfYgBRswHKf_Yin/view?usp=sharing
 ---

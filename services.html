@@ -4,16 +4,32 @@ title : Services
 navbar_title: Services
 ---
 
-<div class="my-3 bg-white shadow-sm rounded-sm">
-    <h6 class="p-3 mb-0 border-bottom border-gray"><i class="fas fa-handshake"></i> Professional Services</h6>
-    <div class="px-3 pb-1">
-        {% for item in site.data.services.academic_services %}
-        <div class="my-2 d-flex align-items-center flex-wrap">
-            <div class="pr-2">
-                <span class="badge badge-pill badge-venue{% if item.rank %} badge-rank-{{ item.rank | downcase }}{% endif %} mr-2 align-middle">{{ item.code }}</span><span class="align-middle">{{ item.title }}{% if item.role %} <span class="text-muted">·</span> {{ item.role }}{% endif %}</span>
-            </div>
-            <div class="ml-auto mt-1 mt-sm-0 text-muted no-break"><i>{{ item.date }}</i></div>
+{% assign service_years = site.data.services.academic_services | sort: "date" | reverse | map: "date" | uniq %}
+
+<div class="page-timeline" aria-label="Services timeline">
+    {% for year in service_years %}
+    <section class="row page-timeline-entry{% if forloop.first %} page-timeline-entry--first{% endif %}" id="year-{{ year }}">
+        <div class="col-lg-2 d-none d-lg-block page-timeline-rail" aria-hidden="true">
+            <span class="page-timeline-label">{{ year }}</span>
+            <span class="page-timeline-knot"></span>
         </div>
-        {% endfor %}
-    </div>
+        <div class="col-lg-10 col-12 page-timeline-content">
+            <h2 class="d-lg-none page-timeline-mobile-label">{{ year }}</h2>
+            {% assign year_items = site.data.services.academic_services | where: "date", year %}
+            <ul class="service-list">
+                {% for item in year_items %}
+                <li class="service-item">
+                    <span class="service-item__text">{{ item.title }}</span>
+                    <span class="service-item__dot text-muted" aria-hidden="true">·</span>
+                    {% if item.url %}
+                    <a class="service-item__name" href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.code }}</a>
+                    {% else %}
+                    <span class="service-item__name">{{ item.code }}</span>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+    {% endfor %}
 </div>
