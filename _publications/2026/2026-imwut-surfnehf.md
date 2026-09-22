@@ -28,7 +28,7 @@ links:
     url: "https://github.com/SJTU-NetSense-Lab/SurfNeHF"
   - label: "Teaser"
     icon: video
-    url: "https://drive.google.com/file/d/1FRrIBLn-Vdr0U1G-TTfYgBRswHKf_Yin/view?usp=sharing"
+    url: "https://drive.google.com/file/d/1lQKvxa0mOZVtV6eZ6k2-amQxbrx1BP1F/view?usp=sharing"
   - label: "Cite"
     icon: cite
     url: /surfnehf/#citation
