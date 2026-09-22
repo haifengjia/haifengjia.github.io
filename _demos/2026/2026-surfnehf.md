@@ -4,7 +4,7 @@ date:           2026/08/08
 selected:       false
 pub:            "Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (IMWUT/UbiComp)"
 pub_date:       "2026"
-cover: /assets/images/covers/surfnehf-framework.png
+cover: /assets/images/covers/SurfNeHF-cover-animation.gif
 authors:
   - Haifeng Jia
   - Xingyuan Ding

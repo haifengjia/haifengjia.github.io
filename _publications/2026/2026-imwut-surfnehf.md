@@ -9,7 +9,7 @@ pub:            "Proceedings of the ACM on Interactive, Mobile, Wearable and Ubi
 pub_last:       '<span class="badge badge-pill badge-publication badge-rank-a">CCF A</span> <span class="badge badge-pill badge-publication badge-rank-a">JCR Q1</span> <span class="badge badge-pill badge-publication badge-rank-a badge-acceptance"><i class="fas fa-star badge-acceptance-star" aria-hidden="true"></i> Acceptance Rate: 13% (127/955)</span>'
 pub_date:       "2026"
 abstract: 
-cover: /assets/images/covers/surfnehf-framework.png
+cover: /assets/images/covers/SurfNeHF-cover-animation.gif
 authors:
   - Haifeng Jia
   - Xingyuan Ding

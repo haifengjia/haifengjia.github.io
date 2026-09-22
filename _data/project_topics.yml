@@ -1,6 +1,6 @@
 topics:
   - id: embodied-ai
-    title: "Embodied AI and Spatial Intelligence"
+    title: "Embodied IoT and Spatial Intelligence"
     start_year: 2026
     end_year: "now"
     description: >-
@@ -14,7 +14,7 @@ topics:
       Coming soon.
 
   - id: urban-mapping
-    title: "Radio Frequency Digital Twin"
+    title: "Neural Radio Frequency Digital Twin"
     start_year: 2024
     end_year: "now"
     description: >-

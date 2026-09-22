@@ -7,10 +7,10 @@ pages:
   url: /publications
 - name: Research
   url: /research
-- name: Teaching
-  url: /teaching
 - name: Services
   url: /services
+- name: Teaching
+  url: /teaching
 - name: Demo
   url: /demo
 # - name: Showcase
