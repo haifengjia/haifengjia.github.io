@@ -17,7 +17,7 @@ navbar_title: Research
         <div class="col-lg-10 col-12 page-timeline-content pt-4">
             <div class="d-lg-none page-timeline-mobile-label">{{ topic_years }}</div>
             <h2 class="research-topic-heading mb-1">
-                {{ topic.title }}
+                {{ topic.title }}{% if topic.thesis_label %} <span class="research-topic-thesis">(<i class="fas fa-star badge-acceptance-star" aria-hidden="true"></i> {{ topic.thesis_label }})</span>{% endif %}
             </h2>
             {% if topic.subtitle %}
             <p class="text-muted mb-3">{{ topic.subtitle }}</p>

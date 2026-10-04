@@ -40,6 +40,15 @@ h2.research-topic-heading .research-topic-years {
     font-size: 1rem;
 }
 
+h2.research-topic-heading .research-topic-thesis {
+    white-space: nowrap;
+}
+
+h2.research-topic-heading .badge-acceptance-star {
+    margin: 0 0.28em;
+    vertical-align: -0.05em;
+}
+
 .research-pub-grid {
     display: flex;
     flex-wrap: wrap;
@@ -793,6 +802,42 @@ div.lazy {
     list-style: none;
     margin: 0;
     padding: 1.35rem 0 0.35rem;
+}
+
+.mentorship-open {
+    margin-left: 0.35rem;
+    font-size: 0.72em;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+}
+
+.mentorship-open .badge-acceptance-star {
+    margin-right: 0.15em;
+    font-size: 0.9em;
+    vertical-align: 0;
+}
+
+.mentorship-next {
+    margin-left: 0.45rem;
+    color: inherit;
+    font-style: normal;
+}
+
+.mentorship-next i {
+    margin-right: 0.45rem;
+}
+
+.mentorship-star {
+    margin-left: 0.12em;
+    font-size: 0.72em;
+    line-height: 0;
+}
+
+.mentorship-star .badge-acceptance-star {
+    margin: 0;
+    font-size: 1em;
+    vertical-align: 0;
 }
 
 .service-item {

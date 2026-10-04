@@ -6,7 +6,7 @@ pub_venue_rank:  c
 date:           2024/12/08
 selected:       true
 pub:            "IEEE Global Communications Conference (GLOBECOM)"
-pub_last:       '<span class="badge badge-pill badge-publication badge-rank-c">CCF C</span> <span class="badge badge-pill badge-publication badge-rank-b">TH-CPL B</span>'
+pub_last:       '<span class="badge badge-pill badge-publication badge-rank-c">CCF C</span> <span class="badge badge-pill badge-publication badge-rank-b">TH-CPL B</span> <span class="badge badge-pill badge-publication badge-rank-b">CORE B</span>'
 pub_date:       "2024"
 abstract: 
 cover: /assets/images/covers/ray_tracing.png

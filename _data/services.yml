@@ -16,8 +16,28 @@ services:
     role: Teaching Assistant (TA)
     date: 2026 SP
 
+mentorship:
+  - name: Chotiwit Rungrueangwutthinon
+    level: Master
+    start: 2026
+    end: Present
+  - name: Xingyuan Ding
+    level: Undergrad
+    start: 2025
+    end: Present
+    star: true
+  - name: Jishan Ge
+    level: Undergrad
+    start: 2026
+    end: Present
+  - name: Jianing Huang
+    level: Undergrad
+    start: 2025
+    end: 2026
+    destination: Master@SJTU
+
 academic_services:
-  - code: MobiCom'26
+  - code: MobiCom'26 AE Committee
     title: Artifact Evaluation Committee (AEC)
     date: 2026
     url: https://www.sigmobile.org/mobicom/2026/artifact_cfp.html

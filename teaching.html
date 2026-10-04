@@ -17,3 +17,17 @@ navbar_title: Teaching
         {% endfor %}
     </div>
 </div>
+
+<div class="my-3 bg-white shadow-sm rounded-sm">
+    <h6 class="p-3 mb-0 border-bottom border-gray"><i class="fas fa-user-graduate" aria-hidden="true"></i> Mentorship <sup class="mentorship-open"><i class="fas fa-star badge-acceptance-star" aria-hidden="true"></i> Open for Graduate Application</sup></h6>
+    <div class="px-3 pb-1">
+        {% for person in site.data.services.mentorship %}
+        <div class="my-2 d-flex align-items-center flex-wrap">
+            <div class="pr-2">
+                <span class="badge badge-pill badge-venue mr-2 align-middle">{{ person.level }}</span><span class="align-middle">{% assign author = site.data.authors[person.name] %}{% if author.url %}<a class="text-body" href="{{ author.url }}" target="_blank" rel="noopener noreferrer">{{ person.name }}</a>{% else %}{{ person.name }}{% endif %}{% if person.star %}<sup class="mentorship-star"><i class="fas fa-star badge-acceptance-star" aria-hidden="true"></i></sup>{% endif %}{% if person.destination %}<span class="mentorship-next"><i class="fas fa-arrow-right" aria-hidden="true"></i>{{ person.destination }}</span>{% endif %}</span>
+            </div>
+            <div class="ml-auto mt-1 mt-sm-0 text-muted no-break"><i>{{ person.start }}~{{ person.end }}</i></div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
