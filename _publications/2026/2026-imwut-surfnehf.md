@@ -6,7 +6,9 @@ pub_venue_rank:  a
 date:           2026/10/13
 selected:       true
 pub:            "Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (IMWUT/UbiComp)"
-pub_last:       '<span class="badge badge-pill badge-publication badge-rank-a">CCF A</span> <span class="badge badge-pill badge-publication badge-rank-a">JCR Q1</span> <span class="badge badge-pill badge-publication badge-rank-a badge-acceptance">Acceptance Rate: 24.5% (234/955)</span>'
+# Acceptance rate badge hidden until the UbiComp '26 reception announcement.
+# Restore by appending: <span class="badge badge-pill badge-publication badge-rank-a badge-acceptance">Acceptance Rate: 24.5% (234/955)</span>
+pub_last:       '<span class="badge badge-pill badge-publication badge-rank-a">CCF A</span> <span class="badge badge-pill badge-publication badge-rank-a">JCR Q1</span>'
 pub_date:       "2026"
 abstract: 
 cover: /assets/images/covers/SurfNeHF-cover-animation.gif
