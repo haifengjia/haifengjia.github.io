@@ -31,6 +31,9 @@ links:
   - label: "Teaser"
     icon: video
     url: "https://drive.google.com/file/d/1lQKvxa0mOZVtV6eZ6k2-amQxbrx1BP1F/view?usp=sharing"
+  - label: "Slides"
+    icon: slides
+    url: assets/slides/SurfNeHF_ubicomp26_haifeng.pptx
   - label: "Cite"
     icon: cite
     url: /surfnehf/#citation
