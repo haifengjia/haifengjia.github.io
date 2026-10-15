@@ -81,8 +81,24 @@ a:hover {
 
 .brand {
     display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.brand-mark {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    flex: none;
+    display: block;
+}
+
+.brand-copy {
+    display: flex;
     align-items: baseline;
     gap: 0.65rem;
+    min-width: 0;
+    white-space: nowrap;
 }
 
 .brand-name {
@@ -106,6 +122,18 @@ a:hover {
     color: var(--text-dim);
     letter-spacing: 0.04em;
     border-bottom: 1px solid transparent;
+    white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+    .topbar-inner {
+        flex-wrap: wrap;
+        row-gap: 0.35rem;
+    }
+
+    .back-link {
+        margin-left: auto;
+    }
 }
 
 .back-link:hover {
