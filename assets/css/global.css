@@ -163,6 +163,14 @@ h2.research-topic-heading .badge-acceptance-star {
     background-color: rgba(66, 153, 225, 0.06);
 }
 
+.publication-mobile-cover {
+    display: block;
+    width: 100%;
+    max-width: 24rem;
+    height: auto;
+    align-self: center;
+}
+
 /* Publication list: hover to preview cover at ~3× size */
 .publication-cover-col {
     overflow: visible;
@@ -1158,10 +1166,6 @@ body.site-dark {
 
 .site-dark .publication-entry:target {
     background-color: var(--site-accent-soft);
-}
-
-.site-dark .publication-entry .w-100[style*="background-color"] {
-    background-color: rgba(16, 24, 38, 0.94) !important;
 }
 
 .site-dark .pub-link-badge {

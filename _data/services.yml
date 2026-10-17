@@ -37,13 +37,14 @@ mentorship:
     destination: Master@SJTU
 
 academic_services:
+  - code: MobiCom'27
+    title: Reviewer
+    date: 2027
+    url: https://www.sigmobile.org/mobicom/2027/
   - code: MobiCom'26 AE Committee
     title: Artifact Evaluation Committee (AEC)
     date: 2026
     url: https://www.sigmobile.org/mobicom/2026/artifact_cfp.html
-  - code: MEIE'26
-    title: Reviewer
-    date: 2026
   - code: ArtInHCI'26
     title: Reviewer
     date: 2026
