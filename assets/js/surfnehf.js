@@ -1,4 +1,29 @@
 (function () {
+
+  // Load formula assets locally when the method section approaches the viewport.
+  var assetBase = new URL('../math/', document.currentScript.src);
+  var formulaSection = document.getElementById('principles-surface');
+  if (formulaSection) {
+    var mathObserver = new IntersectionObserver(function (entries) {
+      if (!entries.some(function (entry) { return entry.isIntersecting; })) return;
+      mathObserver.disconnect();
+      var css = document.createElement('link');
+      css.rel = 'stylesheet'; css.href = new URL('katex.min.css', assetBase); document.head.append(css);
+      var core = document.createElement('script'); core.src = new URL('katex.min.js', assetBase);
+      core.onload = function () {
+        var render = document.createElement('script'); render.src = new URL('auto-render.min.js', assetBase);
+        render.onload = function () {
+          window.renderMathInElement(document.body, {
+            delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}], throwOnError: false
+          });
+        };
+        document.head.append(render);
+      };
+      document.head.append(core);
+    }, { rootMargin: '300px' });
+    mathObserver.observe(formulaSection);
+  }
+
   // ---------- BibTeX copy ----------
   var copyBtn = document.getElementById('surfnehf-copy-bibtex');
   var bibBlock = document.getElementById('surfnehf-bibtex');
@@ -30,6 +55,32 @@
   function smoothstep(t) { t = clamp(t, 0, 1); return t * t * (3 - 2 * t); }
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var motionRate = reduceMotion ? 0.45 : 1;
+
+  // Run overview animation only on screen, at 30 fps.
+  var animationJobs = [];
+  function scheduleOverview(tick) { animationJobs.push(tick); }
+  var overview = document.getElementById('overview');
+  var overviewVisible = false;
+  var animationFrame = null;
+  var lastFrame = 0;
+  function animateOverview(now) {
+    animationFrame = null;
+    if (!overviewVisible || document.hidden) return;
+    if (now - lastFrame >= 33) {
+      animationJobs.forEach(function (job) { job(reduceMotion ? performance.now() + 4500 : now); });
+      lastFrame = now;
+    }
+    if (!reduceMotion) animationFrame = requestAnimationFrame(animateOverview);
+  }
+  function resumeOverview() {
+    if (overviewVisible && !document.hidden && animationFrame === null) animationFrame = requestAnimationFrame(animateOverview);
+  }
+  if (overview) new IntersectionObserver(function (entries) {
+    overviewVisible = entries[0].isIntersecting;
+    if (!overviewVisible && animationFrame !== null) { cancelAnimationFrame(animationFrame); animationFrame = null; }
+    resumeOverview();
+  }).observe(overview);
+  document.addEventListener('visibilitychange', resumeOverview);
 
   // =========================================================
   // 01 Scenario: simultaneous direct and surface-interaction paths
@@ -145,9 +196,9 @@
       setBrokenPathPacket(nlosPacket, sx, sy, hitX, hitY, hx, hy, pathPhase, 0.95 * sceneOpacity);
       var diffractionPhase = (t * 0.29 + 0.68) % 1;
       setBrokenPathPacket(diffPacket, sx, sy, edgeX, edgeY, hx, hy, diffractionPhase, 0.95 * diffractionOpacity);
-      requestAnimationFrame(tick);
+
     }
-    requestAnimationFrame(tick);
+    scheduleOverview(tick);
   })();
 
   // =========================================================
@@ -264,9 +315,9 @@
         heightLabel.setAttribute('y', (queryBase.y + querySurface.y) / 2);
         heightLabel.setAttribute('opacity', fit);
       }
-      requestAnimationFrame(tick);
+
     }
-    requestAnimationFrame(tick);
+    scheduleOverview(tick);
   })();
 
   // =========================================================
@@ -350,8 +401,8 @@
         pointScan.setAttribute('transform', 'translate(' + (progress * 67) + ',' + (progress * 20) + ')');
         pointScan.setAttribute('opacity', progress > 0.02 && progress < 0.98 ? 0.78 : 0.08);
       }
-      requestAnimationFrame(tick);
+
     }
-    requestAnimationFrame(tick);
+    scheduleOverview(tick);
   })();
 })();

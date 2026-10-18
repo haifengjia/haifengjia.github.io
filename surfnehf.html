@@ -7,25 +7,33 @@ permalink: /surfnehf/
 {% assign pub = site.publications | where_exp: "item", "item.path contains '2026-imwut-surfnehf'" | first %}
 {% assign fig = '/assets/images/surfnehf' | relative_url %}
 
-<header class="topbar">
+<header class="topbar" id="top">
     <div class="topbar-inner">
         <div class="brand">
-            <img class="brand-mark" src="{{ fig }}/logo.png" alt="" width="36" height="36">
+            <img class="brand-mark" src="{{ fig }}/web/logo.webp" alt="" width="36" height="36">
             <div class="brand-copy">
                 <span class="brand-name">SurfNeHF</span>
                 <span class="brand-sub">UbiComp '26</span>
             </div>
         </div>
+        <nav class="project-nav" aria-label="Project navigation">
+            <a href="#overview">Overview</a><a href="#teaser">Video</a><a href="#principles-surface">Method</a><a href="#results-recon">Results</a><a href="#citation">Citation</a>
+        </nav>
         <a class="back-link" href="{{ '/' | relative_url }}">← Back to homepage</a>
     </div>
 </header>
 
 <section class="hero">
+    <div class="hero-art" aria-hidden="true">
+        <img src="{{ fig }}/realworld/avenue-surfnehf.jpg" alt="">
+        <img src="{{ fig }}/realworld/canyon-surfnehf.jpg" alt="">
+        <img src="{{ fig }}/realworld/rectory-surfnehf.jpg" alt="">
+    </div>
     <div class="wrap">
-        <h1>
-            <span class="hero-title-line"><span class="name-mark">SurfNeHF</span>: <u>Surf</u>ace-Aware <u>N</u><u>e</u>ural <u>H</u>eight <u>F</u>ields</span>
-            <span class="hero-title-line">for Efficient 3D Urban Mapping Using Crowdsourced GNSS Data</span>
-        </h1>
+        <p class="hero-eyebrow"><span class="hero-conference">ACM IMWUT / UbiComp 2026</span><span class="hero-conference-full">The ACM international joint conference on Pervasive and Ubiquitous Computing (UbiComp)</span><span class="hero-oral">Oral</span></p>
+        <p class="hero-project"><img class="hero-project-mark" src="{{ fig }}/web/logo.webp" alt="" width="52" height="52"><span>SurfNeHF</span></p>
+        <h1><span class="hero-acronym">Surf</span>ace-Aware <span class="hero-acronym">Ne</span>ural <span class="hero-acronym">H</span>eight <span class="hero-acronym">F</span>ields for Efficient 3D Urban Mapping Using Crowdsourced GNSS Data</h1>
+        <p class="hero-summary">Reconstructing urban geometry from crowdsourced GNSS signals through surface-aware inverse rendering.</p>
         <div class="authors">
             {% include widgets/author_list.html authors=pub.authors %}
         </div>
@@ -40,18 +48,29 @@ permalink: /surfnehf/
             <span class="badge badge-pill badge-publication badge-rank-a badge-acceptance">Acceptance Rate: 24.5% (234/955)</span>
             {% endcomment %}
         </div>
-        <div class="btn-row">
-            <a class="btn primary" href="https://doi.org/10.1145/3810234" target="_blank" rel="noopener noreferrer"><i class="ai ai-acmdl" aria-hidden="true"></i><span>Paper</span></a>
-            <a class="btn" href="https://github.com/SJTU-NetSense-Lab/SurfNeHF" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i><span>Code</span></a>
-            <a class="btn" href="https://drive.google.com/file/d/1lQKvxa0mOZVtV6eZ6k2-amQxbrx1BP1F/view?usp=sharing" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-video" aria-hidden="true"></i><span>Teaser</span></a>
-            <a class="btn" href="{{ '/assets/slides/SurfNeHF_ubicomp26_haifeng.pptx' | relative_url }}"><i class="fa-solid fa-file-powerpoint" aria-hidden="true"></i><span>Slides</span></a>
-            <a class="btn" href="#citation"><i class="fa-solid fa-quote-left" aria-hidden="true"></i><span>Cite</span></a>
+        <div class="btn-row" aria-label="Paper resources">
+            <a class="btn primary" href="https://doi.org/10.1145/3810234" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8"/></svg><span>Paper</span></a>
+            <a class="btn primary btn-code" href="https://github.com/SJTU-NetSense-Lab/SurfNeHF" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82A7.65 7.65 0 0 1 8 3.86c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg><span>Code</span></a>
+            <a class="btn" href="#teaser"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 4 13 8-13 8z"/></svg><span>Teaser</span></a>
+            <a class="btn" href="{{ '/assets/slides/SurfNeHF_ubicomp26_haifeng.pptx' | relative_url }}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M12 17v5m-5 0h10"/></svg><span>Slides</span></a>
+            <a class="btn" href="#citation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h6v7H6c0 3 1 4 4 5v3c-5-1-7-4-7-9zm11 0h6v7h-4c0 3 1 4 4 5v3c-5-1-7-4-7-9z"/></svg><span>Cite</span></a>
         </div>
     </div>
 </section>
 
-<section class="overview" aria-label="Framework overview">
+<div class="project-highlights" aria-label="Research highlights">
+    <div class="wrap highlight-grid">
+        <div><span>Mean balanced accuracy</span><strong>94.6%</strong><p class="highlight-detail">+10.8% vs. SOTA</p></div>
+        <div class="highlight-data-efficiency"><span>Better data efficiency</span><strong>≈8×</strong><p class="highlight-detail">&gt;90% balanced accuracy with 12.5% data</p></div>
+        <div><span>Lower system overhead</span><strong>80–90%</strong><p class="highlight-detail">Reduction vs. SOTA</p></div>
+        <div><span>Data source</span><strong>GNSS</strong><p class="highlight-detail">Crowdsourced measurements</p></div>
+        <div><span>Reconstruction approach</span><strong class="highlight-approach">Inverse rendering</strong><p class="highlight-detail">Fully differentiable RF reconstruction</p></div>
+    </div>
+</div>
+
+<section class="overview" id="overview" aria-label="Framework overview">
     <div class="wrap">
+        <h2 class="section-title">Overview</h2>
         <div class="overview-grid">
             <article class="viz-card">
                 <div class="viz-stage">
@@ -108,7 +127,7 @@ permalink: /surfnehf/
                         <circle id="sc-diff-hit" cx="267" cy="133" r="3.2" fill="#b49cff" stroke="#e6deff" stroke-width="0.8" opacity="0"/>
                         <circle id="sc-diff-packet" cx="0" cy="0" r="3" fill="#e6deff" opacity="0"/>
                         <g id="sc-sat">
-                            <image x="-17" y="-17" width="34" height="34" href="{{ fig }}/sattelite-dish.png" preserveAspectRatio="xMidYMid meet"/>
+                            <image x="-17" y="-17" width="34" height="34" href="{{ fig }}/web/sattelite-dish.webp" preserveAspectRatio="xMidYMid meet"/>
                             <circle id="sc-source" cx="-12" cy="11.5" r="1.9" fill="#ffd467" stroke="#fff0bd" stroke-width="0.65"/>
                         </g>
                         <g id="sc-sat-label" font-family="JetBrains Mono, monospace">
@@ -116,7 +135,7 @@ permalink: /surfnehf/
                             <text x="66" y="19.5" text-anchor="middle" font-size="14" fill="#c7e1ff" letter-spacing="0.1">GNSS Satellite</text>
                         </g>
                         <g id="sc-person">
-                            <image x="-27" y="-54" width="54" height="54" href="{{ fig }}/man.png" preserveAspectRatio="xMidYMid meet"/>
+                            <image x="-27" y="-54" width="54" height="54" href="{{ fig }}/web/man.webp" preserveAspectRatio="xMidYMid meet"/>
                         </g>
                         <g id="sc-ue-label" font-family="JetBrains Mono, monospace">
                             <rect x="0" y="0" width="112" height="29" rx="6" fill="#101a29" fill-opacity="0.92" stroke="#42688f" stroke-width="0.9"/>
@@ -197,6 +216,18 @@ permalink: /surfnehf/
     </div>
 </section>
 
+<section class="block teaser-section" id="teaser" aria-labelledby="teaser-title">
+    <div class="wrap">
+        <div class="section-head"><h2 class="section-title" id="teaser-title">Teaser</h2></div>
+        <div class="project-teaser">
+            <video controls playsinline preload="none" poster="{{ '/assets/videos/surfnehf-teaser.webp' | relative_url }}" width="1920" height="1080">
+                <source src="{{ '/assets/videos/surfnehf-teaser.mp4' | relative_url }}" type="video/mp4">
+                <a href="{{ '/assets/videos/surfnehf-teaser.mp4' | relative_url }}">Download teaser</a>
+            </video>
+        </div>
+    </div>
+</section>
+
 <section class="block" id="abstract">
     <div class="wrap">
         <div class="section-head">
@@ -215,7 +246,7 @@ permalink: /surfnehf/
                 </p>
             </div>
             <figure class="abstract-framework">
-                <img src="{{ '/assets/images/covers/surfnehf-framework.png' | relative_url }}" alt="Overview of the SurfNeHF framework" loading="lazy">
+                <img src="{{ '/assets/images/surfnehf/web/surfnehf-framework.webp' | relative_url }}" alt="Overview of the SurfNeHF framework" loading="lazy">
             </figure>
         </div>
     </div>
@@ -246,19 +277,19 @@ permalink: /surfnehf/
         <div class="fig-panel">
             <div class="fig-grid fig-grid--4">
                 <figure class="fig">
-                    <img src="{{ fig }}/satellite_source.png" alt="Satellite source modeling">
+                    <img src="{{ fig }}/web/satellite_source.webp" alt="Satellite source modeling" loading="lazy" decoding="async" width="1528" height="673">
                     <figcaption>Satellite source as a plane wave with parallel incident rays.</figcaption>
                 </figure>
                 <figure class="fig">
-                    <img src="{{ fig }}/Surface-Sampling.png" alt="Surface-aware ray sampling">
+                    <img src="{{ fig }}/web/Surface-Sampling.webp" alt="Surface-aware ray sampling" loading="lazy" decoding="async" width="1576" height="983">
                     <figcaption>Surface-aware ray sampling over the upper hemisphere.</figcaption>
                 </figure>
                 <figure class="fig">
-                    <img src="{{ fig }}/Surface-Sampling-2.png" alt="Differentiable surface sampling weights">
+                    <img src="{{ fig }}/web/Surface-Sampling-2.webp" alt="Differentiable surface sampling weights" loading="lazy" decoding="async" width="1067" height="736">
                     <figcaption>Differentiable surface sampling weights along each ray.</figcaption>
                 </figure>
                 <figure class="fig">
-                    <img src="{{ fig }}/half-vector-encoding.png" alt="Half-vector encoding">
+                    <img src="{{ fig }}/web/half-vector-encoding.webp" alt="Half-vector encoding" loading="lazy" decoding="async" width="1600" height="853">
                     <figcaption>Rusinkiewicz half-angle parameterization for BRDF.</figcaption>
                 </figure>
             </div>
@@ -281,7 +312,7 @@ permalink: /surfnehf/
                 </p>
             </div>
             <div class="tikzjax-wrap">
-                {% include widgets/surfnehf_net_arch_tikz.html %}
+                <img src="{{ fig }}/architecture.svg" alt="SurfNeHF neural network architecture: NeHF geometry, shadow renderer, neural BRDF, and received-power aggregation" loading="lazy" decoding="async" width="566" height="281">
                 <p class="fig-note">Neural network architecture for surface-aware rendering.</p>
             </div>
         </div>
@@ -301,11 +332,11 @@ permalink: /surfnehf/
         <div class="fig-panel fig-panel--brdf">
             <div class="fig-grid fig-grid--brdf">
                 <figure class="fig">
-                    <img src="{{ fig }}/brdf-demo.png" alt="Signal-building intersection">
+                    <img src="{{ fig }}/web/brdf-demo.webp" alt="Signal-building intersection" loading="lazy" decoding="async" width="806" height="826">
                     <figcaption>Signal-building intersection during data collection.</figcaption>
                 </figure>
                 <figure class="fig">
-                    <img src="{{ fig }}/brdf.png" alt="Learned BRDF hemisphere maps">
+                    <img src="{{ fig }}/web/brdf.webp" alt="Learned BRDF hemisphere maps" loading="lazy" decoding="async" width="1600" height="651">
                     <figcaption>Learned BRDF energy over the outgoing hemisphere at different incident elevations.</figcaption>
                 </figure>
             </div>
@@ -328,15 +359,15 @@ permalink: /surfnehf/
                 <div class="recon-scene-name">A-frame</div>
                 <div class="fig-panel recon-panel">
                     <figure class="fig">
-                        <div class="fig-media"><img src="{{ fig }}/A_frame_vis.png" alt="A-frame ground truth"></div>
+                        <div class="fig-media"><img src="{{ fig }}/web/A_frame_vis.webp" alt="A-frame ground truth" loading="lazy" decoding="async" width="1400" height="1400"></div>
                         <figcaption>Ground Truth</figcaption>
                     </figure>
                     <figure class="fig">
-                        <div class="fig-media"><img src="{{ fig }}/A_frame_final.png" alt="A-frame reconstruction under clear-sky conditions"></div>
+                        <div class="fig-media"><img src="{{ fig }}/web/A_frame_final.webp" alt="A-frame reconstruction under clear-sky conditions" loading="lazy" decoding="async" width="1400" height="1400"></div>
                         <figcaption>Clear Sky</figcaption>
                     </figure>
                     <figure class="fig">
-                        <div class="fig-media"><img src="{{ fig }}/A_frame_err.png" alt="A-frame reconstruction in a deep urban environment"></div>
+                        <div class="fig-media"><img src="{{ fig }}/web/A_frame_err.webp" alt="A-frame reconstruction in a deep urban environment" loading="lazy" decoding="async" width="1400" height="1400"></div>
                         <figcaption>Deep Urban</figcaption>
                     </figure>
                 </div>
@@ -345,15 +376,15 @@ permalink: /surfnehf/
                 <div class="recon-scene-name">Tower</div>
                 <div class="fig-panel recon-panel">
                     <figure class="fig">
-                        <div class="fig-media"><img src="{{ fig }}/tower_vis.png" alt="Tower ground truth"></div>
+                        <div class="fig-media"><img src="{{ fig }}/web/tower_vis.webp" alt="Tower ground truth" loading="lazy" decoding="async" width="1400" height="1400"></div>
                         <figcaption>Ground Truth</figcaption>
                     </figure>
                     <figure class="fig">
-                        <div class="fig-media"><img src="{{ fig }}/tower_final.png" alt="Tower reconstruction under clear-sky conditions"></div>
+                        <div class="fig-media"><img src="{{ fig }}/web/tower_final.webp" alt="Tower reconstruction under clear-sky conditions" loading="lazy" decoding="async" width="1400" height="1400"></div>
                         <figcaption>Clear Sky</figcaption>
                     </figure>
                     <figure class="fig">
-                        <div class="fig-media"><img src="{{ fig }}/tower_err.png" alt="Tower reconstruction in a deep urban environment"></div>
+                        <div class="fig-media"><img src="{{ fig }}/web/tower_err.webp" alt="Tower reconstruction in a deep urban environment" loading="lazy" decoding="async" width="1400" height="1400"></div>
                         <figcaption>Deep Urban</figcaption>
                     </figure>
                 </div>
@@ -362,15 +393,15 @@ permalink: /surfnehf/
                 <div class="recon-scene-name">Temple</div>
                 <div class="fig-panel recon-panel">
                     <figure class="fig">
-                        <div class="fig-media"><img src="{{ fig }}/round_temple_vis.png" alt="Temple ground truth"></div>
+                        <div class="fig-media"><img src="{{ fig }}/web/round_temple_vis.webp" alt="Temple ground truth" loading="lazy" decoding="async" width="1400" height="1400"></div>
                         <figcaption>Ground Truth</figcaption>
                     </figure>
                     <figure class="fig">
-                        <div class="fig-media"><img src="{{ fig }}/round_temple_final.png" alt="Temple reconstruction under clear-sky conditions"></div>
+                        <div class="fig-media"><img src="{{ fig }}/web/round_temple_final.webp" alt="Temple reconstruction under clear-sky conditions" loading="lazy" decoding="async" width="1400" height="1400"></div>
                         <figcaption>Clear Sky</figcaption>
                     </figure>
                     <figure class="fig">
-                        <div class="fig-media"><img src="{{ fig }}/round_temple_err.png" alt="Temple reconstruction in a deep urban environment"></div>
+                        <div class="fig-media"><img src="{{ fig }}/web/round_temple_err.webp" alt="Temple reconstruction in a deep urban environment" loading="lazy" decoding="async" width="1400" height="1400"></div>
                         <figcaption>Deep Urban</figcaption>
                     </figure>
                 </div>

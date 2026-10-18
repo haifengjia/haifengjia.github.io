@@ -1231,3 +1231,54 @@ body.site-dark {
         backdrop-filter: none;
     }
 }
+
+/* Demo: equal 16:9 viewports with controls in a separate, shared-height row. */
+.demo-entry { padding: 1.25rem; }
+.demo-entry + .demo-entry { border-top: 1px solid #26374c; }
+.demo-entry__summary { display: flex; align-items: flex-start; gap: 1.25rem; }
+.demo-entry__cover { width: 145px; height: 100px; object-fit: contain; border-radius: 4px; flex-shrink: 0; }
+.demo-media { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 1.25rem; align-items: stretch; }
+.demo-panel { display: grid; grid-template-rows: 2.75rem auto 3rem; min-width: 0; border: 1px solid #293c52; border-radius: 8px; overflow: hidden; background: #0b1420; }
+.demo-panel__heading { display: flex; justify-content: space-between; align-items: center; gap: .5rem; padding: .65rem .8rem; min-width: 0; }
+.demo-panel__heading h6 { font-size: .9rem; margin: 0; }
+.demo-panel__heading a { font-size: .75rem; }
+.demo-panel__stage { position: relative; width: 100%; aspect-ratio: 16 / 9; min-height: 0; overflow: hidden; background: #000; }
+.demo-panel__stage > video, .demo-panel__stage > iframe, .demo-panel__stage > img,
+.demo-panel__stage > .demo-video-play { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; object-fit: contain; }
+.demo-video-play { padding: 0; cursor: pointer; background: #0003; color: #fff; }
+.demo-video-play__label { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: .7rem; font-size: 1rem; text-shadow: 0 2px 8px #000; }
+.demo-video-play__label > span { display: grid; place-items: center; border: 1px solid #83b9f8; border-radius: 50%; width: 3rem; height: 3rem; background: #193655; }
+.demo-slides__controls, .demo-video__controls { display: flex; align-items: center; justify-content: center; gap: .5rem; height: 3rem; padding: .5rem; min-width: 0; }
+.demo-slides__controls button, .demo-video__controls button { flex: none; border: 1px solid #344f70; border-radius: 5px; color: #cee3ff; background: #172b42; min-width: 2rem; height: 2rem; cursor: pointer; }
+.demo-slides__controls button:disabled, .demo-video__controls button:disabled { opacity: .3; cursor: default; }
+.demo-slides__counter { font-size: .8rem; min-width: 4rem; text-align: center; }
+.demo-video__seek { flex: 1; min-width: 1rem; width: 100%; margin: 0; accent-color: #84bdfd; cursor: pointer; }
+.demo-video__time { font-size: .7rem; font-variant-numeric: tabular-nums; min-width: 4.7rem; text-align: center; color: #bdd4ed; }
+.demo-slides__error, .demo-video__error { position: absolute; inset: 0; padding: 1rem; background: #0b1420; }
+.demo-slides__error a, .demo-video__error a { display: inline-block; margin: .25rem; }
+.demo-panel:focus-visible, .demo-panel button:focus-visible, .demo-panel input:focus-visible { outline: 2px solid #80baff; outline-offset: -3px; }
+.demo-panel:fullscreen { display: flex; flex-direction: column; border: 0; border-radius: 0; }
+.demo-panel:fullscreen .demo-panel__heading, .demo-panel:fullscreen .demo-slides__controls, .demo-panel:fullscreen .demo-video__controls { flex-shrink: 0; }
+.demo-panel:fullscreen .demo-panel__stage { flex: 1; min-height: 0; aspect-ratio: auto; }
+@media (max-width: 767px) {
+    .demo-media { grid-template-columns: minmax(0, 1fr); }
+    .demo-entry { padding: 1rem; }
+    .demo-entry__summary { flex-direction: column; gap: .75rem; }
+    .demo-entry__cover { width: 130px; height: 85px; }
+}
+
+.demo-video__controls button > svg { display: block; margin: auto; width: 16px; height: 16px; }
+
+/* Emphasize released SurfNeHF resources wherever publication badges are reused. */
+.pub-link-badge.pub-link-badge--highlight,
+.site-dark .pub-link-badge.pub-link-badge--highlight {
+    color: #102033;
+    background-color: #fff;
+    border-color: #fff;
+}
+.pub-link-badge.pub-link-badge--highlight:hover,
+.site-dark .pub-link-badge.pub-link-badge--highlight:hover {
+    color: #102033;
+    background-color: #e7f0fa;
+    border-color: #e7f0fa;
+}

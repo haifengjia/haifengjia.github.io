@@ -23,9 +23,11 @@ links:
     icon: acmdl
     url: "https://doi.org/10.1145/3810234"
   - label: "Project Page"
+    highlight: true
     icon: webpage
     url: /surfnehf/
   - label: "Code"
+    highlight: true
     icon: github
     url: "https://github.com/SJTU-NetSense-Lab/SurfNeHF"
   - label: "Teaser"

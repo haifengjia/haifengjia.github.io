@@ -2,6 +2,7 @@
 layout: default
 title : Demo
 navbar_title: Demo
+lightweight: true
 ---
 
 {% assign demos_by_year = site.demos | sort: "date" | reverse | group_by_exp: "item", "item.date | date: '%Y'" %}
@@ -17,10 +18,12 @@ navbar_title: Demo
             <h2 class="d-lg-none page-timeline-mobile-label">{{ year.name }}</h2>
         <div class="my-0 p-0 bg-white shadow-sm rounded-sm">
             {% for item in year.items %}
-                {% include widgets/publication_item.html item=item hide_bottom_border=forloop.last first=forloop.first last=forloop.last %}
+                {% include widgets/demo_item.html item=item %}
             {% endfor %}
         </div>
         </div>
     </section>
     {% endfor %}
 </div>
+
+<script defer src="{{ "/assets/js/demo.js" | relative_url }}?v=20261018-8"></script>

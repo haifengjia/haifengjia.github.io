@@ -1,0 +1,52 @@
+{% assign item = include.item %}
+<article class="demo-entry" id="demo-{{ item.path | split: '/' | last | replace: '.md', '' }}">
+    <div class="demo-entry__summary">
+        {% if item.cover %}<img class="demo-entry__cover" src="{{ item.cover | relative_url }}" alt="{{ item.title | escape }}" loading="lazy" decoding="async" width="300" height="200">{% endif %}
+        <div>
+            <h5 class="mt-0 mb-1 font-weight-normal">{{ item.title }}</h5>
+            <p class="small mb-0">{% include widgets/author_list.html authors=item.authors %}</p>
+            <p class="small mb-0"><i>{{ item.pub }}</i> <span class="publication-time">{{ item.pub_date }}</span></p>
+            {% include widgets/publication_links.html item=item hide_teaser=true %}
+        </div>
+    </div>
+    {% if item.teaser_id or item.slides %}
+    <div class="demo-media{% unless item.slides %} demo-media--single{% endunless %}">
+        {% if item.teaser_id %}
+        {% assign teaser_link = item.links | where: "icon", "video" | first %}
+        {% capture teaser_url %}{% if teaser_link.url %}{{ teaser_link.url }}{% else %}https://drive.google.com/file/d/{{ item.teaser_id }}/view?usp=sharing{% endif %}{% endcapture %}
+        <section class="demo-panel demo-video" aria-label="{{ item.title | escape }} teaser">
+            <div class="demo-panel__heading"><h6>Teaser</h6><a href="{{ teaser_url | escape }}" target="_blank" rel="noopener noreferrer">Open video ↗</a></div>
+            <div class="demo-panel__stage">
+                <video preload="none" playsinline poster="{{ item.teaser_poster | relative_url }}" data-src="{{ item.teaser_video | relative_url }}" width="1920" height="1080" aria-label="{{ item.title | escape }} teaser video"></video>
+                <button class="demo-video-play" type="button" aria-label="Play teaser">
+                    <span class="demo-video-play__label"><span aria-hidden="true">▶</span> Play teaser</span>
+                </button>
+                <span class="demo-video__error" hidden>Video could not load. <a href="{{ item.teaser_video | relative_url }}">Open video</a></span>
+            </div>
+            <div class="demo-video__controls" aria-label="Video controls">
+                <button type="button" class="demo-video__toggle" aria-label="Play video"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M7 4.5a.75.75 0 0 1 1.15-.64l12 7.5a.75.75 0 0 1 0 1.28l-12 7.5A.75.75 0 0 1 7 19.5z"/></svg></button>
+                <input class="demo-video__seek" type="range" min="0" max="100" step="0.1" value="0" aria-label="Video progress" disabled>
+                <span class="demo-video__time" aria-live="off">0:00</span>
+                <button type="button" class="demo-video__mute" aria-label="Mute video" aria-pressed="false"><i class="fa-solid fa-volume-high" aria-hidden="true"></i></button>
+                <button type="button" class="demo-video__fullscreen" aria-label="View video fullscreen">⛶</button>
+            </div>
+        </section>
+        {% endif %}
+        {% if item.slides %}
+        <section class="demo-panel demo-slides" data-directory="{{ item.slides.directory | relative_url }}" data-count="{{ item.slides.count }}" data-player="{{ item.slides.player | relative_url }}" tabindex="0" aria-label="{{ item.title | escape }} slides. Click to advance animations; use the arrows to step through effects.">
+            <div class="demo-panel__heading"><h6>Slides</h6><a href="{{ item.slides.download | relative_url }}" download>Download PPTX ↓</a></div>
+            <div class="demo-panel__stage demo-slides__stage">
+                <img src="{{ item.slides.directory | relative_url }}/slide-01.webp" alt="Slide 1 of {{ item.slides.count }}" loading="lazy" decoding="async" width="1280" height="720">
+                <span class="demo-slides__error" hidden>Preview unavailable. <a href="{{ item.slides.download | relative_url }}">Download slides</a></span>
+            </div>
+            <div class="demo-slides__controls">
+                <button type="button" data-direction="-1" aria-label="Previous animation effect" disabled>←</button>
+                <span class="demo-slides__counter" aria-live="polite">1 / {{ item.slides.count }}</span>
+                <button type="button" data-direction="1" aria-label="Next animation effect" disabled>→</button>
+                <button type="button" class="demo-slides__fullscreen" aria-label="View slides fullscreen">⛶</button>
+            </div>
+        </section>
+        {% endif %}
+    </div>
+    {% endif %}
+</article>

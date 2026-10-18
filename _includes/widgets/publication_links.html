@@ -1,6 +1,7 @@
 {%- assign pub = include.item -%}
 <p class="small pb-0 mb-0 lh-125 abstract-links pub-link-badges">
     {%- for link in pub.links -%}
+        {%- if include.hide_teaser and link.label == 'Teaser' -%}{%- continue -%}{%- endif -%}
         {%- assign u = link.url -%}
         {%- if u == '#' -%}
             {%- assign href = '#' -%}
@@ -13,6 +14,7 @@
             {%- assign badge_class = 'pub-link-badge pub-link-badge--muted pub-link-badge--static' -%}
         {%- else -%}
             {%- assign badge_class = 'pub-link-badge' -%}
+            {%- if link.highlight -%}{%- assign badge_class = badge_class | append: ' pub-link-badge--highlight' -%}{%- endif -%}
         {%- endif -%}
         {%- if href == '#' -%}
         <span class="{{ badge_class }}">
