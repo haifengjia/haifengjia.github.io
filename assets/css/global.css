@@ -291,6 +291,11 @@ h2.research-topic-heading .badge-acceptance-star {
     font-weight: 400;
 }
 
+.text-profile-bio .research-interest-highlight {
+    color: #f0a35e;
+    font-weight: 700;
+}
+
 .author-note {
     color: #6b7280;
     background: transparent;
