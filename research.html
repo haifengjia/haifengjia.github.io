@@ -23,11 +23,13 @@ navbar_title: Research
             <p class="text-muted mb-3">{{ topic.subtitle }}</p>
             {% endif %}
             <div class="my-0 p-0 bg-white shadow-sm rounded-sm research-topic-card">
+                {% if topic.description %}
                 <div class="px-3 pt-3">
                     <p class="mb-0">{{ topic.description }}</p>
                 </div>
+                {% endif %}
                 {% assign has_pubs = false %}
-                <div class="research-pub-grid px-3 pb-3">
+                <div class="research-pub-grid px-3 pb-3{% unless topic.description %} pt-3 mt-0{% endunless %}">
                     {% for pub_key in topic.publications %}
                         {% assign pub = site.publications | where_exp: "item", "item.path contains pub_key" | first %}
                         {% if pub %}
@@ -35,9 +37,17 @@ navbar_title: Research
                             {% include widgets/publication_compact_card.html item=pub anchor=pub_key %}
                         {% endif %}
                     {% endfor %}
+                    {% for project in topic.ongoing_projects %}
+                    <article class="research-ongoing-card">
+                        <h3 class="research-ongoing-card__title">{{ project.title | escape }}</h3>
+                        <span class="research-ongoing-card__status">Ongoing</span>
+                    </article>
+                    {% endfor %}
                 </div>
                 {% unless has_pubs %}
+                {% unless topic.ongoing_projects %}
                 <p class="small text-muted px-3 pb-3 mb-0">More publications coming soon.</p>
+                {% endunless %}
                 {% endunless %}
             </div>
         </div>

@@ -61,6 +61,38 @@ h2.research-topic-heading .badge-acceptance-star {
     overflow: visible;
 }
 
+.research-ongoing-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    width: 9.5rem;
+    min-height: 9rem;
+    padding: 1rem;
+    border: 1px dashed #cbd5e1;
+    border-radius: 0.25rem;
+    background: #f8fafc;
+    text-align: center;
+}
+
+.research-ongoing-card__title {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    color: #475569;
+}
+
+.research-ongoing-card__status {
+    padding: 0.2rem 0.55rem;
+    border-radius: 1rem;
+    background: #e2e8f0;
+    color: #64748b;
+    font-size: 0.65rem;
+    line-height: 1.3;
+    letter-spacing: 0.03em;
+}
+
 .publication-compact-card {
     display: block;
     width: 9.5rem;
@@ -1157,6 +1189,20 @@ body.site-dark {
 
 .site-dark .publication-compact-card__cover {
     background: var(--site-bg);
+}
+
+.site-dark .research-ongoing-card {
+    background: var(--site-bg);
+    border-color: var(--site-line-strong);
+}
+
+.site-dark .research-ongoing-card__title {
+    color: var(--site-text-dim);
+}
+
+.site-dark .research-ongoing-card__status {
+    color: var(--site-text-muted);
+    background: var(--site-elev);
 }
 
 .site-dark .publication-cover-zoom__flyout {

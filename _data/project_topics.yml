@@ -3,15 +3,20 @@ topics:
     title: "Embodied IoT and Spatial Intelligence"
     start_year: 2026
     end_year: "now"
-    description: >-
-      Coming soon.
+    ongoing_projects:
+      - title: "Smart Navigation Agents"
 
-  - id: next-gen-wireless-sensing
-    title: "Next Generation Wireless Sensing"
+  - id: 3d-4d-reconstruction
+    title: "3D / 4D Reconstruction"
     start_year: 2025
     end_year: "now"
     description: >-
-      Coming soon.
+      We study neural representations for reconstructing 3D geometry and dynamic scenes from multimodal signals.
+    publications:
+      - 2026/2026-imwut-surfnehf
+      - 2024/2024-globecom
+    ongoing_projects:
+      - title: "Real-Time 4D Reconstruction"
 
   - id: urban-mapping
     title: "Neural Radio Frequency Digital Twin"
