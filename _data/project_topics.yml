@@ -6,29 +6,19 @@ topics:
     ongoing_projects:
       - title: "Smart Navigation Agents"
 
-  - id: 3d-4d-reconstruction
-    title: "3D / 4D Reconstruction"
-    start_year: 2025
-    end_year: "now"
-    description: >-
-      We study neural representations for reconstructing 3D geometry and dynamic scenes from multimodal signals.
-    publications:
-      - 2026/2026-imwut-surfnehf
-      - 2024/2024-globecom
-    ongoing_projects:
-      - title: "Real-Time 4D Reconstruction"
-
   - id: urban-mapping
     title: "Neural Radio Frequency Digital Twin"
     thesis_label: "PhD Thesis"
     start_year: 2024
     end_year: "now"
     description: >-
-      We build radio frequency (RF) digital twins by reconstructing urban 3D geometry and RF signal propagation environments from mobile sensing data, leveraging neural networks as a powerful tool for accurate and efficient reconstruction.
+      We study neural radio frequency (RF) digital twins through 3D/4D scene reconstruction and RF propagation modeling from multimodal sensing data.
     publications:
       - 2026/2026-imwut-surfnehf
       - 2026/2026-wcl-urc-sim-reality
       - 2024/2024-globecom
+    ongoing_projects:
+      - title: "Real-Time 4D Reconstruction"
 
   - id: wireless-sensing
     title: "Low Power Wireless Sensor Networking"
