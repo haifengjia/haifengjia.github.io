@@ -72,3 +72,11 @@
 </a>
 {%- if fmt == 'stack' -%}</li>{%- endif -%}
 {%- endif -%}
+
+{%- if site.data.profile.cv_link -%}
+{%- if fmt == 'stack' -%}<li>{%- endif -%}
+<a class="profile-contact-ch profile-contact-ch--{{ fmt }}" href="{{ site.data.profile.cv_link | relative_url }}" download="cv_HaifengJia_bilingual.pdf" title="Download bilingual CV (PDF)">
+    <i class="fas fa-file-arrow-down {% if fmt == 'stack' %}fa-fw{% endif %}" aria-hidden="true"></i>{% if fmt == 'stack' %}<span>CV</span>{% else %} CV{% endif %}
+</a>
+{%- if fmt == 'stack' -%}</li>{%- endif -%}
+{%- endif -%}
