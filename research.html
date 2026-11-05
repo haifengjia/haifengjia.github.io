@@ -40,7 +40,7 @@ navbar_title: Research
                     {% for project in topic.ongoing_projects %}
                     <article class="research-ongoing-card">
                         <h3 class="research-ongoing-card__title">{{ project.title | escape }}</h3>
-                        <span class="research-ongoing-card__status">Ongoing</span>
+                        <span class="research-ongoing-card__status">{{ project.status | default: "Ongoing" | escape }}</span>
                     </article>
                     {% endfor %}
                 </div>
