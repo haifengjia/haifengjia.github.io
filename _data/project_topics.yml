@@ -1,6 +1,6 @@
 topics:
   - id: embodied-ai
-    title: "Embodied IoT and Spatial Intelligence"
+    title: "Embodied AI and Spatial Intelligence"
     start_year: 2026
     end_year: "now"
     ongoing_projects:
@@ -14,7 +14,7 @@ topics:
     start_year: 2024
     end_year: "now"
     description: >-
-      We study 3D/4D scene reconstruction from multimodal signals (radio, visual, etc.), with related work on RF propagation modeling.
+      We study 3D/4D scene reconstruction and neural scene representations from multimodal observations, with a focus on large-scale outdoor environments and dynamic scenes.
     publications:
       - 2026/2026-imwut-surfnehf
       - 2026/2026-wcl-urc-sim-reality
