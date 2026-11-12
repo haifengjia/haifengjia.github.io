@@ -15,6 +15,14 @@
 {%- if fmt == 'stack' -%}</li>{%- endif -%}
 {%- endif -%}
 
+{%- if site.data.profile.openreview -%}
+{%- if fmt == 'stack' -%}<li>{%- endif -%}
+<a class="profile-contact-ch profile-contact-ch--{{ fmt }}" target="_blank" rel="noopener noreferrer" href="{{ site.data.profile.openreview | escape }}">
+    <i class="fas fa-file-lines {% if fmt == 'stack' %}fa-fw{% endif %}" aria-hidden="true"></i>{% if fmt == 'stack' %}<span>OpenReview</span>{% else %} OpenReview{% endif %}
+</a>
+{%- if fmt == 'stack' -%}</li>{%- endif -%}
+{%- endif -%}
+
 {%- if site.data.profile.gscholar -%}
 {%- if fmt == 'stack' -%}<li>{%- endif -%}
 <a class="profile-contact-ch profile-contact-ch--{{ fmt }}" target="_blank" href="{{ gscholar_url }}">
