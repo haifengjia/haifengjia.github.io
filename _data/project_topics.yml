@@ -21,9 +21,9 @@ topics:
     ongoing_projects:
       - title: "Large-Scale Outdoor Urban Mapping with Trees"
         status: "Submission in Progress"
-      - title: "Real-Time 4D Reconstruction for Teleoperation"
       - title: "Indoor Multi-Media Scene Reconstruction for Wi-Fi"
         status: "Submission in Progress"
+      - title: "Real-Time 4D Reconstruction for Teleoperation"
 
   - id: wireless-sensing
     title: "Low Power Wireless Sensor Networking"
