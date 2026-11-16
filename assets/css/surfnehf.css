@@ -988,7 +988,7 @@ a.btn:hover { color: #fff; background: #ffffff1c; border-color: #c0e7fa; }
 .tikzjax-wrap > img { width: 100%; height: auto; display: block; }
 .teaser-section { background: #eaf0f4; }
 .project-teaser { width: min(100%, 1040px); margin: 28px auto 0; aspect-ratio: 16 / 9; background: #000; border-radius: 12px; overflow: hidden; box-shadow: 0 15px 35px #112c4526; }
-.project-teaser video { display: block; width: 100%; height: 100%; object-fit: contain; }
+.project-teaser iframe { display: block; width: 100%; height: 100%; border: 0; }
 .cite-panel { border-radius: 10px; background: #f0f4f7; }
 .copy-btn { color: #245d7b; background: #fff; }
 .page-end { background: #0c1c26; padding: 30px; }

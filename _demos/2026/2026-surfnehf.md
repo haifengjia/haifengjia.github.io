@@ -34,6 +34,9 @@ links:
   - label: Slides
     icon: slides
     url: /assets/slides/SurfNeHF_ubicomp26_haifeng.pptx
+  - label: Teaser
+    icon: video
+    url: https://www.youtube.com/watch?v=pZIXNxYgpvk
   - label: Cite
     icon: cite
     url: /surfnehf/#citation

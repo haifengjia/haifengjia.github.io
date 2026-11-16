@@ -32,7 +32,7 @@ links:
     url: "https://github.com/SJTU-NetSense-Lab/SurfNeHF"
   - label: "Teaser"
     icon: video
-    url: "https://drive.google.com/file/d/1lQKvxa0mOZVtV6eZ6k2-amQxbrx1BP1F/view?usp=sharing"
+    url: "https://www.youtube.com/watch?v=pZIXNxYgpvk"
   - label: "Slides"
     icon: slides
     url: assets/slides/SurfNeHF_ubicomp26_haifeng.pptx
