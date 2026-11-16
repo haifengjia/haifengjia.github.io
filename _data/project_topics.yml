@@ -6,7 +6,7 @@ topics:
     ongoing_projects:
       - title: "Smart Navigation Agents"
       - title: "Multi-Agent Edge-Offloaded SLAM"
-      - title: "Real-Time 4D Reconstruction"
+      - title: "Real-Time 4D Reconstruction for Teleoperation"
 
   - id: urban-mapping
     title: "3D/4D Scene Reconstruction"
@@ -21,6 +21,9 @@ topics:
       - 2024/2024-globecom
     ongoing_projects:
       - title: "Large-Scale Outdoor Urban Mapping with Trees"
+        status: "Submission in Progress"
+      - title: "Real-Time 4D Reconstruction for Teleoperation"
+      - title: "Indoor Multi-Media Scene Reconstruction for Wi-Fi"
         status: "Submission in Progress"
 
   - id: wireless-sensing
