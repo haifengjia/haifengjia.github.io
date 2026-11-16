@@ -17,7 +17,6 @@ topics:
       We study 3D/4D scene reconstruction and neural scene representations from multimodal observations, with a focus on large-scale outdoor environments and dynamic scenes.
     publications:
       - 2026/2026-imwut-surfnehf
-      - 2026/2026-wcl-urc-sim-reality
       - 2024/2024-globecom
     ongoing_projects:
       - title: "Large-Scale Outdoor Urban Mapping with Trees"
