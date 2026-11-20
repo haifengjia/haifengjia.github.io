@@ -31,6 +31,10 @@
         {%- assign display_name = name | append: mark -%}
     {%- endif -%}
     
+    {%- if key == "Haifeng Jia" -%}
+        {%- assign display_name = display_name | prepend: '<span class="publication-author-self">' | append: '</span>' -%}
+    {%- endif -%}
+
     {%- if info['url'] -%}
         <a class="text-body" target="_blank" href="{{ info['url'] }}">{{ display_name }}</a>{%- if forloop.index < authors.size -%}, {% endif -%}
     {%- else -%}

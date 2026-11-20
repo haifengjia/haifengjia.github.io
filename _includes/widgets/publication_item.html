@@ -27,6 +27,8 @@
         <div class="d-flex align-items-start flex-column py-3 px-4">
             {% if item.cover %}
             <img src="{{ item.cover | relative_url }}" alt="{{ item.title | escape }}" class="publication-mobile-cover rounded-sm mb-3" loading="lazy" decoding="async">
+            {% else %}
+            <svg class="bubble-visual-hash lazy publication-mobile-cover rounded-sm mb-3" data-bubble-visual-hash="{{ item.id }}" viewBox="0 0 300 200" aria-hidden="true"></svg>
             {% endif %}
             <div class="mb-auto"></div>
             <div>

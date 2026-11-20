@@ -1333,3 +1333,13 @@ body.site-dark {
     background-color: #e7f0fa;
     border-color: #e7f0fa;
 }
+
+/* Highlight the site owner on the publications page. */
+.page-timeline[aria-label="Publications timeline"] .publication-author-self {
+    color: #276899;
+    font-weight: 600;
+}
+
+.site-dark .page-timeline[aria-label="Publications timeline"] .publication-author-self {
+    color: #8fc9fa;
+}

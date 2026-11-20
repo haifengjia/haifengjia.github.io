@@ -4,7 +4,7 @@ title : Publications
 navbar_title: Publications
 ---
 
-{% assign pubs_by_year = site.publications | sort: "date" | reverse | group_by_exp: "item", "item.date | date: '%Y'" %}
+{% assign pubs_by_year = site.publications | sort: "date" | reverse | group_by_exp: "item", "item.pub_year | default: item.date | date: '%Y'" %}
 
 <div class="page-timeline" aria-label="Publications timeline">
     {% for year in pubs_by_year %}

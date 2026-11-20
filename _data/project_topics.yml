@@ -1,20 +1,20 @@
 topics:
   - id: embodied-ai
-    title: "Embodied AI and Spatial Intelligence"
+    title: "Embodied and Spatial Intelligence"
     start_year: 2026
     end_year: "now"
     ongoing_projects:
-      - title: "Smart Navigation Agents"
-      - title: "Multi-Agent Edge-Offloaded SLAM"
       - title: "Real-Time 4D Reconstruction for Teleoperation"
+      - title: "Video Generation Models"
+      - title: "Interactive World Models"
+      - title: "Totally Edge-Offloaded vSLAM"
 
   - id: urban-mapping
-    title: "3D/4D Scene Reconstruction"
-    thesis_label: "PhD Thesis"
+    title: "Multimodal 3D/4D Scene Reconstruction"
     start_year: 2024
     end_year: "now"
     description: >-
-      We study 3D/4D scene reconstruction and neural scene representations from multimodal observations, with a focus on large-scale outdoor environments and dynamic scenes.
+      We study 3D/4D scene reconstruction and neural scene representations from multimodal observations, including radio and vision.
     publications:
       - 2026/2026-imwut-surfnehf
       - 2024/2024-globecom
