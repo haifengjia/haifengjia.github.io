@@ -6,7 +6,7 @@ navbar_title: Services
 
 {% assign service_years = site.data.services.academic_services | sort: "date" | reverse | map: "date" | uniq %}
 
-<div class="page-timeline" aria-label="Services timeline">
+<div class="page-timeline services-timeline" aria-label="Services timeline">
     {% for year in service_years %}
     <section class="row page-timeline-entry{% if forloop.first %} page-timeline-entry--first{% endif %}" id="year-{{ year }}">
         <div class="col-lg-2 d-none d-lg-block page-timeline-rail" aria-hidden="true">

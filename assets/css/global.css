@@ -894,6 +894,60 @@ div.lazy {
     line-height: 1.45;
 }
 
+@media (max-width: 991.98px) {
+    .services-timeline {
+        position: relative;
+        padding-left: 1.5rem;
+    }
+
+    .services-timeline::before {
+        content: "";
+        position: absolute;
+        top: 0.6rem;
+        bottom: 0;
+        left: 0.2rem;
+        width: 1px;
+        background: #d7dee8;
+    }
+
+    .services-timeline .page-timeline-mobile-label {
+        position: relative;
+    }
+
+    .services-timeline .page-timeline-mobile-label::before {
+        content: "";
+        position: absolute;
+        left: -1.55rem;
+        top: 0.35em;
+        width: 9px;
+        height: 9px;
+        border: 2px solid #f8f9fa;
+        border-radius: 50%;
+        background: #0d6efd;
+        box-shadow: 0 0 0 1px #0d6efd;
+    }
+
+    .site-dark .services-timeline::before {
+        background: #33445c;
+    }
+
+    .site-dark .services-timeline .page-timeline-mobile-label::before {
+        border-color: #0b111b;
+    }
+
+    .service-item {
+        position: relative;
+        padding-left: 1.15rem;
+    }
+
+    .service-item::before {
+        content: "\2022";
+        position: absolute;
+        left: 0.15rem;
+        top: 0;
+    }
+}
+
 .service-item__name {
     font-weight: 400;
     text-decoration: none;
