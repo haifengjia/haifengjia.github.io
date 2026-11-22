@@ -8,13 +8,14 @@ topics:
       - title: "Video Generation Models"
       - title: "Interactive World Models"
       - title: "Totally Edge-Offloaded vSLAM"
+      - title: "Edge Offloaded Smart Navigator"
 
   - id: urban-mapping
-    title: "Multimodal 3D/4D Scene Reconstruction"
+    title: "Multimodal 3D/4D Reconstruction"
     start_year: 2024
     end_year: "now"
     description: >-
-      We study 3D/4D scene reconstruction and neural scene representations from multimodal observations, including radio and vision.
+      We study 3D/4D reconstruction and neural representations of both scenes and humans using multimodal observations, including radio and vision.
     publications:
       - 2026/2026-imwut-surfnehf
       - 2024/2024-globecom
