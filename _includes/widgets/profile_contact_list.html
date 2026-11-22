@@ -7,10 +7,10 @@
 {%- endif -%}
 {%- endif -%}
 
-{%- if site.data.profile.email -%}
+{%- if site.data.profile.gscholar -%}
 {%- if fmt == 'stack' -%}<li>{%- endif -%}
-<a class="profile-contact-ch profile-contact-ch--{{ fmt }}" href="mailto:{{ site.data.profile.email | encode_email }}">
-    <i class="fas fa-at {% if fmt == 'stack' %}fa-fw{% endif %}"></i>{% if fmt == 'stack' %}<span>Email</span>{% else %} <span class="email-text">{{ site.data.profile.email | replace: "@", "(at)" }}</span>{% endif %}
+<a class="profile-contact-ch profile-contact-ch--{{ fmt }}" target="_blank" href="{{ gscholar_url }}">
+    <i class="fab fa-google-scholar {% if fmt == 'stack' %}fa-fw{% endif %}"></i>{% if fmt == 'stack' %}<span>Google Scholar</span>{% else %} Google Scholar{% endif %}
 </a>
 {%- if fmt == 'stack' -%}</li>{%- endif -%}
 {%- endif -%}
@@ -23,10 +23,18 @@
 {%- if fmt == 'stack' -%}</li>{%- endif -%}
 {%- endif -%}
 
-{%- if site.data.profile.gscholar -%}
+{%- if site.data.profile.dblp -%}
 {%- if fmt == 'stack' -%}<li>{%- endif -%}
-<a class="profile-contact-ch profile-contact-ch--{{ fmt }}" target="_blank" href="{{ gscholar_url }}">
-    <i class="fab fa-google-scholar {% if fmt == 'stack' %}fa-fw{% endif %}"></i>{% if fmt == 'stack' %}<span>Google Scholar</span>{% else %} Google Scholar{% endif %}
+<a class="profile-contact-ch profile-contact-ch--{{ fmt }}" target="_blank" rel="noopener noreferrer" href="{{ site.data.profile.dblp | escape }}">
+    <i class="fas fa-book {% if fmt == 'stack' %}fa-fw{% endif %}" aria-hidden="true"></i>{% if fmt == 'stack' %}<span>DBLP</span>{% else %} DBLP{% endif %}
+</a>
+{%- if fmt == 'stack' -%}</li>{%- endif -%}
+{%- endif -%}
+
+{%- if site.data.profile.email -%}
+{%- if fmt == 'stack' -%}<li>{%- endif -%}
+<a class="profile-contact-ch profile-contact-ch--{{ fmt }}" href="mailto:{{ site.data.profile.email | encode_email }}">
+    <i class="fas fa-at {% if fmt == 'stack' %}fa-fw{% endif %}"></i>{% if fmt == 'stack' %}<span>Email</span>{% else %} <span class="email-text">{{ site.data.profile.email | replace: "@", "(at)" }}</span>{% endif %}
 </a>
 {%- if fmt == 'stack' -%}</li>{%- endif -%}
 {%- endif -%}
