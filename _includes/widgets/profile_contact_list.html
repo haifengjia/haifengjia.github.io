@@ -31,14 +31,6 @@
 {%- if fmt == 'stack' -%}</li>{%- endif -%}
 {%- endif -%}
 
-{%- if site.data.profile.email -%}
-{%- if fmt == 'stack' -%}<li>{%- endif -%}
-<a class="profile-contact-ch profile-contact-ch--{{ fmt }}" href="mailto:{{ site.data.profile.email | encode_email }}">
-    <i class="fas fa-at {% if fmt == 'stack' %}fa-fw{% endif %}"></i>{% if fmt == 'stack' %}<span>Email</span>{% else %} <span class="email-text">{{ site.data.profile.email | replace: "@", "(at)" }}</span>{% endif %}
-</a>
-{%- if fmt == 'stack' -%}</li>{%- endif -%}
-{%- endif -%}
-
 {%- if site.data.profile.github -%}
 {%- if fmt == 'stack' -%}<li>{%- endif -%}
 <a class="profile-contact-ch profile-contact-ch--{{ fmt }}" target="_blank" href="https://github.com/{{ site.data.profile.github }}">
@@ -93,6 +85,14 @@
 {%- if fmt == 'stack' -%}<li>{%- endif -%}
 <a class="profile-contact-ch profile-contact-ch--{{ fmt }}" href="{{ site.data.profile.cv_link | escape }}" target="_blank" rel="noopener noreferrer" title="View bilingual CV">
     <i class="fas fa-file-arrow-down {% if fmt == 'stack' %}fa-fw{% endif %}" aria-hidden="true"></i>{% if fmt == 'stack' %}<span>CV</span>{% else %} CV{% endif %}
+</a>
+{%- if fmt == 'stack' -%}</li>{%- endif -%}
+{%- endif -%}
+
+{%- if site.data.profile.email -%}
+{%- if fmt == 'stack' -%}<li>{%- endif -%}
+<a class="profile-contact-ch profile-contact-ch--{{ fmt }}" href="mailto:{{ site.data.profile.email | encode_email }}">
+    <i class="fas fa-at {% if fmt == 'stack' %}fa-fw{% endif %}"></i>{% if fmt == 'stack' %}<span>Email</span>{% else %} <span class="email-text">{{ site.data.profile.email | replace: "@", "(at)" }}</span>{% endif %}
 </a>
 {%- if fmt == 'stack' -%}</li>{%- endif -%}
 {%- endif -%}
