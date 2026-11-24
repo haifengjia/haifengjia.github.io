@@ -1,14 +1,19 @@
 topics:
   - id: embodied-ai
-    title: "Embodied and Spatial Intelligence"
+    title: "Video Models and Spatial Intelligence"
     start_year: 2026
     end_year: "now"
+    description: >-
+      We study video generation and interactive world models for coding, gaming, and robotics, alongside spatial intelligence for visual SLAM and navigation.
     ongoing_projects:
-      - title: "Real-Time 4D Reconstruction for Teleoperation"
       - title: "Video Generation Models"
+        role: "First Author"
       - title: "Interactive World Models"
+        role: "First Author"
       - title: "Totally Edge-Offloaded vSLAM"
+        role: "Project Lead"
       - title: "Edge Offloaded Smart Navigator"
+        role: "Project Lead"
 
   - id: urban-mapping
     title: "Multimodal 3D/4D Reconstruction"
@@ -17,21 +22,33 @@ topics:
     description: >-
       We study 3D/4D reconstruction and neural representations of both scenes and humans using multimodal observations, including radio and vision.
     publications:
-      - 2026/2026-imwut-surfnehf
-      - 2024/2024-globecom
+      - key: 2026/2026-imwut-surfnehf
+        role: "First Author"
+      - key: 2024/2024-globecom
+        role: "First Author"
     ongoing_projects:
       - title: "Large-Scale Outdoor Urban Mapping with Trees"
+        role: "First Author"
         status: "Submission in Progress"
       - title: "Indoor Multi-Media Scene Reconstruction for Wi-Fi"
+        role: "First Author"
         status: "Submission in Progress"
       - title: "Real-Time 4D Reconstruction for Teleoperation"
+        role: "Project Lead · Co-First Author"
+      - title: "Faithful Human Activity Recognition"
+        role: "Project Lead · First Author"
 
   - id: wireless-sensing
-    title: "Low Power Wireless Sensor Networking"
-    start_year: 2023
+    title: "Low-Power Wireless Sensor Networking"
+    start_year: 2022
     end_year: 2024
     description: >-
-      We study low-power wireless sensor networks by estimating interference graphs and link connectivity in multi-hop BLE systems. Enabled by our hardware design, nodes can probe the channel during ongoing communication without reserving additional dedicated time-frequency resources, thereby supporting efficient and reliable network operations.
+      We study low-power wireless sensor networking for ubiquitous computing and communication.
     publications:
-      - 2024/2024-tosn
-      - 2023/2023-ewsn
+      - key: 2024/2024-tosn
+        role: "First Author"
+      - key: 2023/2023-ewsn
+        role: "Co-First Author"
+    demos:
+      - key: 2022/2022-mde
+        role: "Team Member"

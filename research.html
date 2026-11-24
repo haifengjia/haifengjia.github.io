@@ -4,7 +4,7 @@ title : Research
 navbar_title: Research
 ---
 
-{% assign project_topics = site.data.project_topics.topics | sort: "start_year" | reverse %}
+{% assign project_topics = site.data.project_topics.topics %}
 
 <div class="page-timeline" aria-label="Research timeline">
     {% for topic in project_topics %}
@@ -30,16 +30,27 @@ navbar_title: Research
                 {% endif %}
                 {% assign has_pubs = false %}
                 <div class="research-pub-grid px-3 pb-3{% unless topic.description %} pt-3 mt-0{% endunless %}">
-                    {% for pub_key in topic.publications %}
+                    {% for publication in topic.publications %}
+                        {% assign pub_key = publication.key %}
                         {% assign pub = site.publications | where_exp: "item", "item.path contains pub_key" | first %}
                         {% if pub %}
                             {% assign has_pubs = true %}
-                            {% include widgets/publication_compact_card.html item=pub anchor=pub_key %}
+                            {% include widgets/publication_compact_card.html item=pub anchor=pub_key role=publication.role %}
+                        {% endif %}
+                    {% endfor %}
+                    {% for demo in topic.demos %}
+                        {% assign demo_item = site.demos | where_exp: "item", "item.path contains demo.key" | first %}
+                        {% if demo_item %}
+                            {% assign demo_anchor = demo.key | split: '/' | last | prepend: '/demo#demo-' %}
+                            {% include widgets/publication_compact_card.html item=demo_item href=demo_anchor badge="MDE" role=demo.role %}
                         {% endif %}
                     {% endfor %}
                     {% for project in topic.ongoing_projects %}
                     <article class="research-ongoing-card">
                         <h3 class="research-ongoing-card__title">{{ project.title | escape }}</h3>
+                        {% if project.role %}
+                        <span class="small font-weight-bold">{{ project.role | escape }}</span>
+                        {% endif %}
                         <span class="research-ongoing-card__status">{{ project.status | default: "Ongoing" | escape }}</span>
                     </article>
                     {% endfor %}

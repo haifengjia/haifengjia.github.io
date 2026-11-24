@@ -5,6 +5,10 @@
 {% assign pub_anchor = item.path | split: '/' | last | replace: '.md', '' %}
 {% endif %}
 {% assign pub_href = '/publications' | relative_url | append: '#pub-' | append: pub_anchor %}
+{% if include.href %}
+{% assign pub_href = include.href | relative_url %}
+{% endif %}
+{% assign venue_badge = include.badge | default: item.pub_venue_badge %}
 <a class="publication-compact-card" href="{{ pub_href }}" title="{{ item.title }}">
     <div class="publication-compact-card__cover">
         {%- if item.cover -%}
@@ -18,8 +22,11 @@
         </div>
     </div>
     <div class="publication-compact-card__meta">
-        {% if item.pub_venue_badge %}
-        <span class="badge badge-pill badge-venue{% if item.pub_venue_rank %} badge-rank-{{ item.pub_venue_rank | downcase }}{% endif %} publication-compact-card__venue">{{ item.pub_venue_badge }}</span>
+        {% if venue_badge %}
+        <span class="badge badge-pill badge-venue{% if item.pub_venue_rank %} badge-rank-{{ item.pub_venue_rank | downcase }}{% endif %} publication-compact-card__venue">{{ venue_badge }}</span>
+        {% endif %}
+        {% if include.role %}
+        <span class="small font-weight-bold">{{ include.role | escape }}</span>
         {% endif %}
     </div>
 </a>
