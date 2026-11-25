@@ -10,6 +10,8 @@ topics:
         role: "First Author"
       - title: "Interactive World Models"
         role: "First Author"
+      - title: "Real-Time 4D Reconstruction for Teleoperation"
+        role: "Project Lead · Co-First Author"
       - title: "Totally Edge-Offloaded vSLAM"
         role: "Project Lead"
       - title: "Edge Offloaded Smart Navigator"
@@ -35,8 +37,6 @@ topics:
         status: "Submission in Progress"
       - title: "Real-Time 4D Reconstruction for Teleoperation"
         role: "Project Lead · Co-First Author"
-      - title: "Faithful Human Activity Recognition"
-        role: "Project Lead · First Author"
 
   - id: wireless-sensing
     title: "Low-Power Wireless Sensor Networking"
